@@ -1,0 +1,1 @@
+var modelInfo = {model:"mcb_pmsm_foc_sensorless_f28069MLaunchPad"};var modelHierarchy=[{model:"mcb_pmsm_foc_sensorless_f28069MLaunchPad",relativePath:"_internal.html",parent:"null"},];var AddCode = true;var ProtectedModel = false;

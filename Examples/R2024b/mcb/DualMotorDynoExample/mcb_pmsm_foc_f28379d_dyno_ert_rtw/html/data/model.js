@@ -1,0 +1,1 @@
+var modelInfo = {model:"mcb_pmsm_foc_f28379d_dyno"};var modelHierarchy=[{model:"mcb_pmsm_foc_f28379d_dyno",relativePath:"_internal.html",parent:"null"},];var AddCode = true;var ProtectedModel = false;

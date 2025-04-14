@@ -1,0 +1,1 @@
+var modelInfo = {model:"mcb_pmsm_hall_offset_f28069m"};var modelHierarchy=[{model:"mcb_pmsm_hall_offset_f28069m",relativePath:"_internal.html",parent:"null"},];var AddCode = true;var ProtectedModel = false;

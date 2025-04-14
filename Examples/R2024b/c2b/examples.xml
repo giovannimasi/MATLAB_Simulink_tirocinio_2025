@@ -1,0 +1,1634 @@
+<?xml version="1.0"?>
+<demos>
+  <demoitem>
+    <source>CodeVerificationAndValidationWithExternalModeExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/CodeVerificationAndValidationWithExternalModeExample.html</file>
+    <metadata>ex01819474</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <product>ecoder</product>
+    <file component="c2b" timestamp="1518781995">f28m35x_m3_ext_comm_interface.png</file>
+    <file component="c2b" timestamp="1518781995">f28m35x_m3_extmode_2.png</file>
+    <file component="c2b" timestamp="1518781995">f28m35x_m3_extmode_3.png</file>
+    <file component="c2b" timestamp="1518781995">f28m35x_m3_extmode_4.png</file>
+    <file component="c2b" timestamp="1518781995">f28m35x_m3_extmode_5.png</file>
+    <file component="c2b" timestamp="1565246436">f28m35x_m3_extmode_6.png</file>
+    <file component="c2b" timestamp="1565246436">f28m35x_m3_extmode_7.png</file>
+    <file component="c2b" timestamp="1565246436">f28m35x_m3_extmode_8.png</file>
+    <file component="c2b" open="open" timestamp="1681053448">f28m35x_m3_external_mode.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>PFCMultiAxisKitExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/PFCMultiAxisKitExample.html</file>
+    <metadata>ex03985231</metadata>
+    <thumbnail>html/PFCMultiAxisKitExample_01.png</thumbnail>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>simscapeelectrical</product>
+    <product>simulink</product>
+    <product>ecoder</product>
+    <product>mcb</product>
+    <file component="c2b" timestamp="1639668429">hardware_connection_hvm.png</file>
+    <file component="c2b" timestamp="1642504497">adc_config.png</file>
+    <file component="c2b" timestamp="1642668479">epwm4_config.png</file>
+    <file component="c2b" timestamp="1642504497">epwm5_config.png</file>
+    <file component="c2b" timestamp="1642504497">hardware_result.png</file>
+    <file component="c2b" timestamp="1642668479">overvoltage_protection.png</file>
+    <file component="c2b" timestamp="1680720444">c2000_host_pfc.slx</file>
+    <file component="c2b" open="open" timestamp="1680720444">c28069pfchvkit.slx</file>
+    <file component="c2b" timestamp="1690393319">c28069pfcmotorcontrolhvkit.slx</file>
+    <file component="c2b" timestamp="1690393319">c28069pfcmotorcontrolhvkit_data.m</file>
+    <file component="c2b" timestamp="1690393319">c2000pfcmotorcontrolhostmodel.slx</file>
+    <file component="c2b" timestamp="1690293765">hw-motor-load.png</file>
+    <file component="c2b" timestamp="1690203590">pfc-intro.png</file>
+    <file component="c2b" timestamp="1690203590">pfc-cla.png</file>
+    <file component="c2b" timestamp="1690203590">pfc-cla1.png</file>
+    <file component="c2b" timestamp="1690203590">pfc-epwm.png</file>
+    <file component="c2b" timestamp="1690203590">pfc-sync.png</file>
+    <file component="c2b" timestamp="1690203590">pfc-hw.png</file>
+    <file component="c2b" timestamp="1690203590">pfc-hw1.png</file>
+    <file component="c2b" timestamp="1690203590">c28069pfchvkit_data.m</file>
+    <file component="c2b" timestamp="1699955464">xxhw-motor-load.png</file>
+  </demoitem>
+  <demoitem>
+    <source>PVInverterUsingSolarExplorerKitExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/PVInverterUsingSolarExplorerKitExample.html</file>
+    <metadata>ex09449719</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>c2b</product>
+    <product>matlab</product>
+    <product>simulink</product>
+    <product>simscapeelectrical</product>
+    <product>instrument</product>
+    <product>ecoder</product>
+    <file component="c2b" timestamp="1680717530">Solar_Inverter.m</file>
+    <file component="c2b" open="open" timestamp="1680717530">Solar_Inverter_Sim.slx</file>
+    <file component="c2b" timestamp="1680717530">c2000_host_solar.slx</file>
+    <file component="c2b" timestamp="1680717530">c28035solar_inverter.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>ModifyEPWMDutyCycleUsingDMAExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/ModifyEPWMDutyCycleUsingDMAExample.html</file>
+    <metadata>ex12361669</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <file component="c2b" timestamp="1685560311">c2806x_dma_epwm.slx</file>
+    <file component="c2b" timestamp="1685560311">c2833x_dma_epwm.slx</file>
+    <file component="c2b" open="open" timestamp="1685560311">c28x7x_c28004x_dma_epwm.slx</file>
+    <file component="c2b" timestamp="1683634851">sineTableCalculation.m</file>
+  </demoitem>
+  <demoitem>
+    <source>FieldOrientedControlOfPMSMWithQEPUsingC2000ProcessorsExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/FieldOrientedControlOfPMSMWithQEPUsingC2000ProcessorsExample.html</file>
+    <metadata>ex13417578</metadata>
+    <thumbnail>data/mcb_quad_enc.png</thumbnail>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>fixedpoint</product>
+    <product>simulink</product>
+    <product>mcb</product>
+    <file component="c2b" timestamp="1610443492">mcb_quad_enc.png</file>
+    <file component="c2b" timestamp="1610963900">foc_qep.png</file>
+    <file component="c2b" timestamp="1610963900">foc_qep1.png</file>
+    <file component="c2b" timestamp="1610963900">foc_qep2.png</file>
+    <file component="c2b" timestamp="1610963900">foc_qep3.png</file>
+    <file component="c2b" timestamp="1611294896">foc_qep5.png</file>
+    <file component="c2b" timestamp="1681299220">mcb_pmsm_foc_host_model.slx</file>
+    <file component="c2b" timestamp="1681299220">mcb_pmsm_foc_qep_f280049C.slx</file>
+    <file component="c2b" open="open" timestamp="1681299220">mcb_pmsm_foc_qep_f28035.slx</file>
+    <file component="c2b" timestamp="1681299220">mcb_pmsm_foc_qep_f28335.slx</file>
+    <file component="c2b" timestamp="1680119418">mcb_pmsm_foc_qep_f28035_data.m</file>
+    <file component="c2b" timestamp="1680119418">current_control.slx</file>
+    <file component="c2b" timestamp="1681299220">foc_qep_algorithm.slx</file>
+    <file component="c2b" timestamp="1680119418">mcb_pmsm_foc_f280049C_data.m</file>
+    <file component="c2b" timestamp="1680119418">mcb_pmsm_foc_f28335_data.m</file>
+    <file component="c2b" timestamp="1681299220">qep_algorithm.slx</file>
+    <file component="c2b" timestamp="1680119418">speed_control.slx</file>
+    <file component="c2b" timestamp="1687612499">mcb_pmsmfoc_motor.png</file>
+    <file component="c2b" timestamp="1687612499">mcb_pmsmfoc_processor.png</file>
+    <file component="c2b" timestamp="1690560647">mcb_c2000_pmsm_offset_data.m</file>
+    <file component="c2b" timestamp="1690560647">mcb_pmsm_host_offsetComputation.slx</file>
+    <file component="c2b" timestamp="1690560647">mcb_pmsm_qep_offset_f280049C.slx</file>
+    <file component="c2b" timestamp="1690560647">mcb_pmsm_qep_offset_f28035.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>UsingECAPBlockInHighResolutionToCaptureSignalsExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/UsingECAPBlockInHighResolutionToCaptureSignalsExample.html</file>
+    <metadata>ex14504303</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>fixedpoint</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <file component="c2b" open="open" timestamp="1705434180">c28xhrcaptype1.slx</file>
+    <file component="c2b" timestamp="1701771116">hw-config.png</file>
+    <file component="c2b" timestamp="1701771116">hw-config1.png</file>
+    <file component="c2b" timestamp="1701771116">hw-config2.png</file>
+    <file component="c2b" timestamp="1701771116">hw-config3.png</file>
+    <file component="c2b" timestamp="1701771116">ecap.png</file>
+    <file component="c2b" timestamp="1705434180">ecap1.png</file>
+    <file component="c2b" timestamp="1701771116">epwm.png</file>
+    <file component="c2b" timestamp="1701771116">epwm1.png</file>
+    <file component="c2b" timestamp="1701771116">epwm2.png</file>
+    <file component="c2b" timestamp="1701771116">monitor-tune.png</file>
+  </demoitem>
+  <demoitem>
+    <source>InterProcessorCommunicationUsingIPCBlocksExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/InterProcessorCommunicationUsingIPCBlocksExample.html</file>
+    <metadata>ex14800765</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <file component="c2b" open="open" timestamp="1680789840">c2837xd_ipc_cpu1_tx.slx</file>
+    <file component="c2b" timestamp="1690364211">c2837xd_ipc_cpu2_rx.slx</file>
+    <file component="c2b" timestamp="1690364211">c2838xd_ipc_cm.slx</file>
+    <file component="c2b" timestamp="1680789840">c2838xd_ipc_cpu1.slx</file>
+    <file component="c2b" timestamp="1680789840">c2838xd_ipc_cpu2.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>C280xC2833xAsynchronousSchedulingExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/C280xC2833xAsynchronousSchedulingExample.html</file>
+    <metadata>ex18263641</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>ecoder</product>
+    <product>matlab</product>
+    <product>c2b</product>
+    <file component="c2b" timestamp="1681214442">c2807x_2837xx_asyncscheduling_ert.slx</file>
+    <file component="c2b" open="open" timestamp="1681214442">c280x_2833x_asyncscheduling_ert.slx</file>
+    <file component="c2b" timestamp="1681214442">c280xx_asyncscheduling_ert.slx</file>
+    <file component="c2b" timestamp="1681214442">c281x_asyncscheduling_ert.slx</file>
+    <file component="c2b" timestamp="1680795719">c28M3xx_asyncscheduling_ert.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>GetStartedWithC2bMultiprocessorBlocksOnMCUsExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/GetStartedWithC2bMultiprocessorBlocksOnMCUsExample.html</file>
+    <metadata>ex18398123</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <file component="c2b" timestamp="1689536061">MCUGettingStartedResults.png</file>
+    <file component="c2b" timestamp="1689536061">MCUGettingStartedResults_HW.png</file>
+    <file component="c2b" timestamp="1689536061">RC_circuit.png</file>
+    <file component="c2b" open="open" timestamp="1689536061">soc_closed_loop.slx</file>
+    <file component="c2b" timestamp="1689536061">soc_closed_loop_ref.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>EncodeDecodeSerialDataC2000basedHardwareExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/EncodeDecodeSerialDataC2000basedHardwareExample.html</file>
+    <metadata>ex20276951</metadata>
+    <thumbnail>html/EncodeDecodeSerialDataC2000basedHardwareExample_01.png</thumbnail>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <file component="c2b" timestamp="1627914851">encoder-decoder-xcp-settings.png</file>
+    <file component="c2b" timestamp="1627914851">encoder-decoder-sci-settings.png</file>
+    <file component="c2b" timestamp="1627889737">encode-decode-blocks.png</file>
+    <file component="c2b" timestamp="1627889737">encode-decode-packet.png</file>
+    <file component="c2b" open="open" timestamp="1680881332">c2000_encode_decode_packet.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>SignalMonitoringTuningXCPOnCANGeneratedA2LExample</source>
+    <type>M-GUI</type>
+    <extension>mlx</extension>
+    <metadata>ex21710105</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>vnt</product>
+    <file component="c2b" open="open" timestamp="1724079531">XCPLogging_App.mlapp</file>
+  </demoitem>
+  <demoitem>
+    <source>SeriallyManagedDCDCPowerConverterUsingC2000Example</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex22884972</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simscape</product>
+    <product>simscapeelectrical</product>
+    <product>simulink</product>
+    <file component="c2b" timestamp="1689539178">soc_dcdc_sci_cpu1_ref.slx</file>
+    <file component="c2b" timestamp="1689539178">soc_dcdc_sci_cpu2_ref.slx</file>
+    <file component="c2b" timestamp="1689539178">soc_dcdc_sci_param.m</file>
+    <file component="c2b" timestamp="1689539178">soc_dcdc_sci_top.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>TriggerDownstreamTIC2000InterruptSingleTapBMI160Example</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/TriggerDownstreamTIC2000InterruptSingleTapBMI160Example.html</file>
+    <metadata>ex23331888</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>simulink</product>
+    <product>ecoder</product>
+    <product>simulinkcoder</product>
+    <file component="c2b" timestamp="1673886116">c2b_bmi160_block_param_single_tap.png</file>
+    <file component="c2b" timestamp="1673886116">c2b_bmi160_initialize.png</file>
+    <file component="c2b" open="open" timestamp="1705487235">c28x_i2c_singletap_interrupt_detection.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>DataExchangeBetweenCPUAndCLACoprocessorExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex26112072</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>simulink</product>
+    <file component="c2b" timestamp="1673184053">c2000_cla_ipc_c2000_proc_model.slx</file>
+    <file component="c2b" timestamp="1673184053">c2000_cla_ipc_cla_proc_model.slx</file>
+    <file component="c2b" timestamp="1673184053">c2000_cla_ipc_top_level_model.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>GettingStartedForTexasInstrumentsC2000ProcessorsExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/GettingStartedForTexasInstrumentsC2000ProcessorsExample.html</file>
+    <metadata>ex26268421</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>simulink</product>
+    <product>ecoder</product>
+    <product>simulinkcoder</product>
+    <file component="c2b" timestamp="1669365827">f2838_lib.png</file>
+    <file component="c2b" timestamp="1595405151">f2838_lib1.png</file>
+    <file component="c2b" timestamp="1669365827">f2838_lib2.png</file>
+    <file component="c2b" timestamp="1595405151">f2838_lib3.png</file>
+    <file component="c2b" timestamp="1674128284">f2838_lib4.png</file>
+    <file component="c2b" timestamp="1595405151">f2838_lib5.png</file>
+    <file component="c2b" timestamp="1669365827">f28069_lib.png</file>
+    <file component="c2b" timestamp="1595405151">f28069_lib1.png</file>
+    <file component="c2b" timestamp="1674128284">f28069_lib2.png</file>
+    <file component="c2b" timestamp="1595405151">f28069_lib3.png</file>
+    <file component="c2b" timestamp="1669365827">f28379_lib.png</file>
+    <file component="c2b" timestamp="1595405151">f28379_lib1.png</file>
+    <file component="c2b" timestamp="1673362738">f28379_lib2.png</file>
+    <file component="c2b" timestamp="1595405151">f28379_lib3.png</file>
+    <file component="c2b" open="open" timestamp="1679579111">c28069_blink.slx</file>
+    <file component="c2b" timestamp="1679579111">c28379D_cpu1_blink.slx</file>
+    <file component="c2b" timestamp="1679579111">c28379D_cpu2_blink.slx</file>
+    <file component="c2b" timestamp="1679579111">c2838x_armm4_blink.slx</file>
+    <file component="c2b" timestamp="1679579111">c2838x_cpu1_blink.slx</file>
+    <file component="c2b" timestamp="1679579111">c2838x_cpu2_blink.slx</file>
+    <file component="c2b" timestamp="1690560722">c28x_LedBlink_ert.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>ImpactDetectionLIS3DHInterruptExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/ImpactDetectionLIS3DHInterruptExample.html</file>
+    <metadata>ex27075809</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <file component="c2b" open="open" timestamp="1690511279">c28x_i2c_lis3dh_inertialwakeupinterrupt.slx</file>
+    <file component="c2b" timestamp="1689628361">c2b_impact_detection_model.png</file>
+    <file component="c2b" timestamp="1689628361">c2b_enable_inertial_wakeup.png</file>
+    <file component="c2b" timestamp="1673524433">c2000_lis3dh_monitor_tune.png</file>
+    <file component="c2b" timestamp="1674689699">c2b_block_param_fifo.png</file>
+  </demoitem>
+  <demoitem>
+    <source>MPPTUsingFlybackConverterInTISolarExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/MPPTUsingFlybackConverterInTISolarExample.html</file>
+    <metadata>ex30616722</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>instrument</product>
+    <product>fixedpoint</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <product>simscapeelectrical</product>
+    <product>matlabcoder</product>
+    <file component="c2b" timestamp="1656664273">hardware-connection.png</file>
+    <file component="c2b" timestamp="1656664273">adc.png</file>
+    <file component="c2b" timestamp="1656664273">epwm-block.png</file>
+    <file component="c2b" timestamp="1656664273">over-current.png</file>
+    <file component="c2b" timestamp="1656669349">over-current1.png</file>
+    <file component="c2b" timestamp="1656669349">over-voltage.png</file>
+    <file component="c2b" timestamp="1656669349">pv.png</file>
+    <file component="c2b" timestamp="1656664273">sci.png</file>
+    <file component="c2b" timestamp="1658405718">hardware-results.png</file>
+    <file component="c2b" timestamp="1658405718">hardware-results1.png</file>
+    <file component="c2b" timestamp="1658405718">voltage1.png</file>
+    <file component="c2b" timestamp="1680718390">c2000_solarkit_host_model.slx</file>
+    <file component="c2b" open="open" timestamp="1680718390">c28069mpptsolarkit.slx</file>
+    <file component="c2b" timestamp="1690548062">c28069mpptsolarkit_data.m</file>
+    <file component="c2b" timestamp="1715345224">mppt-hw-connection.png</file>
+  </demoitem>
+  <demoitem>
+    <source>FreeFallDetectionC2BLIS3DHInterruptExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/FreeFallDetectionC2BLIS3DHInterruptExample.html</file>
+    <metadata>ex31613267</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <file component="c2b" open="open" timestamp="1690511127">c28x_i2c_lis3dh_automaticchutetriggering.slx</file>
+    <file component="c2b" timestamp="1689624013">c2b_freefall_detect_model.png</file>
+    <file component="c2b" timestamp="1689624013">c2b_sel_detect_freefall.png</file>
+    <file component="c2b" timestamp="1674689699">c2b_block_param_fifo.png</file>
+    <file component="c2b" timestamp="1673524433">c2000_lis3dh_monitor_tune.png</file>
+  </demoitem>
+  <demoitem>
+    <source>SynchronizationBetweenCPUAndCLACoprocessorExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex33200524</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>simulink</product>
+    <product>ecoder</product>
+    <file component="c2b" timestamp="1673184835">CPU_to_CLA_synchornization_C2000_processor_model.slx</file>
+    <file component="c2b" timestamp="1673184835">CPU_to_CLA_synchornization_CLA_coprocessor_model.slx</file>
+    <file component="c2b" timestamp="1673184835">CPU_to_CLA_synchornization_top_level_model.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>SensorlessfocUsingC2000ProcessorsExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/SensorlessfocUsingC2000ProcessorsExample.html</file>
+    <metadata>ex33431879</metadata>
+    <thumbnail>html/SensorlessfocUsingC2000ProcessorsExample_01.png</thumbnail>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>fixedpoint</product>
+    <product>simulink</product>
+    <product>mcb</product>
+    <file component="c2b" timestamp="1611067522">sensorless_foc2.png</file>
+    <file component="c2b" timestamp="1611067522">sensorless_foc3.png</file>
+    <file component="c2b" timestamp="1611067522">sensorless_foc4.png</file>
+    <file component="c2b" timestamp="1611067522">sensorless_foc5.png</file>
+    <file component="c2b" timestamp="1680776037">foc_sensorless_algorithm.slx</file>
+    <file component="c2b" timestamp="1680776037">mcb_pmsm_foc_sensorless_f280049C.slx</file>
+    <file component="c2b" timestamp="1680374711">mcb_pmsm_foc_sensorless_f280049C_data.m</file>
+    <file component="c2b" timestamp="1680374711">mcb_pmsm_foc_sensorless_f280049C_datascript.m</file>
+    <file component="c2b" timestamp="1680776037">mcb_pmsm_foc_sensorless_f28027LaunchPad.slx</file>
+    <file component="c2b" timestamp="1680374711">mcb_pmsm_foc_sensorless_f28027LaunchPad_data.m</file>
+    <file component="c2b" timestamp="1680776037">mcb_pmsm_foc_sensorless_f28035.slx</file>
+    <file component="c2b" timestamp="1680374711">mcb_pmsm_foc_sensorless_f28035_data.m</file>
+    <file component="c2b" timestamp="1680374711">mcb_pmsm_foc_sensorless_f28035_datascript.m</file>
+    <file component="c2b" open="open" timestamp="1680776037">mcb_pmsm_foc_sensorless_f28069m.slx</file>
+    <file component="c2b" timestamp="1680374711">mcb_pmsm_foc_sensorless_f28069m_data.m</file>
+    <file component="c2b" timestamp="1680374711">mcb_pmsm_foc_sensorless_f28069m_datascript.m</file>
+    <file component="c2b" timestamp="1680776037">mcb_pmsm_foc_sensorless_f28335.slx</file>
+    <file component="c2b" timestamp="1680374711">mcb_pmsm_foc_sensorless_f28335_data.m</file>
+    <file component="c2b" timestamp="1680374711">mcb_pmsm_foc_sensorless_f28335_datascript.m</file>
+    <file component="c2b" timestamp="1680776037">mcb_pmsm_foc_sensorless_hvkit_f28069m.slx</file>
+    <file component="c2b" timestamp="1680374711">mcb_pmsm_foc_sensorless_hvkit_f28069m_data.m</file>
+    <file component="c2b" timestamp="1680374711">mcb_pmsm_foc_sensorless_hvkit_f28069m_datascript.m</file>
+    <file component="c2b" timestamp="1680776037">sensorless_algorithm.slx</file>
+    <file component="c2b" timestamp="1680374711">current_control.slx</file>
+    <file component="c2b" timestamp="1680374711">speed_control.slx</file>
+    <file component="c2b" timestamp="1687596076">mcb_pmsmfoc_motor.png</file>
+    <file component="c2b" timestamp="1687596076">mcb_pmsmfoc_processor.png</file>
+    <file component="c2b" timestamp="1687616634">mcb_pmsm_foc_host_model.slx</file>
+    <file component="c2b" timestamp="1690554632">c28027pmsmfoc_ert.m</file>
+    <file component="c2b" timestamp="1690554632">c28035pmsmfoc_ert.m</file>
+    <file component="c2b" timestamp="1690554632">c28035pmsmfochvkit_ert.m</file>
+    <file component="c2b" timestamp="1690554632">c28069pmsmfoc_ert.m</file>
+    <file component="c2b" timestamp="1690554632">c28335pmsmfoc_ert.m</file>
+    <file component="c2b" timestamp="1690562472">c28027pmsmfoc_data.m</file>
+    <file component="c2b" timestamp="1690562472">c28035pmsmfoc_data.m</file>
+    <file component="c2b" timestamp="1690542562">c28035pmsmfoc_data_cla.m</file>
+    <file component="c2b" timestamp="1690542562">c28069pmsmfoc_data.m</file>
+    <file component="c2b" timestamp="1690542562">c28335_pmsmfoc_data.m</file>
+  </demoitem>
+  <demoitem>
+    <source>TripleAxisTiltC2000LIS3DHDataReadyInterruptExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/TripleAxisTiltC2000LIS3DHDataReadyInterruptExample.html</file>
+    <metadata>ex33848910</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>simulink</product>
+    <product>ecoder</product>
+    <file component="c2b" timestamp="1673524433">c2000_lis3dh_monitor_tune.png</file>
+    <file component="c2b" timestamp="1673518287">c2000_lis3dh_interrupt.png</file>
+    <file component="c2b" timestamp="1674689699">c2b_block_param_fifo.png</file>
+    <file component="c2b" timestamp="1674691990">c2b_external_interrupt.png</file>
+    <file component="c2b" timestamp="1674689699">c2b_input_x_bar.png</file>
+    <file component="c2b" open="open" timestamp="1690547636">c28xlis3dhtiltdetection.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>ADCPWMSynchronizationViaADCInterruptExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/ADCPWMSynchronizationViaADCInterruptExample.html</file>
+    <metadata>ex34159848</metadata>
+    <thumbnail>data/adc-config.png</thumbnail>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <file component="c2b" timestamp="1705682517">c28004x_adcpwmasynctest_ert.slx</file>
+    <file component="c2b" timestamp="1705682517">c2807x_2837xx_adcpwmasynctest_ert.slx</file>
+    <file component="c2b" open="open" timestamp="1705682517">c280x_2833x_adcpwmasynctest_ert.slx</file>
+    <file component="c2b" timestamp="1705682517">c280xx_adcpwmasynctest_ert.slx</file>
+    <file component="c2b" timestamp="1705682517">c281x_adcpwmasynctest_ert.slx</file>
+    <file component="c2b" timestamp="1685564047">c2838x_adcpwmasync_TopModel.slx</file>
+    <file component="c2b" timestamp="1680437345">c2838x_adcpwmsync_config.sldd</file>
+    <file component="c2b" timestamp="1683639385">adc_pwm_system.slx</file>
+    <file component="c2b" timestamp="1721130224">adc-config.png</file>
+    <file component="c2b" timestamp="1721130224">adc-epwm-config.png</file>
+    <file component="c2b" timestamp="1721130224">Hardware-mapping.png</file>
+    <file component="c2b" timestamp="1721130224">epwm-config1.png</file>
+    <file component="c2b" timestamp="1721130224">epwm-config2.png</file>
+  </demoitem>
+  <demoitem>
+    <source>UsingTheControlLawAcceleratorCLAExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/UsingTheControlLawAcceleratorCLAExample.html</file>
+    <metadata>ex38372164</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <product>matlabcoder</product>
+    <file component="c2b" timestamp="1512983458">publish_c28069pmsmfoc_cla1tocpu.png</file>
+    <file component="c2b" timestamp="1512983458">publish_c28069pmsmfoc_clablock.png</file>
+    <file component="c2b" timestamp="1512983458">publish_c28069pmsmfoc_cpu2cla1.png</file>
+    <file component="c2b" timestamp="1512983458">publish_c28069pmsmfoc_inline.png</file>
+    <file component="c2b" timestamp="1603101677">cla_data_storage1.png</file>
+    <file component="c2b" timestamp="1603101677">cla_data_storage2.png</file>
+    <file component="c2b" timestamp="1611826648">hall_signals.png</file>
+    <file component="c2b" timestamp="1612162579">data_exchange2.png</file>
+    <file component="c2b" timestamp="1612162579">data_exchange3.png</file>
+    <file component="c2b" timestamp="1624916447">cla-config-cmpss.png</file>
+    <file component="c2b" timestamp="1624916447">cla-subsystem-config.png</file>
+    <file component="c2b" timestamp="1628075472">cla-method1-data-store.png</file>
+    <file component="c2b" timestamp="1628075472">cla-method1.png</file>
+    <file component="c2b" timestamp="1628075472">cla-method2-data-store.png</file>
+    <file component="c2b" timestamp="1628075472">cla-method2-signal.png</file>
+    <file component="c2b" timestamp="1628075472">cla-method2.png</file>
+    <file component="c2b" timestamp="1628075472">monitor-tune.png</file>
+    <file component="c2b" timestamp="1640255725">custom_code.png</file>
+    <file component="c2b" timestamp="1640255725">custom_code1.png</file>
+    <file component="c2b" timestamp="1640255725">cla_custom_code.png</file>
+    <file component="c2b" timestamp="1680772017">c28004xblink_cla.slx</file>
+    <file component="c2b" timestamp="1680772017">c28035blink_cla.slx</file>
+    <file component="c2b" timestamp="1680772017">c28035pmsmfoc_cla.slx</file>
+    <file component="c2b" timestamp="1680772017">c28069_dataintegrity_cla.slx</file>
+    <file component="c2b" open="open" timestamp="1680772017">c28069blink_cla.slx</file>
+    <file component="c2b" timestamp="1685558934">c28069pmsmfoc_cla.slx</file>
+    <file component="c2b" timestamp="1680772017">c28377Sblink_cla.slx</file>
+    <file component="c2b" timestamp="1680772017">c28379D_cmpss_cla_blink.slx</file>
+    <file component="c2b" timestamp="1680772017">c28379D_cpu1_blink_cla.slx</file>
+    <file component="c2b" timestamp="1680772017">c28379D_cpu2_blink_cla.slx</file>
+    <file component="c2b" timestamp="1680772017">c28379D_custom_code_cla.slx</file>
+    <file component="c2b" timestamp="1680772017">c28379D_dataintegrity_cla.slx</file>
+    <file component="c2b" timestamp="1680094084">c28035pmsmfoc_data_cla.m</file>
+    <file component="c2b" timestamp="1680094084">customcode.cla</file>
+    <file component="c2b" timestamp="1680119781">hall_sensor_lib.slx</file>
+    <file component="c2b" timestamp="1683631965">c28069pmsmfoc_data.m</file>
+  </demoitem>
+  <demoitem>
+    <source>SerialDataCommF28M3xConcertoARMC28xHostComputerExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/SerialDataCommF28M3xConcertoARMC28xHostComputerExample.html</file>
+    <metadata>ex40024748</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>simulink</product>
+    <product>ecoder</product>
+    <file component="c2b" timestamp="1518781079">f28m35x_m3_baudrate.png</file>
+    <file component="c2b" timestamp="1518781079">f28m35x_m3_internal_loopback.png</file>
+    <file component="c2b" timestamp="1518781079">f28m35x_c28_internal_loopback.png</file>
+    <file component="c2b" timestamp="1680885268">Host_read_f28m35.slx</file>
+    <file component="c2b" timestamp="1680885268">f28m35x_c28_send.slx</file>
+    <file component="c2b" open="open" timestamp="1680885268">f28m35x_m3_receive.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>DataExchangeBetweenCPUAndARMProcessorsExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex40385475</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>simulink</product>
+    <file component="c2b" timestamp="1673179835">c2000_armcortexm_ipc_arm_proc_model.slx</file>
+    <file component="c2b" timestamp="1673179835">c2000_armcortexm_ipc_c2000_proc_model.slx</file>
+    <file component="c2b" timestamp="1673179835">c2000_armcortexm_ipc_top_level_model.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>UsingHRCAPToCaptureInputSignalsExample</source>
+    <type>M-file</type>
+    <extension>m</extension>
+    <metadata>ex41814775</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <product>fixedpoint</product>
+    <file component="c2b" timestamp="1690473184">c2806xhrcap.slx</file>
+    <file component="c2b" timestamp="1690459257">hrcap-block-config.png</file>
+    <file component="c2b" timestamp="1690459257">hrcap-block-config1.png</file>
+    <file component="c2b" timestamp="1690459257">hrcap-block-config2.png</file>
+    <file component="c2b" timestamp="1690480088">hrcap-block-model-config.png</file>
+    <file component="c2b" timestamp="1690480088">hrcap-block-model-config1.png</file>
+    <file component="c2b" timestamp="1690459257">hrcap-block-model-config2.png</file>
+    <file component="c2b" timestamp="1690480088">hrcap-block-config3.png</file>
+    <file component="c2b" timestamp="1690480088">hrcap-block-config4.png</file>
+    <file component="c2b" timestamp="1705435098">hw-connection.png</file>
+  </demoitem>
+  <demoitem>
+    <source>CANCommunicationUsingECANBlocksC2000Example</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/CANCommunicationUsingECANBlocksC2000Example.html</file>
+    <metadata>ex43095304</metadata>
+    <thumbnail>data/ecan-host-model.png</thumbnail>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>simulink</product>
+    <product>ecoder</product>
+    <product>vnt</product>
+    <file component="c2b" timestamp="1627028931">build-deploy.png</file>
+    <file component="c2b" timestamp="1627300948">ecan-host-model.png</file>
+    <file component="c2b" timestamp="1627028931">ecan-target-model-receive.png</file>
+    <file component="c2b" timestamp="1627028931">ecan-target-model-transmit.png</file>
+    <file component="c2b" timestamp="1627028931">ecan-target-model.png</file>
+    <file component="c2b" timestamp="1627015706">ecan-acceptance-target-model-receive.png</file>
+    <file component="c2b" timestamp="1627015706">ecan-acceptance-target-model.png</file>
+    <file component="c2b" timestamp="1627150646">ecan-host-can-config.png</file>
+    <file component="c2b" timestamp="1627150646">ecan-host-model-canpack-transmit.png</file>
+    <file component="c2b" timestamp="1627150646">ecan-host-model-receive.png</file>
+    <file component="c2b" timestamp="1627150646">ecan-host-model1.png</file>
+    <file component="c2b" timestamp="1627150646">model-config.png</file>
+    <file component="c2b" timestamp="1627150646">simulation-pacing.png</file>
+    <file component="c2b" timestamp="1627300948">simulation-results.png</file>
+    <file component="c2b" timestamp="1627150646">acceptance-host-model.png</file>
+    <file component="c2b" timestamp="1627300948">acceptance-host-model1.png</file>
+    <file component="c2b" timestamp="1627300948">acceptance-standard.png</file>
+    <file component="c2b" timestamp="1627300948">acceptance-extended.png</file>
+    <file component="c2b" timestamp="1627498022">ecan-host-model2.png</file>
+    <file component="c2b" timestamp="1627478495">acceptance-host-model4.png</file>
+    <file component="c2b" timestamp="1627478495">ecan-acceptance-target-model-receive2.png</file>
+    <file component="c2b" timestamp="1627478495">ecan-acceptance-target-model3.png</file>
+    <file component="c2b" timestamp="1627478495">ecan-target-model2.png</file>
+    <file component="c2b" timestamp="1627917608">ecan-selector.png</file>
+    <file component="c2b" timestamp="1627917608">ecan-table.png</file>
+    <file component="c2b" timestamp="1680796788">c2000_host_CAN_acceptance_filtering.slx</file>
+    <file component="c2b" timestamp="1680796788">c2000_host_CAN_comm.slx</file>
+    <file component="c2b" timestamp="1680796788">c28x_CAN_acceptance_filtering.slx</file>
+    <file component="c2b" open="open" timestamp="1680796788">c28x_CAN_comm.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>SignalLoggingParameterTuningPackedModeExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/SignalLoggingParameterTuningPackedModeExample.html</file>
+    <metadata>ex43958294</metadata>
+    <thumbnail>data/packed_mode_model.png</thumbnail>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <file component="c2b" timestamp="1638653139">control_panel.png</file>
+    <file component="c2b" timestamp="1638653139">packed_mode_model.png</file>
+    <file component="c2b" timestamp="1638653139">send_packets.png</file>
+    <file component="c2b" timestamp="1638653139">signal_trigger.png</file>
+    <file component="c2b" timestamp="1638653139">monitor_tune_packed.png</file>
+    <file component="c2b" timestamp="1640618169">max_samples.png</file>
+    <file component="c2b" timestamp="1640618169">max_sample.png</file>
+    <file component="c2b" timestamp="1640618169">send_packet.png</file>
+    <file component="c2b" open="open" timestamp="1680887606">c28x_xcp_packed.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>CalibrateECUParametersCANInterfaceExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/CalibrateECUParametersCANInterfaceExample.html</file>
+    <metadata>ex45421889</metadata>
+    <thumbnail>data/c2000_xcp_can.png</thumbnail>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <file component="c2b" timestamp="1601460073">c2000_xcp_can.png</file>
+    <file component="c2b" timestamp="1602487553">c2000_build_for_monitoring.png</file>
+    <file component="c2b" timestamp="1603719035">c2000_xcp_can_setting.png</file>
+    <file component="c2b" timestamp="1602487553">c2000_model_settings.png</file>
+    <file component="c2b" timestamp="1602573355">c2000_monitor_signals.png</file>
+    <file component="c2b" timestamp="1640184037">c2000_cansettings.png</file>
+    <file component="c2b" timestamp="1640184037">c2000_can_settings.png</file>
+    <file component="c2b" open="open" timestamp="1680886229">c28x_xcp_can_3pcaltool.slx</file>
+    <file component="c2b" timestamp="1727279120">c2000_canpe_troubleshoot.png</file>
+  </demoitem>
+  <demoitem>
+    <source>FOCHallSensorUsingC2000Example</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/FOCHallSensorUsingC2000Example.html</file>
+    <metadata>ex46895598</metadata>
+    <thumbnail>html/FOCHallSensorUsingC2000Example_01.png</thumbnail>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>fixedpoint</product>
+    <product>simulink</product>
+    <product>mcb</product>
+    <product>ecoder</product>
+    <file component="c2b" timestamp="1610963900">mcb_hall_sensors.png</file>
+    <file component="c2b" timestamp="1610963900">foc_qep.png</file>
+    <file component="c2b" timestamp="1610963900">foc_qep1.png</file>
+    <file component="c2b" timestamp="1674129254">foc_qep2.png</file>
+    <file component="c2b" timestamp="1610963900">foc_qep3.png</file>
+    <file component="c2b" timestamp="1611294896">foc_qep5.png</file>
+    <file component="c2b" timestamp="1680147355">current_control.slx</file>
+    <file component="c2b" timestamp="1680773952">foc_hall_algorithm.slx</file>
+    <file component="c2b" timestamp="1680773952">hall_sensor_lib.slx</file>
+    <file component="c2b" timestamp="1680147355">mcb_pmsm_foc_f280049C_data.m</file>
+    <file component="c2b" timestamp="1680147355">mcb_pmsm_foc_f28335_data.m</file>
+    <file component="c2b" timestamp="1680773952">mcb_pmsm_foc_hall_f280049C.slx</file>
+    <file component="c2b" open="open" timestamp="1680773952">mcb_pmsm_foc_hall_f28035.slx</file>
+    <file component="c2b" timestamp="1680171032">mcb_pmsm_foc_hall_f28035_data.m</file>
+    <file component="c2b" timestamp="1680773952">mcb_pmsm_foc_hall_f28335.slx</file>
+    <file component="c2b" timestamp="1680773952">mcb_pmsm_foc_hall_hvkit_f28069m.slx</file>
+    <file component="c2b" timestamp="1680171032">mcb_pmsm_foc_hall_hvkit_f28069m_data.m</file>
+    <file component="c2b" timestamp="1680773952">mcb_pmsm_foc_host_model.slx</file>
+    <file component="c2b" timestamp="1680147355">speed_control.slx</file>
+    <file component="c2b" timestamp="1687593257">mcb_pmsmfoc_motor.png</file>
+    <file component="c2b" timestamp="1687593257">mcb_pmsmfoc_processor.png</file>
+    <file component="c2b" timestamp="1690546936">mcb_c2000_pmsm_offset_data.m</file>
+    <file component="c2b" timestamp="1690546936">mcb_pmsm_hall_offset_f280049C.slx</file>
+    <file component="c2b" timestamp="1690546936">mcb_pmsm_hall_offset_f28035.slx</file>
+    <file component="c2b" timestamp="1690546936">mcb_pmsm_hall_offset_hvkit_f28069m.slx</file>
+    <file component="c2b" timestamp="1690546936">mcb_pmsm_host_offsetComputation.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>CodeVerValidPILARMCortexM3CoreF28M3xConcertoProcessorExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/CodeVerValidPILARMCortexM3CoreF28M3xConcertoProcessorExample.html</file>
+    <metadata>ex48398174</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <file component="c2b" timestamp="1518779317">f28m35x_m3_comm_interface.png</file>
+    <file component="c2b" timestamp="1685576879">f28m35x_m3_model_pil_block.slx</file>
+    <file component="c2b" open="open" timestamp="1681031553">f28m35x_m3_pil_block.slx</file>
+    <file component="c2b" timestamp="1681031553">f28m35x_m3_top_model_pil.slx</file>
+    <file component="c2b" timestamp="1680690763">tic2000_concerto_pil_topmodel_data.m</file>
+    <file component="c2b" timestamp="1683641005">f28m35x_m3_counter.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>ConfigureC2000ModelWithCLACoprocessorExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex49202866</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>simulink</product>
+    <file component="c2b" timestamp="1673183339">c2000_and_cla_setup_c2000_proc_model.slx</file>
+    <file component="c2b" timestamp="1673183339">c2000_and_cla_setup_cla_proc_model.slx</file>
+    <file component="c2b" timestamp="1673183339">c2000_and_cla_setup_top_level_model.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>C2000DCDCBuckConverterUsingMCUExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex49860432</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simscape</product>
+    <product>simscapeelectrical</product>
+    <product>simulink</product>
+    <file component="c2b" timestamp="1689537762">soc_dcdc_buck.slx</file>
+    <file component="c2b" timestamp="1689537762">soc_dcdc_buck_cpu1_ref.slx</file>
+    <file component="c2b" timestamp="1689537762">soc_dcdc_buck_cpu2_ref.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>OpenLoopControlUsingC2000ProcessorsExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/OpenLoopControlUsingC2000ProcessorsExample.html</file>
+    <metadata>ex50275232</metadata>
+    <thumbnail>html/OpenLoopControlUsingC2000ProcessorsExample_01.png</thumbnail>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>simulink</product>
+    <product>fixedpoint</product>
+    <product>mcb</product>
+    <file component="c2b" timestamp="1611120627">adc_openloop_calibration.png</file>
+    <file component="c2b" timestamp="1611120627">adc_openloop_calibration1.png</file>
+    <file component="c2b" timestamp="1680418897">mcb_c2000_open_loop_control_data.m</file>
+    <file component="c2b" timestamp="1680776857">mcb_c2000_open_loop_control_host_model.slx</file>
+    <file component="c2b" timestamp="1680776857">mcb_open_loop_control_f280049C_DRV8305.slx</file>
+    <file component="c2b" timestamp="1680776857">mcb_open_loop_control_f28027Launchpad.slx</file>
+    <file component="c2b" open="open" timestamp="1680776857">mcb_open_loop_control_f28035_DRV8312.slx</file>
+    <file component="c2b" timestamp="1690566160">mcb_open_loop_control_data.m</file>
+  </demoitem>
+  <demoitem>
+    <source>GettingStartedWithConnectedIOExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/GettingStartedWithConnectedIOExample.html</file>
+    <metadata>ex50917916</metadata>
+    <thumbnail>html/GettingStartedWithConnectedIOExample_01.png</thumbnail>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>simulink</product>
+    <file component="c2b" timestamp="1672831066">connectedio-config.png</file>
+    <file component="c2b" timestamp="1672831066">connectedio.png</file>
+    <file component="c2b" timestamp="1672831066">run-io.png</file>
+    <file component="c2b" open="open" timestamp="1704717484">c2837xconnectedio.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>UsingSPIToReadAndWriteDataOnSPIEEPROMExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/UsingSPIToReadAndWriteDataOnSPIEEPROMExample.html</file>
+    <metadata>ex51436780</metadata>
+    <thumbnail>html/UsingSPIToReadAndWriteDataOnSPIEEPROMExample_01.png</thumbnail>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <file component="c2b" timestamp="1680798004">c28x_spi_eeprom.slx</file>
+    <file component="c2b" timestamp="1680798004">c28x_spi_eeprom_interrupt.slx</file>
+    <file component="c2b" timestamp="1680798004">c28x_spi_interrupt_test_ert.slx</file>
+    <file component="c2b" open="open" timestamp="1680798004">c28x_spitest_ert.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>UsingCrossbarsXBARsExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/UsingCrossbarsXBARsExample.html</file>
+    <metadata>ex53431745</metadata>
+    <thumbnail>data/xbar-model2.png</thumbnail>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <file component="c2b" open="open" timestamp="1720441985">f2837xXBAR.slx</file>
+    <file component="c2b" timestamp="1705590677">hardware-connection.png</file>
+    <file component="c2b" timestamp="1705590677">hardware-connection1.png</file>
+    <file component="c2b" timestamp="1705590677">xbar-signal.png</file>
+    <file component="c2b" timestamp="1705590677">xbar-config.png</file>
+    <file component="c2b" timestamp="1705590677">xbar-config1.png</file>
+    <file component="c2b" timestamp="1705590677">xbar-config2.png</file>
+    <file component="c2b" timestamp="1705590677">memory-copy1.png</file>
+    <file component="c2b" timestamp="1705590677">xbar-epwm10.png</file>
+    <file component="c2b" timestamp="1705590677">xbar-epwm11.png</file>
+    <file component="c2b" timestamp="1705590677">xbar-epwm22.png</file>
+    <file component="c2b" timestamp="1705590677">xbar-epwm33.png</file>
+    <file component="c2b" timestamp="1705590677">xbar-model1.png</file>
+    <file component="c2b" timestamp="1705590677">xbar-subsystem1.png</file>
+    <file component="c2b" timestamp="1705590677">xbar-analysis.png</file>
+    <file component="c2b" timestamp="1705655080">xbar-waveform.png</file>
+    <file component="c2b" timestamp="1705655080">xbar-wavform1.png</file>
+    <file component="c2b" timestamp="1720441985">memory-copy2.png</file>
+    <file component="c2b" timestamp="1720441985">xbar-config3.png</file>
+    <file component="c2b" timestamp="1720441985">xbar-model2.png</file>
+  </demoitem>
+  <demoitem>
+    <source>UsingEPWMExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/UsingEPWMExample.html</file>
+    <metadata>ex53759629</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <file component="c2b" open="open" timestamp="1702569282">f2837xePWMGettingStarted.slx</file>
+    <file component="c2b" timestamp="1705677962">epwm_frequency1.png</file>
+    <file component="c2b" timestamp="1705677962">epwm_frequency2.png</file>
+    <file component="c2b" timestamp="1705677962">epwm_frequency3.png</file>
+    <file component="c2b" timestamp="1705677962">epwm_frequency4.png</file>
+    <file component="c2b" timestamp="1705677962">epwm_frequency_table1.png</file>
+    <file component="c2b" timestamp="1705677962">epwm_submodules_timebase7.png</file>
+    <file component="c2b" timestamp="1705677962">epwm_submodules_timebase_eqn1.png</file>
+    <file component="c2b" timestamp="1705677962">epwm_frequency5.png</file>
+  </demoitem>
+  <demoitem>
+    <source>ClickDetectionLIS3DHSingleClickInterruptExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/ClickDetectionLIS3DHSingleClickInterruptExample.html</file>
+    <metadata>ex53933484</metadata>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <file component="c2b" open="open" timestamp="1690589532">c28x_i2c_lis3dh_clickdetection.slx</file>
+    <file component="c2b" timestamp="1689691719">c2b_click_detection_model.png</file>
+    <file component="c2b" timestamp="1674689699">c2b_block_param_fifo.png</file>
+    <file component="c2b" timestamp="1673524433">c2000_lis3dh_monitor_tune.png</file>
+    <file component="c2b" timestamp="1689620804">c2b_enable_single_click.png</file>
+    <workFolder>ClickDetectc2b</workFolder>
+  </demoitem>
+  <demoitem>
+    <source>UsingComparatorSubsystemExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/UsingComparatorSubsystemExample.html</file>
+    <metadata>ex53981782</metadata>
+    <thumbnail>data/cmpss_model.png</thumbnail>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>ecoder</product>
+    <product>c2b</product>
+    <product>simulink</product>
+    <file component="c2b" timestamp="1605694820">cmpss_rep1.png</file>
+    <file component="c2b" timestamp="1605694820">cmpss_rep2.png</file>
+    <file component="c2b" timestamp="1605692463">header_pin.png</file>
+    <file component="c2b" timestamp="1605694820">configure1.png</file>
+    <file component="c2b" timestamp="1605694820">configure2.png</file>
+    <file component="c2b" timestamp="1605694820">block_configuration.png</file>
+    <file component="c2b" timestamp="1605694820">scope_block.png</file>
+    <file component="c2b" timestamp="1605694820">scope_block1.png</file>
+    <file component="c2b" timestamp="1605692463">header_pin1.png</file>
+    <file component="c2b" timestamp="1605692463">cmpss_model.png</file>
+    <file component="c2b" timestamp="1674750879">configure3.png</file>
+    <file component="c2b" timestamp="1680788454">f28004x_cmpss.slx</file>
+    <file component="c2b" open="open" timestamp="1680788454">f2837x_cmpss.slx</file>
+    <file component="c2b" timestamp="1721149434">configure4.png</file>
+  </demoitem>
+  <demoitem>
+    <source>ScheduleMultiRateControllerPermanentMagnetSynchMachineExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/ScheduleMultiRateControllerPermanentMagnetSynchMachineExample.html</file>
+    <metadata>ex57252256</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <file component="c2b" open="open" timestamp="1680782015">c28335_pmsmfoc.slx</file>
+    <file component="c2b" timestamp="1680782015">c28335_pmsmfoc_adcinterrupt.slx</file>
+    <file component="c2b" timestamp="1680435571">c28335_pmsmfoc_data.m</file>
+  </demoitem>
+  <demoitem>
+    <source>ExchangingEthernetDataWithTheF28M3xConcertoProcessorExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/ExchangingEthernetDataWithTheF28M3xConcertoProcessorExample.html</file>
+    <metadata>ex64077364</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <product>instrument</product>
+    <file component="c2b" timestamp="1518781464">f28m35x_m3_ethernet_static.png</file>
+    <file component="c2b" timestamp="1518781464">f28m35x_m3_ethernet_dhcp.png</file>
+    <file component="c2b" timestamp="1680885686">f28m35_TCP_host.slx</file>
+    <file component="c2b" timestamp="1680885686">f28m35_TCP_target.slx</file>
+    <file component="c2b" timestamp="1680885686">f28m35_UDP_host.slx</file>
+    <file component="c2b" open="open" timestamp="1680885686">f28m35_UDP_target.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>MATfileLoggingOnAnSDCardForTexasInstrumentsC2000Example</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/MATfileLoggingOnAnSDCardForTexasInstrumentsC2000Example.html</file>
+    <metadata>ex66558946</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <file component="c2b" timestamp="1563250499">logfile.png</file>
+    <file component="c2b" timestamp="1563365508">configuration_properties_example.png</file>
+    <file component="c2b" timestamp="1680691520">c28x_MAT_stitcher.m</file>
+    <file component="c2b" open="open" timestamp="1681032256">c28x_matfile_logging.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>ReadDataFromIMUEnvironmentalSensorsExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/ReadDataFromIMUEnvironmentalSensorsExample.html</file>
+    <metadata>ex67554225</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <file component="c2b" timestamp="1626098408">bmi160-config-param-settings.png</file>
+    <file component="c2b" timestamp="1626098408">bmi160-config-param-settings-gpio.png</file>
+    <file component="c2b" timestamp="1680866693">c28x_i2c_bme280_sensor.slx</file>
+    <file component="c2b" open="open" timestamp="1680866693">c28x_i2c_bmi160_sensor.slx</file>
+    <file component="c2b" timestamp="1680866693">c28x_i2c_bmm150_sensor.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>GettingStartedF28M3xConcertoProcessorsExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/GettingStartedF28M3xConcertoProcessorsExample.html</file>
+    <metadata>ex69317674</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <file component="c2b" timestamp="1679580771">led_blink_f28m35_c28.slx</file>
+    <file component="c2b" open="open" timestamp="1679580771">led_blink_f28m35_m3.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>QuadratureEncoderOffsetCalibrationForPMSMMotorExample</source>
+    <type>M-file</type>
+    <extension>m</extension>
+    <metadata>ex70478541</metadata>
+    <thumbnail>html/QuadratureEncoderOffsetCalibrationForPMSMMotorExample_01.png</thumbnail>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>mcb</product>
+    <product>fixedpoint</product>
+    <product>simulink</product>
+    <file component="c2b" timestamp="1694328433">mcb_pmsm_qep_offset_f280049C.slx</file>
+    <file component="c2b" timestamp="1694328433">mcb_pmsm_qep_offset_f28035.slx</file>
+    <file component="c2b" timestamp="1694328433">mcb_pmsm_host_offsetComputation.slx</file>
+    <file component="c2b" timestamp="1694330639">mcb_c2000_pmsm_offset_data.m</file>
+  </demoitem>
+  <demoitem>
+    <source>PeakCurrentModeControlExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/PeakCurrentModeControlExample.html</file>
+    <metadata>ex71217152</metadata>
+    <thumbnail>data/pcmc_model.png</thumbnail>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <product>fixedpoint</product>
+    <product>dsp</product>
+    <product>instrument</product>
+    <product>simscapeelectrical</product>
+    <file component="c2b" timestamp="1607064181">baudrate.png</file>
+    <file component="c2b" timestamp="1607064181">config_parameters.png</file>
+    <file component="c2b" timestamp="1607064181">hardware_connection.png</file>
+    <file component="c2b" timestamp="1607064181">epwm.png</file>
+    <file component="c2b" timestamp="1607064181">epwm7.png</file>
+    <file component="c2b" timestamp="1607064181">epwm8.png</file>
+    <file component="c2b" timestamp="1607064181">epwm9.png</file>
+    <file component="c2b" timestamp="1607064181">adc.png</file>
+    <file component="c2b" timestamp="1607064181">cmpss.png</file>
+    <file component="c2b" timestamp="1607064181">cmpss2.png</file>
+    <file component="c2b" timestamp="1607064181">build_deploy_start.png</file>
+    <file component="c2b" timestamp="1607064181">epwm1.png</file>
+    <file component="c2b" timestamp="1603245062">pcmc_model.png</file>
+    <file component="c2b" timestamp="1603245062">pcmc_host_model.png</file>
+    <file component="c2b" timestamp="1603245062">intro.png</file>
+    <file component="c2b" timestamp="1607064181">com_port.png</file>
+    <file component="c2b" timestamp="1603245062">voltage.png</file>
+    <file component="c2b" timestamp="1603245062">active.png</file>
+    <file component="c2b" timestamp="1607749222">epwm11.png</file>
+    <file component="c2b" timestamp="1680693527">DCDC_Buck_PCMC_Param.m</file>
+    <file component="c2b" timestamp="1681032850">c2000_host_read_PCMC.slx</file>
+    <file component="c2b" open="open" timestamp="1704905864">f280049C_DCDC_Buck_PCMC.slx</file>
+    <file component="c2b" timestamp="1698320954">hardware_connection1.png</file>
+    <file component="c2b" timestamp="1704905864">initialize.png</file>
+  </demoitem>
+  <demoitem>
+    <source>HighVoltageHEVEVHVACECompressorMotorControlExample</source>
+    <type>M-file</type>
+    <extension>m</extension>
+    <metadata>ex72429371</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>mcb</product>
+    <product>ecoder</product>
+    <file component="c2b" timestamp="1705556560">hvac-image1.png</file>
+    <noButton/>
+  </demoitem>
+  <demoitem>
+    <source>GettingStartedWithHardwareProfilerExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex72437220</metadata>
+    <thumbnail>html/GettingStartedWithHardwareProfilerExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <file component="c2b" timestamp="1720943176">gettingstartedwithhardwareprofiler.slx</file>
+    <file component="c2b" timestamp="1720943176">profiling_foc_sensorless_algorithm.slx</file>
+    <file component="c2b" timestamp="1720943176">profiling_mcb_pmsm_foc_host_model.slx</file>
+    <file component="c2b" timestamp="1720943176">profiling_mcb_pmsm_foc_sensorless_f280049C.slx</file>
+    <file component="c2b" timestamp="1720943176">profiling_mcb_pmsm_foc_sensorless_f280049C_datascript.m</file>
+    <file component="c2b" timestamp="1720943176">profiling_mcb_pmsm_foc_sensorless_f280049C_optimconfigs.m</file>
+    <file component="c2b" timestamp="1720943176">profiling_mcb_pmsmfoc_motor.png</file>
+    <file component="c2b" timestamp="1720943176">profiling_mcb_pmsmfoc_processor.png</file>
+    <file component="c2b" timestamp="1720943176">profiling_sensorless_algorithm.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>InterfacingLCDDisplayBoosterPackWithTIC2000ProcessorsExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/InterfacingLCDDisplayBoosterPackWithTIC2000ProcessorsExample.html</file>
+    <metadata>ex74768385</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <file component="c2b" timestamp="1565000026">dma_settings_1.png</file>
+    <file component="c2b" timestamp="1565000026">spi_settings_1.png</file>
+    <file component="c2b" timestamp="1605062103">dma.png</file>
+    <file component="c2b" timestamp="1605062103">lcd_hardware_connection.png</file>
+    <file component="c2b" timestamp="1674752047">spi_settings_2.png</file>
+    <file component="c2b" open="open" timestamp="1680798262">c2837xD_lcd_display.slx</file>
+    <file component="c2b" timestamp="1680464681">c2837xD_serial_send.m</file>
+    <file component="c2b" timestamp="1680464681">mathworks.jpg</file>
+    <file component="c2b" timestamp="1690557675">c2837xD_Display_Param.m</file>
+  </demoitem>
+  <demoitem>
+    <source>DCDCBuckConverterExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/DCDCBuckConverterExample.html</file>
+    <metadata>ex78245720</metadata>
+    <thumbnail>html/DCDCBuckConverterExample_01.png</thumbnail>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>fixedpoint</product>
+    <product>simscape</product>
+    <product>simscapeelectrical</product>
+    <product>instrument</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <file component="c2b" timestamp="1636463403">adc_configuration.png</file>
+    <file component="c2b" timestamp="1636463403">epwm_configuration.png</file>
+    <file component="c2b" timestamp="1639422927">cla_subsystem.png</file>
+    <file component="c2b" timestamp="1641384509">hardware_connection.png</file>
+    <file component="c2b" timestamp="1642502400">hardware_results.png</file>
+    <file component="c2b" timestamp="1642502400">host_model.png</file>
+    <file component="c2b" timestamp="1642502400">hardware_results1.png</file>
+    <file component="c2b" timestamp="1680698565">DCDC_Buck_CLA_Param.m</file>
+    <file component="c2b" timestamp="1680698565">DCDC_Buck_Param.m</file>
+    <file component="c2b" timestamp="1721390073">c2000_DCDC_Buck_CLA_host_model.slx</file>
+    <file component="c2b" timestamp="1721390073">c2000_DCDC_Buck_host_model.slx</file>
+    <file component="c2b" open="open" timestamp="1680698565">f28379D_DCDC_Buck.slx</file>
+    <file component="c2b" timestamp="1680698565">f28379D_DCDC_Buck_CLA.slx</file>
+    <file component="c2b" timestamp="1729694252">f28p65xDCDCBuckCLA.slx</file>
+    <file component="c2b" timestamp="1729694252">f28p65xDCDCBuckCLAHost.slx</file>
+    <file component="c2b" timestamp="1729694252">hardware_connection-65x.png</file>
+  </demoitem>
+  <demoitem>
+    <source>ProfilingC2000XCPExternalModeExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/ProfilingC2000XCPExternalModeExample.html</file>
+    <metadata>ex84459392</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>simulink</product>
+    <product>ecoder</product>
+    <file component="c2b" timestamp="1634568623">profiling_model.png</file>
+    <file component="c2b" timestamp="1634570282">c2000_measure_task_time.png</file>
+    <file component="c2b" timestamp="1634570282">c2000_xcp_on_serial.png</file>
+    <file component="c2b" timestamp="1637774444">c2000_alldata_barchart.PNG</file>
+    <file component="c2b" timestamp="1637774444">c2000_alldata_piechart.PNG</file>
+    <file component="c2b" timestamp="1637774444">c2000_alldata_sdi.PNG</file>
+    <file component="c2b" timestamp="1637774444">c2000_alldata_report.PNG</file>
+    <file component="c2b" timestamp="1637774444">c2000_measure_function_time1.png</file>
+    <file component="c2b" timestamp="1637774444">c2000_save_options1.png</file>
+    <file component="c2b" timestamp="1637942162">c2000_metricsonly_report.png</file>
+    <file component="c2b" timestamp="1638460569">c2000_sdi.png</file>
+    <file component="c2b" open="open" timestamp="1680887202">f28379D_profiling_xcp.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>SerialCommunicationUsingSCIBlocksExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/SerialCommunicationUsingSCIBlocksExample.html</file>
+    <metadata>ex86037675</metadata>
+    <thumbnail>html/SerialCommunicationUsingSCIBlocksExample_01.png</thumbnail>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>instrument</product>
+    <product>simulink</product>
+    <product>ecoder</product>
+    <product>simulinkcoder</product>
+    <file component="c2b" timestamp="1641226433">build_deploy.png</file>
+    <file component="c2b" timestamp="1641226433">sci_block_rx_tx.png</file>
+    <file component="c2b" timestamp="1641226433">sci_config.png</file>
+    <file component="c2b" timestamp="1641226433">sci_host.png</file>
+    <file component="c2b" timestamp="1641226433">simulation_pacing.png</file>
+    <file component="c2b" timestamp="1641226433">simulation_results.png</file>
+    <file component="c2b" timestamp="1642017786">sci_comm_block.png</file>
+    <file component="c2b" timestamp="1641226433">sci_comm_config.png</file>
+    <file component="c2b" timestamp="1641226433">com_port.png</file>
+    <file component="c2b" timestamp="1641226433">com_result.png</file>
+    <file component="c2b" timestamp="1641226433">sci_interrupt_block.png</file>
+    <file component="c2b" timestamp="1673199184">frame1.png</file>
+    <file component="c2b" timestamp="1673199184">frame2.png</file>
+    <file component="c2b" timestamp="1673460973">sciframe.png</file>
+    <file component="c2b" timestamp="1673460973">sciframe1.png</file>
+    <file component="c2b" timestamp="1673460973">sciframe2.png</file>
+    <file component="c2b" open="open" timestamp="1680796088">c28x_sci_comm.slx</file>
+    <file component="c2b" timestamp="1680796088">c28x_sci_comm_interrupt.slx</file>
+    <file component="c2b" timestamp="1680796088">c28x_sci_comm_interrupt_TopModel.slx</file>
+    <file component="c2b" timestamp="1680433463">c28x_sci_comm_interrupt_config.sldd</file>
+    <file component="c2b" timestamp="1680796088">c28xsciframehostmodel.slx</file>
+    <file component="c2b" timestamp="1680796088">c28xsciframetx.slx</file>
+    <file component="c2b" timestamp="1680796088">sci_receive_and_transmit.slx</file>
+    <file component="c2b" timestamp="1689157410">c2000HostSCICommunication.m</file>
+    <file component="c2b" timestamp="1687618414">c2000_host_serial_comm.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>CommunicationWithMCANBlocksExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/CommunicationWithMCANBlocksExample.html</file>
+    <metadata>ex86503709</metadata>
+    <thumbnail>html/CommunicationWithMCANBlocksExample_01.png</thumbnail>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>vnt</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <file component="c2b" timestamp="1720563202">c2000MCANHostModel.slx</file>
+    <file component="c2b" open="open" timestamp="1720563202">c2000MCANTargetModel.slx</file>
+    <file component="c2b" timestamp="1720563202">mcan-config.png</file>
+    <file component="c2b" timestamp="1720563202">mcan-config1.png</file>
+    <file component="c2b" timestamp="1720563202">mcan-config2.png</file>
+    <file component="c2b" timestamp="1720563202">mcan-config3.png</file>
+    <file component="c2b" timestamp="1720563202">mcan-config4.png</file>
+    <file component="c2b" timestamp="1720563202">mcan-config5.png</file>
+    <file component="c2b" timestamp="1720563202">mcan-config6.png</file>
+    <file component="c2b" timestamp="1720563202">mcan-config7.png</file>
+  </demoitem>
+  <demoitem>
+    <source>CalibrateECUParametersXCPCANExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/CalibrateECUParametersXCPCANExample.html</file>
+    <metadata>ex88913594</metadata>
+    <thumbnail>data/model.png</thumbnail>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>simulink</product>
+    <product>ecoder</product>
+    <product>vnt</product>
+    <file component="c2b" timestamp="1621504891">model.png</file>
+    <file component="c2b" timestamp="1621697715">canchannel.png</file>
+    <file component="c2b" timestamp="1621697715">xcp_can.png</file>
+    <file component="c2b" timestamp="1622100559">visualize_results.png</file>
+    <file component="c2b" timestamp="1623437237">monitor_tune.png</file>
+    <file component="c2b" open="open" timestamp="1680886852">c28x_xcp_can_ext.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>RealTimeCodeExecutionProfilingExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/RealTimeCodeExecutionProfilingExample.html</file>
+    <metadata>ex90028447</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <file component="c2b" timestamp="1513056335">rtprofiler_report.png</file>
+    <file component="c2b" timestamp="1513056335">rtprofiler_timeline.png</file>
+    <file component="c2b" open="open" timestamp="1681052124">f28377S_RTProfiler.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>PermanentMagnetSynchronousMotorFieldOrientedControlExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/PermanentMagnetSynchronousMotorFieldOrientedControlExample.html</file>
+    <metadata>ex90980737</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>mcb</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <file component="c2b" open="open" timestamp="1680778685">mcb_pmsm_foc_sensorless_f28m35x.slx</file>
+    <file component="c2b" timestamp="1680778685">mcb_pmsm_foc_sensorless_f28m36x.slx</file>
+    <file component="c2b" timestamp="1687617131">mcb_pmsm_foc_host_model.slx</file>
+    <file component="c2b" timestamp="1680433359">mcb_pmsm_foc_sensorless_f28m35x_datascript.m</file>
+    <file component="c2b" timestamp="1680433359">mcb_pmsm_foc_sensorless_f28m36x_datascript.m</file>
+    <file component="c2b" timestamp="1687597238">mcb_pmsmfoc_motor.png</file>
+    <file component="c2b" timestamp="1687597238">mcb_pmsmfoc_processor.png</file>
+    <file component="c2b" timestamp="1690555860">c28M35xpmsmfoc_ert.m</file>
+    <file component="c2b" timestamp="1690555860">c28M36xpmsmfoc_ert.m</file>
+    <file component="c2b" timestamp="1690555860">mcb_pmsm_foc_sensorless_f28m35x_data.m</file>
+    <file component="c2b" timestamp="1690555860">mcb_pmsm_foc_sensorless_f28m36x_data.m</file>
+    <file component="c2b" timestamp="1690573794">foc_sensorless_algorithm.slx</file>
+    <file component="c2b" timestamp="1690573794">sensorless_algorithm.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>LINBasedControlOfPWMDutyCycleExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/LINBasedControlOfPWMDutyCycleExample.html</file>
+    <metadata>ex91942471</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <file component="c2b" open="open" timestamp="1680797434">c28035lintest.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>PositionReadingOfABiSSCAbsoluteEncoderExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/PositionReadingOfABiSSCAbsoluteEncoderExample.html</file>
+    <metadata>ex92598839</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <file component="c2b" timestamp="1639152625">biss_data_format.png</file>
+    <file component="c2b" timestamp="1642007058">biss_implementation.png</file>
+    <file component="c2b" timestamp="1639152625">biss_introduction.png</file>
+    <file component="c2b" timestamp="1639152625">clb_tile1.png</file>
+    <file component="c2b" timestamp="1639152625">clb_tile3.png</file>
+    <file component="c2b" timestamp="1639152625">config_set.png</file>
+    <file component="c2b" timestamp="1639152625">model.png</file>
+    <file component="c2b" timestamp="1639152625">clb_xbar.png</file>
+    <file component="c2b" timestamp="1639152625">epwm_block.png</file>
+    <file component="c2b" timestamp="1639152625">epwm_block1.png</file>
+    <file component="c2b" timestamp="1639152625">epwm_block2.png</file>
+    <file component="c2b" timestamp="1639152625">gpio_block.png</file>
+    <file component="c2b" timestamp="1639152625">input_xbar.png</file>
+    <file component="c2b" timestamp="1639152625">monitor_tune.png</file>
+    <file component="c2b" timestamp="1640687689">spi_block.png</file>
+    <file component="c2b" timestamp="1639152625">spi_config.png</file>
+    <file component="c2b" timestamp="1639152625">build.png</file>
+    <file component="c2b" timestamp="1639152625">sci.png</file>
+    <file component="c2b" timestamp="1639152625">uart.png</file>
+    <file component="c2b" timestamp="1639152625">uart1.png</file>
+    <file component="c2b" timestamp="1639152625">data_packet.png</file>
+    <file component="c2b" timestamp="1680465607">bissc.syscfg</file>
+    <file component="c2b" timestamp="1680465607">clb_config.c</file>
+    <file component="c2b" timestamp="1680465607">clb_config.h</file>
+    <file component="c2b" open="open" timestamp="1680799044">f280049C_BiSSC_Protocol.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>ParameterTuningAndSignalLoggingWithSerialExternalModeExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/ParameterTuningAndSignalLoggingWithSerialExternalModeExample.html</file>
+    <metadata>ex94211459</metadata>
+    <thumbnail>html/ParameterTuningAndSignalLoggingWithSerialExternalModeExample_01.png</thumbnail>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <product>ecoder</product>
+    <file component="c2b" timestamp="1513055899">publish_c28x_serial_ext_archive_dialog.png</file>
+    <file component="c2b" timestamp="1513055899">publish_c28x_serial_ext_armtrigger.png</file>
+    <file component="c2b" timestamp="1513055899">publish_c28x_serial_ext_dialog.png</file>
+    <file component="c2b" timestamp="1513055899">publish_c28x_serial_ext_sampletime.png</file>
+    <file component="c2b" timestamp="1513055899">publish_c28x_serial_ext_scopeparam.png</file>
+    <file component="c2b" timestamp="1513055899">publish_c28x_serial_ext_signaltrigger.png</file>
+    <file component="c2b" timestamp="1513055899">publish_c28x_serial_ext_toolchain.png</file>
+    <file component="c2b" timestamp="1562669622">publish_c28x_serial_ext_configparams_1.png</file>
+    <file component="c2b" timestamp="1562670384">publish_c28x_serial_ext_config_model_1.png</file>
+    <file component="c2b" timestamp="1559815181">publish_c28x_serial_ext_SCI_1.png</file>
+    <file component="c2b" timestamp="1559815181">publish_c28x_serial_ext_modeparams_1.png</file>
+    <file component="c2b" timestamp="1562733190">publish_c28x_serial_ext_sim_mode_1.png</file>
+    <file component="c2b" timestamp="1562733190">publish_c28x_serial_ext_start_1.png</file>
+    <file component="c2b" timestamp="1561955865">publish_c28x_serial_ext_stop_1.png</file>
+    <file component="c2b" timestamp="1592194747">external_mode_sci.png</file>
+    <file component="c2b" timestamp="1657726848">xcp-serial.png</file>
+    <file component="c2b" open="open" timestamp="1680883686">c28x_serial_ext.slx</file>
+    <file component="c2b" timestamp="1703243561">sample-time.png</file>
+  </demoitem>
+  <demoitem>
+    <source>UsingTimeBaseCounterToSynchronizeEPWMsAndECAPSExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/UsingTimeBaseCounterToSynchronizeEPWMsAndECAPSExample.html</file>
+    <metadata>ex94459004</metadata>
+    <thumbnail>data/model.png</thumbnail>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>ecoder</product>
+    <product>c2b</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <file component="c2b" timestamp="1654764240">ecap-block.png</file>
+    <file component="c2b" timestamp="1654764240">ecap-config.png</file>
+    <file component="c2b" timestamp="1654764240">ecap-time-based-sync.png</file>
+    <file component="c2b" timestamp="1654764240">ecap-time-based-sync1.png</file>
+    <file component="c2b" timestamp="1654764240">ecap-waveform.png</file>
+    <file component="c2b" timestamp="1654764240">ecap-xbar.png</file>
+    <file component="c2b" timestamp="1654764240">epwm-config.png</file>
+    <file component="c2b" timestamp="1654764240">epwm4-block.png</file>
+    <file component="c2b" timestamp="1654764240">input-xbar-config.png</file>
+    <file component="c2b" timestamp="1655039758">model.png</file>
+    <file component="c2b" timestamp="1655039758">config.png</file>
+    <file component="c2b" timestamp="1654766204">phase.png</file>
+    <file component="c2b" timestamp="1654766204">phase1.png</file>
+    <file component="c2b" timestamp="1655039758">scope.png</file>
+    <file component="c2b" timestamp="1657173690">epwm1-block.png</file>
+    <file component="c2b" timestamp="1657562083">epwm1-block.png</file>
+    <file component="c2b" open="open" timestamp="1704797335">f2837x_TimeBaseSync.slx</file>
+    <file component="c2b" timestamp="1704797335">f2838x_TimeBaseSync.slx</file>
+    <file component="c2b" timestamp="1683640219">c28xgetPhaseOffsetValue.m</file>
+    <file component="c2b" timestamp="1704797335">f2837xTimeBaseSyncUpDownMode.slx</file>
+    <file component="c2b" timestamp="1703002080">f2837xTimeBaseSyncUpDownMode_data.m</file>
+    <file component="c2b" timestamp="1704813323">ecap-phaseshift.png</file>
+    <file component="c2b" timestamp="1704813323">ecap-phaseshift1.png</file>
+  </demoitem>
+  <demoitem>
+    <source>ClockFrequencyIODBExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex94662959</metadata>
+    <thumbnail>html/ClockFrequencyIODBExample_11.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>c2b</product>
+  </demoitem>
+  <demoitem>
+    <source>DualMotorDynoUsingC2000ProcessorsExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/DualMotorDynoUsingC2000ProcessorsExample.html</file>
+    <metadata>ex96652545</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>fixedpoint</product>
+    <product>mcb</product>
+    <product>simulink</product>
+    <product>ecoder</product>
+    <file component="c2b" timestamp="1611712431">adc_dyno.png</file>
+    <file component="c2b" timestamp="1611712431">adc_dyno1.png</file>
+    <file component="c2b" timestamp="1611712431">adc_dyno2.png</file>
+    <file component="c2b" timestamp="1611712431">adc_dyno3.png</file>
+    <file component="c2b" timestamp="1611712431">epwm_dyno.png</file>
+    <file component="c2b" timestamp="1611712431">epwm_dyno1.png</file>
+    <file component="c2b" timestamp="1611712431">epwm_dyno2.png</file>
+    <file component="c2b" timestamp="1611712431">configure_dyno.png</file>
+    <file component="c2b" timestamp="1611712431">configure_dyno1.png</file>
+    <file component="c2b" timestamp="1612346207">ipc_dyno.png</file>
+    <file component="c2b" timestamp="1612346207">memory_dyno.png</file>
+    <file component="c2b" timestamp="1681039828">mcb_pmsm_foc_dual_cpu1_f28379d.slx</file>
+    <file component="c2b" timestamp="1681039828">mcb_pmsm_foc_dual_cpu2_f28379d.slx</file>
+    <file component="c2b" timestamp="1681039828">mcb_pmsm_foc_dual_f28379d_data.m</file>
+    <file component="c2b" timestamp="1681039828">mcb_pmsm_foc_dual_f28379d_datascript.m</file>
+    <file component="c2b" timestamp="1681039828">mcb_pmsm_foc_dual_host_model.slx</file>
+    <file component="c2b" timestamp="1681039828">mcb_pmsm_foc_host_model_dyno_f28069m.slx</file>
+    <file component="c2b" timestamp="1681039828">mcb_pmsm_foc_host_model_dyno_f28379d.slx</file>
+    <file component="c2b" timestamp="1681039828">mcb_pmsm_foc_qep_dyno_f28069m.slx</file>
+    <file component="c2b" timestamp="1681039828">mcb_pmsm_foc_qep_dyno_f28069m_data.m</file>
+    <file component="c2b" open="open" timestamp="1681039828">mcb_pmsm_foc_sensorless_dyno_f28379d.slx</file>
+    <file component="c2b" timestamp="1681039828">mcb_pmsm_foc_sensorless_dyno_f28379d_data.m</file>
+    <file component="c2b" timestamp="1681039828">mcb_pmsm_foc_sensorless_dyno_f28379d_datascript.m</file>
+    <file component="c2b" timestamp="1681039828">soc_mcb_pmsm_foc_dyno_f28379d_data.m</file>
+    <file component="c2b" timestamp="1680776037">sensorless_algorithm.slx</file>
+    <file component="c2b" timestamp="1680776037">foc_sensorless_algorithm.slx</file>
+    <file component="c2b" timestamp="1680374711">current_control.slx</file>
+    <file component="c2b" timestamp="1690556862">c28069pmsmfocdual_ert.m</file>
+    <file component="c2b" timestamp="1690556862">c28377Spmsmfocdual_ert.m</file>
+    <file component="c2b" timestamp="1690556862">c28379dpmsmfocdual_cpu1_ert.m</file>
+    <file component="c2b" timestamp="1690556862">c28379dpmsmfocdual_cpu2_ert.m</file>
+  </demoitem>
+  <demoitem>
+    <source>ConfigureC2000AndARMCortexMProcessorModelExample</source>
+    <type>live</type>
+    <extension>mlx</extension>
+    <metadata>ex97489645</metadata>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>simulink</product>
+    <file component="c2b" timestamp="1673181841">c2000_armcortexm_armcortexm_processor_model.slx</file>
+    <file component="c2b" timestamp="1673181841">c2000_armcortexm_c2000_processor_model.slx</file>
+    <file component="c2b" timestamp="1673181841">c2000_armcortexm_top_level_model.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>UsingSigmaDeltaFilterModuleSDFMToMeasureExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/UsingSigmaDeltaFilterModuleSDFMToMeasureExample.html</file>
+    <metadata>ex97538348</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <file component="c2b" timestamp="1591443518">sdfm_connection.png</file>
+    <file component="c2b" timestamp="1591449602">sdfm_config.png</file>
+    <file component="c2b" timestamp="1604991928">sdfm_table.png</file>
+    <file component="c2b" open="open" timestamp="1680788783">c28x7x_sdfm.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>CodeVerificationAndValidationWithPILExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/CodeVerificationAndValidationWithPILExample.html</file>
+    <metadata>ex97834195</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>simulink</product>
+    <product>ecoder</product>
+    <file component="c2b" timestamp="1685558152">c2000_model_pil_block.slx</file>
+    <file component="c2b" open="open" timestamp="1681052842">c2000_pil_block.slx</file>
+    <file component="c2b" timestamp="1681052842">c2000_top_model_pil.slx</file>
+    <file component="c2b" timestamp="1679588819">tic2000_pil_topmodel_data.m</file>
+    <file component="c2b" timestamp="1683630439">c2000_counter.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>UsingTheI2CBusToAccessSensorsExample</source>
+    <type>model</type>
+    <extension>m</extension>
+    <file>html/UsingTheI2CBusToAccessSensorsExample.html</file>
+    <metadata>ex98009751</metadata>
+    <sandboxPublished/>
+    <hideCode/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>dsp</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <product>ecoder</product>
+    <file component="c2b" open="open" timestamp="1680797657">c28x_i2c_eeprom.slx</file>
+    <file component="c2b" timestamp="1680797657">c28x_i2c_eeprom_interrupt.slx</file>
+    <file component="c2b" timestamp="1680797657">c28x_i2c_sensor.slx</file>
+  </demoitem>
+  <demoitem>
+    <source>ClosedLoopBuckConverterUsingHardwareInLoopHILSimulationExample</source>
+    <project cmSystem="" component="c2b" open="open" type="main">c2bBuckHIL</project>
+    <type>project</type>
+    <extension>m</extension>
+    <file>html/ClosedLoopBuckConverterUsingHardwareInLoopHILSimulationExample.html</file>
+    <metadata>ex98818430</metadata>
+    <thumbnail>data/HIL-model1.png</thumbnail>
+    <sandboxPublished/>
+    <product>matlab</product>
+    <product>c2b</product>
+    <product>ecoder</product>
+    <product>simulink</product>
+    <product>simulinkcoder</product>
+    <product>simscapeelectrical</product>
+    <product>slrt</product>
+    <product>simscape</product>
+    <product>hdlcoder</product>
+    <product>fixedpoint</product>
+    <file component="c2b" timestamp="1721992196">hil-host-model.png</file>
+    <file component="c2b" timestamp="1721992196">hil-target-model.png</file>
+    <file component="c2b" timestamp="1721992196">hil-speedgoat.png</file>
+    <file component="c2b" timestamp="1721992196">hil-speedgoat1.png</file>
+    <file component="c2b" timestamp="1721992196">hil-speedgoat2.png</file>
+    <file component="c2b" timestamp="1721992196">hil-result.png</file>
+    <file component="c2b" timestamp="1721992196">hil-result1.png</file>
+    <file component="c2b" timestamp="1721992196">HIL-model1.png</file>
+    <file component="c2b" timestamp="1721992196">hil-host-model1.png</file>
+    <file component="c2b" timestamp="1721992196">hil-target-model1.png</file>
+    <file component="c2b" timestamp="1721992196">hil-target-model2.png</file>
+    <file component="c2b" timestamp="1721992196">hil-result2.png</file>
+    <file component="c2b" timestamp="1721992196">hil-target-model3.png</file>
+  </demoitem>
+</demos>

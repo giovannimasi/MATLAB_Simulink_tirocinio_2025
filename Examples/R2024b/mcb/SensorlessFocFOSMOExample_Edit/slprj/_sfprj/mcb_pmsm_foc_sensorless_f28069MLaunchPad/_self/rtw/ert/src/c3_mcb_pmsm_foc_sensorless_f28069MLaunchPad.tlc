@@ -1,0 +1,60 @@
+%implements "chartSource" "C"
+%function ChartConfig(block, system) void
+  %createrecord chartConfiguration { ...
+          executeAtInitialization  0 ...
+  }
+  %return chartConfiguration
+%endfunction
+%function ChartDataMap(block, system) void
+  %createrecord ChartDataElements {\
+    NumChartData   6 \
+    ChartDataDefaults {\
+      RecordType   "ChartData"\
+      Dimensions   []\
+      IsTestPoint  0\
+    }\
+    ChartData {\
+      Name         "is_active_c3_mcb_pmsm_foc_sensorless_f28069MLaunchPad"\
+      Description  "StateIsActive"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_c3_mcb_pmsm_foc_sensorless_f28069MLaunchPad"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_RunMode"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "RunMode"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_NegativeSpeedRun"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "RunMode.NegativeSpeedRun"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "is_PositiveSpeedRun"\
+      Description  "StateActiveChild"\
+      SFName       ""\
+      Path         "RunMode.PositiveSpeedRun"\
+      SrcLocation  ""\
+    }\
+    ChartData {\
+      Name         "temporalCounter_i1"\
+      Description  "TemporalCounter"\
+      SFName       ""\
+      Path         ""\
+      SrcLocation  ""\
+    }\
+  }
+  %return ChartDataElements
+%endfunction
