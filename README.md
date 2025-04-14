@@ -4,7 +4,7 @@ Il repository contiene i progetti MATLAB/Simulink utilizzati durante il corso de
 ## Parte 1
 L'obiettivo di questa fase è prendere confidenza con l'hardware, con il software Simulink, infine con la tecnica di controllo basata sul controllo PI in cascata, outer-loop in velocità e inner-loop in corrente, basato sulla schematizzazione del sistema a 3 fasi in una configurazione semplificata a due correnti (diretta e di quadratura), ottenuta tramite trasformazioni di Clarke e Park.
 
-In questa parte viene utilizzata la configurazione hardware così composta: scheda di controllo LAUNCHPAD-F28069M, inverter BOOSTXL-DRV8305EVM, motore trifase brushless Anaheim-BLY172S-24V-4000.
+In questa parte viene utilizzata la configurazione hardware così composta: scheda di controllo LAUNCHPAD-F28069M, inverter BOOSTXL-DRV8305-EVM, motore trifase brushless Anaheim-BLY172S-24V-4000.
 
 Le fasi di lavoro sono elencate di seguito:
 
@@ -16,7 +16,7 @@ Le fasi di lavoro sono elencate di seguito:
 ## Parte 2
 Una volta esser riusciti a mettere mano sul controllo vero e proprio, è stato richiesto di metterlo in pratica su una diversa configurazione, testando la robustezza del controllo su una coppia di motori, in cui il motore 2 genera una coppia resistente che ostacolerà la rotazione del motore 1. Il motore 1 deve essere comunque in grado, con il controllo implementato anche precedentemente, di mantenere la velocità richiesta anche a fronte di variazioni della coppia resistente.
 
-La configurazione hardware è così composta: scheda di controllo LAUNCHPAD-F29379D, inverter BOOSTXL-DRV8305EVM, motore trifase brushless Teknic-2310P.
+La configurazione hardware è così composta: scheda di controllo LAUNCHPAD-F29379D, inverter BOOSTXL-DRV8305-EVM, motore trifase brushless Teknic-2310P.
 
 Sono stati provati due approcci, entrambi risultati funzionali:
 
