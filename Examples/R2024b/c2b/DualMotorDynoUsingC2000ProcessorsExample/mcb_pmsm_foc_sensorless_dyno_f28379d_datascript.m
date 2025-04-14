@@ -212,7 +212,7 @@ gamma=0.6;
 %Speed PI
 
 wn_speed=5*zeta1/Rt_speed;
-alpha=0.001;
+alpha=0.003;
 a=pmsm.B/pmsm.J;
 b=1.5*alpha*((pmsm.p)^2 * pmsm.FluxPM)/pmsm.J;
 PI_params.Kp_speed=(2*zeta1*wn_speed-a)/b;
