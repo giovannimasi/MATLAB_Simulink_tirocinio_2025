@@ -23,6 +23,6 @@ Sono stati provati due approcci, entrambi risultati funzionali:
 - QuadratureEncoderOffsetExample e DualMotorDynoExample: in cui il controllo rimane lo stesso studiato nella fase 1, ma necessitava dell'utilizzo di un encoder a quadratura, di cui è stata fatta la calibrazione dell'offset per entrambi i motori correttamente;
 - DualMotorDynoUsingC2000ProcessorsExample: la cui unica differenza degna di nota è l'utilizzo di un osservatore per la stima asintotica della velocità, piuttosto che il sensore
 
-## Conslusioni
+## Conclusioni
 
 Tutti i test sono stati svolti prima in simulazione, poi su hardware, in modo da garantire sicurezza contro guasti e inefficienza.
