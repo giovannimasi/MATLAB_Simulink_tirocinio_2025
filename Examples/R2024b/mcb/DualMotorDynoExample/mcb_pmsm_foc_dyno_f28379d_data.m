@@ -136,6 +136,12 @@ disp(PU_System_motor2);
 % ISE = 0.0045
 % ITAE = 0.0112
 
+% V_base: 13.8564
+% I_base: 15.0000
+% N_base: 4062
+% P_base: 311.7691
+% T_base: 0.5756
+
 
 % [IAE, ISE, ITAE] = computeIndices(error,Ts_speed);
 % display(IAE);
