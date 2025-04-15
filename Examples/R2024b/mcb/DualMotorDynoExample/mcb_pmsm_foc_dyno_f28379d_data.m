@@ -77,8 +77,8 @@ PU_System_motor2 = mcb_SetPUSystem(pmsm_motor2,inverter_motor2);
 
 %% Controller design // Get ballpark values!
 % for motor 1 
-%PI_params_motor1 = mcb_SetControllerParameters(pmsm_motor1,inverter_motor1,PU_System_motor1,T_pwm,Ts,Ts_speed);
-PI_params_motor1=calculate_PI_params(pmsm_motor1,inverter_motor1);
+PI_params_motor1 = mcb_SetControllerParameters(pmsm_motor1,inverter_motor1,PU_System_motor1,T_pwm,Ts,Ts_speed);
+%PI_params_motor1=calculate_PI_params(pmsm_motor1,inverter_motor1);
 
 %Default PI params:
 %PI_params_motor1.Kp_speed=0.9089;
@@ -97,8 +97,8 @@ PI_params_motor1.delay_Position    = 1; %int32(Ts/Ts_simulink);
 % mcb_getControlAnalysis(pmsm_motor1,inverter_motor1,PU_System_motor1,PI_params_motor1,Ts,Ts_speed); 
 
 % for motor 2
-%PI_params_motor2 = mcb_SetControllerParameters(pmsm_motor2,inverter_motor2,PU_System_motor2,T_pwm,Ts,Ts_speed);
-PI_params_motor2=calculate_PI_params(pmsm_motor2,inverter_motor2);
+PI_params_motor2 = mcb_SetControllerParameters(pmsm_motor2,inverter_motor2,PU_System_motor2,T_pwm,Ts,Ts_speed);
+%PI_params_motor2=calculate_PI_params(pmsm_motor2,inverter_motor2);
 
 %Default PI params:
 %PI_params_motor2.Kp_speed=0.9089;

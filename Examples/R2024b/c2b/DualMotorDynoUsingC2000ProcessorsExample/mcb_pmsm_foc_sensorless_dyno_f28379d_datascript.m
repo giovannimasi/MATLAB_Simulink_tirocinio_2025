@@ -148,6 +148,8 @@ disp(PU_System_motor2);
 
 %% Indici prestazione
 
+% FLUX OBSERVER
+
 %originali
 % IAE = 0.0429
 % ISE = 0.0027
@@ -197,6 +199,13 @@ disp(PU_System_motor2);
 % IAE = 0.6726
 % ISE = 0.1063
 % ITAE = 2.2670
+
+%SLIDING MODE OBSERVER
+
+%originali
+% IAE = 0.0429
+% ISE = 0.0027
+% ITAE = 0.1179
 
 %% Functions
 

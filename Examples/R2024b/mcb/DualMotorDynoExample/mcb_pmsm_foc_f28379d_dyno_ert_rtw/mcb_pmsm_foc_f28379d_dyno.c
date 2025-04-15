@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'mcb_pmsm_foc_f28379d_dyno'.
  *
- * Model version                  : 8.28
+ * Model version                  : 8.29
  * Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
- * C/C++ source code generated on : Mon Apr 14 12:20:38 2025
+ * C/C++ source code generated on : Tue Apr 15 14:18:18 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -1740,8 +1740,8 @@ void mcb_Currentcontrolformotor1(void)
      *  Constant: '<S30>/Ki1'
      *  Constant: '<S30>/Kp'
      */
-    mcb_pmsm_foc_MATLABFunction(mcb_pmsm_foc_f28379d_dyno_B.Sum_c, 1.44F,
-      0.2025F, mcb_pmsm_foc_f28379d_dyno_B.LogicalOperator_m, 0.0F, 1.0,
+    mcb_pmsm_foc_MATLABFunction(mcb_pmsm_foc_f28379d_dyno_B.Sum_c, 2.16506362F,
+      0.206583142F, mcb_pmsm_foc_f28379d_dyno_B.LogicalOperator_m, 0.0F, 1.0,
       &mcb_pmsm_foc_f28379d_dyno_B.sf_MATLABFunction,
       &mcb_pmsm_foc_f28379d_dyno_DWork.sf_MATLABFunction);
 
@@ -1817,8 +1817,8 @@ void mcb_Currentcontrolformotor1(void)
      *  Constant: '<S31>/Kp'
      *  Constant: '<S31>/Kp1'
      */
-    mcb_pmsm_f_MATLABFunction_j(mcb_pmsm_foc_f28379d_dyno_B.Sum_k, 1.44F,
-      0.2025F, mcb_pmsm_foc_f28379d_dyno_B.LogicalOperator_p, 0.0F, 1.0,
+    mcb_pmsm_f_MATLABFunction_j(mcb_pmsm_foc_f28379d_dyno_B.Sum_k, 2.16506362F,
+      0.206583142F, mcb_pmsm_foc_f28379d_dyno_B.LogicalOperator_p, 0.0F, 1.0,
       &mcb_pmsm_foc_f28379d_dyno_B.sf_MATLABFunction_j,
       &mcb_pmsm_foc_f28379d_dyno_DWork.sf_MATLABFunction_j);
 
@@ -4244,8 +4244,8 @@ void mcb_Currentcontrolformotor2(void)
      *  Constant: '<S269>/Kp'
      *  Constant: '<S269>/Kp1'
      */
-    mcb_pmsm_f_MATLABFunction_j(mcb_pmsm_foc_f28379d_dyno_B.Sum_jx, 1.44F,
-      0.2025F, mcb_pmsm_foc_f28379d_dyno_B.LogicalOperator, 0.0F, 1.0,
+    mcb_pmsm_f_MATLABFunction_j(mcb_pmsm_foc_f28379d_dyno_B.Sum_jx, 2.16506362F,
+      0.206583142F, mcb_pmsm_foc_f28379d_dyno_B.LogicalOperator, 0.0F, 1.0,
       &mcb_pmsm_foc_f28379d_dyno_B.sf_MATLABFunction_k,
       &mcb_pmsm_foc_f28379d_dyno_DWork.sf_MATLABFunction_k);
 
@@ -4323,8 +4323,8 @@ void mcb_Currentcontrolformotor2(void)
      *  Constant: '<S268>/Ki1'
      *  Constant: '<S268>/Kp'
      */
-    mcb_pmsm_foc_MATLABFunction(mcb_pmsm_foc_f28379d_dyno_B.Sum_o, 1.44F,
-      0.2025F, mcb_pmsm_foc_f28379d_dyno_B.LogicalOperator_f, 0.0F, 1.0,
+    mcb_pmsm_foc_MATLABFunction(mcb_pmsm_foc_f28379d_dyno_B.Sum_o, 2.16506362F,
+      0.206583142F, mcb_pmsm_foc_f28379d_dyno_B.LogicalOperator_f, 0.0F, 1.0,
       &mcb_pmsm_foc_f28379d_dyno_B.sf_MATLABFunction_i,
       &mcb_pmsm_foc_f28379d_dyno_DWork.sf_MATLABFunction_i);
 
@@ -4947,10 +4947,10 @@ void mcb_p_Speedcontrolformotor1(real32_T rtu_Speed_Ref_PU, real32_T
 
   /* '<S587>:1:26' */
   /* '<S587>:1:29' */
-  localDW->integrator_state += 0.0399242267F * localB->Sum;
+  localDW->integrator_state += 0.0119992699F * localB->Sum;
 
   /* '<S587>:1:32' */
-  Trq_ref_unsat = 1.90777314F * localB->Sum + localDW->integrator_state;
+  Trq_ref_unsat = 0.908872724F * localB->Sum + localDW->integrator_state;
 
   /* '<S587>:1:35' */
   if (Trq_ref_unsat <= 1.0F) {
@@ -4968,7 +4968,7 @@ void mcb_p_Speedcontrolformotor1(real32_T rtu_Speed_Ref_PU, real32_T
   if (localB->Trq_ref != Trq_ref_unsat) {
     /* '<S587>:1:38' */
     /* '<S587>:1:39' */
-    localDW->integrator_state -= 0.0399242267F * localB->Sum;
+    localDW->integrator_state -= 0.0119992699F * localB->Sum;
   }
 
   /* End of MATLAB Function: '<S564>/MATLAB Function' */

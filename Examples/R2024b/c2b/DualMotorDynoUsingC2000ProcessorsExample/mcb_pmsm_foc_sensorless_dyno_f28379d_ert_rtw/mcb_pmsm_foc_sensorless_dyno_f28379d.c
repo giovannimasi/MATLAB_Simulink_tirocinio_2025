@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'mcb_pmsm_foc_sensorless_dyno_f28379d'.
  *
- * Model version                  : 9.5
+ * Model version                  : 9.7
  * Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
- * C/C++ source code generated on : Mon Apr 14 13:24:02 2025
+ * C/C++ source code generated on : Tue Apr 15 14:21:51 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -4740,10 +4740,10 @@ void mcb_pmsm_foc_s_SpeedControl(real_T rtu_EstimatorSelect, real32_T
 
   /* '<S560>:1:26' */
   /* '<S560>:1:29' */
-  localDW->integrator_state += 0.159696907F * localB->Sum;
+  localDW->integrator_state += 0.0532323F * localB->Sum;
 
   /* '<S560>:1:32' */
-  Trq_ref_unsat = 3.81554627F * localB->Sum + localDW->integrator_state;
+  Trq_ref_unsat = 1.2718488F * localB->Sum + localDW->integrator_state;
 
   /* '<S560>:1:35' */
   if (Trq_ref_unsat <= 1.0F) {
@@ -4761,7 +4761,7 @@ void mcb_pmsm_foc_s_SpeedControl(real_T rtu_EstimatorSelect, real32_T
   if (localB->Trq_ref != Trq_ref_unsat) {
     /* '<S560>:1:38' */
     /* '<S560>:1:39' */
-    localDW->integrator_state -= 0.159696907F * localB->Sum;
+    localDW->integrator_state -= 0.0532323F * localB->Sum;
   }
 
   /* End of MATLAB Function: '<S555>/MATLAB Function' */
