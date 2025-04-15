@@ -111,7 +111,7 @@ acceleration = 20000/PU_System_motor1.N_base;                  % P.U/Sec // Maxi
 %% Controller design // Get ballpark values!
 % for motor 1 
 %PI_params_motor1 = mcb.internal.SetControllerParameters(pmsm_motor1,inverter_motor1,PU_System_motor1,T_pwm,2*Ts,Ts_speed);
-PI_params_motor1 = calculate_PI_params(pmsm_motor1, inverter_motor1);
+PI_params_motor1 = calculate_PI_params(pmsm_motor1);
 
 %Updating delays for simulation
 PI_params_motor1.delay_Currents    = 1; %int32(Ts/Ts_simulink);
@@ -125,7 +125,7 @@ smo_motor1 = mcb_ComputeSMOParameters(pmsm_motor1,Ts,PU_System_motor1);
 
 % for motor 2
 %PI_params_motor2 = mcb.internal.SetControllerParameters(pmsm_motor2,inverter_motor2,PU_System_motor2,T_pwm,2*Ts,Ts_speed);
-PI_params_motor2=calculate_PI_params(pmsm_motor2,inverter_motor2);
+PI_params_motor2=calculate_PI_params(pmsm_motor2);
 
 %Updating delays for simulation
 PI_params_motor2.delay_Currents    = 1; %int32(Ts/Ts_simulink);
@@ -204,12 +204,74 @@ disp(PU_System_motor2);
 
 %originali
 % IAE = 0.0429
-% ISE = 0.0027
-% ITAE = 0.1179
+% ISE = 0.0019
+% ITAE = 0.1170
+
+%custom alpha=0.0095
+% IAE = 0.0198
+% ISE = 0.00067411
+% ITAE = 0.0451
+
+%custom alpha=0.0094
+% IAE = 0.0196
+% ISE = 0.00066223
+% ITAE = 0.0446
+
+%custom alpha=0.0093
+% IAE = 0.0195
+% ISE = 0.00065090
+% ITAE = 0.0443
+
+%custom alpha=0.0092
+% IAE = 0.0195
+% ISE = 0.00064056
+% ITAE = 0.0441
+
+%custom alpha=0.0091
+% IAE = 0.0196
+% ISE = 0.00063076
+% ITAE = 0.0440
+
+%custom alpha=0.009
+% IAE = 0.0197
+% ISE = 0.00062199
+% ITAE = 0.0438
+
+%custom alpha=0.0089
+% IAE = 0.0198
+% ISE = 0.00061452
+% ITAE = 0.0439
+
+%custom alpha=0.0088
+% IAE = 0.0199
+% ISE = 0.00060775
+% ITAE = 0.0437
+
+%custom alpha=0.0087
+% IAE = 0.0200
+% ISE = 0.00060228
+% ITAE = 0.0436
+
+%custom alpha=0.0086
+% IAE = 0.0202
+% ISE = 0.00059686
+% ITAE = 0.0436
+
+%custom alpha=0.0085
+% IAE = 0.0204
+% ISE = 0.00059346
+% ITAE = 0.0436
+
+%custom alpha=0.008
+% IAE = 0.0212
+% ISE = 0.00058933
+% ITAE = 0.0435
 
 %% Functions
 
-function PI_params = calculate_PI_params(pmsm, inverter)
+function PI_params = calculate_PI_params(pmsm)
+%Options
+sliding_mode=0;
 
 %Parameters
 zeta1=0.707;
@@ -221,7 +283,11 @@ gamma=0.6;
 %Speed PI
 
 wn_speed=5*zeta1/Rt_speed;
-alpha=0.003;
+if sliding_mode
+    alpha=0.0092;
+else
+    alpha=0.003;
+end
 a=pmsm.B/pmsm.J;
 b=1.5*alpha*((pmsm.p)^2 * pmsm.FluxPM)/pmsm.J;
 PI_params.Kp_speed=(2*zeta1*wn_speed-a)/b;
