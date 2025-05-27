@@ -2129,8 +2129,8 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:8530"] = {rtwname: "<S37>/Kp"};
 	this.rtwnameHashMap["<S37>/Logical Operator"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:8531"};
 	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:8531"] = {rtwname: "<S37>/Logical Operator"};
-	this.rtwnameHashMap["<S37>/MATLAB Function"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:9994"};
-	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:9994"] = {rtwname: "<S37>/MATLAB Function"};
+	this.rtwnameHashMap["<S37>/PI_Controller_Id"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:9994"};
+	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:9994"] = {rtwname: "<S37>/PI_Controller_Id"};
 	this.rtwnameHashMap["<S37>/Saturation"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:8532"};
 	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:8532"] = {rtwname: "<S37>/Saturation"};
 	this.rtwnameHashMap["<S37>/Sum"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:8533"};
@@ -2159,8 +2159,8 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:8544"] = {rtwname: "<S38>/Kp"};
 	this.rtwnameHashMap["<S38>/Logical Operator"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:8545"};
 	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:8545"] = {rtwname: "<S38>/Logical Operator"};
-	this.rtwnameHashMap["<S38>/MATLAB Function"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:9995"};
-	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:9995"] = {rtwname: "<S38>/MATLAB Function"};
+	this.rtwnameHashMap["<S38>/PI_Controller_Iq"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:9995"};
+	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:9995"] = {rtwname: "<S38>/PI_Controller_Iq"};
 	this.rtwnameHashMap["<S38>/Sum"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:8546"};
 	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:8546"] = {rtwname: "<S38>/Sum"};
 	this.rtwnameHashMap["<S38>/Switch"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:8547"};
@@ -6257,8 +6257,8 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:9672"] = {rtwname: "<S289>/Kp"};
 	this.rtwnameHashMap["<S289>/Logical Operator"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:9673"};
 	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:9673"] = {rtwname: "<S289>/Logical Operator"};
-	this.rtwnameHashMap["<S289>/MATLAB Function"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:9996"};
-	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:9996"] = {rtwname: "<S289>/MATLAB Function"};
+	this.rtwnameHashMap["<S289>/PI_Controller_Id"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:9996"};
+	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:9996"] = {rtwname: "<S289>/PI_Controller_Id"};
 	this.rtwnameHashMap["<S289>/Sum"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:9674"};
 	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:9674"] = {rtwname: "<S289>/Sum"};
 	this.rtwnameHashMap["<S289>/V_ref"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:9675"};
@@ -6279,8 +6279,8 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:9683"] = {rtwname: "<S290>/Kp1"};
 	this.rtwnameHashMap["<S290>/Logical Operator"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:9684"};
 	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:9684"] = {rtwname: "<S290>/Logical Operator"};
-	this.rtwnameHashMap["<S290>/MATLAB Function"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:10002"};
-	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:10002"] = {rtwname: "<S290>/MATLAB Function"};
+	this.rtwnameHashMap["<S290>/PI_Controller_Iq"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:10002"};
+	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:10002"] = {rtwname: "<S290>/PI_Controller_Iq"};
 	this.rtwnameHashMap["<S290>/Sum"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:9685"};
 	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:9685"] = {rtwname: "<S290>/Sum"};
 	this.rtwnameHashMap["<S290>/V_ref"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:9686"};
@@ -10963,10 +10963,10 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:9738"] = {rtwname: "<S555>/Kp1"};
 	this.rtwnameHashMap["<S555>/Logical Operator"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:9739"};
 	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:9739"] = {rtwname: "<S555>/Logical Operator"};
-	this.rtwnameHashMap["<S555>/MATLAB Function"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:9987"};
-	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:9987"] = {rtwname: "<S555>/MATLAB Function"};
 	this.rtwnameHashMap["<S555>/MATLAB Function1"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:9989"};
 	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:9989"] = {rtwname: "<S555>/MATLAB Function1"};
+	this.rtwnameHashMap["<S555>/PI_Controller_Speed"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:9987"};
+	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:9987"] = {rtwname: "<S555>/PI_Controller_Speed"};
 	this.rtwnameHashMap["<S555>/Scope"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:9990"};
 	this.sidHashMap["mcb_pmsm_foc_sensorless_dyno_f28379d:9990"] = {rtwname: "<S555>/Scope"};
 	this.rtwnameHashMap["<S555>/Sum"] = {sid: "mcb_pmsm_foc_sensorless_dyno_f28379d:9740"};

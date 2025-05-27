@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'mcb_pmsm_foc_sensorless_dyno_f28379d'.
  *
- * Model version                  : 9.7
+ * Model version                  : 9.12
  * Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
- * C/C++ source code generated on : Tue Apr 15 14:21:51 2025
+ * C/C++ source code generated on : Tue May 27 11:59:56 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -1666,10 +1666,10 @@ void mcb_FOCAlgorithmMotor1_Init(void)
     EDIS;
   }
 
-  /* SystemInitialize for MATLAB Function: '<S37>/MATLAB Function' */
+  /* SystemInitialize for MATLAB Function: '<S37>/PI_Controller_Id' */
   mcb_pmsm_foc_sensorless_d_DWork.integrator_state_j = 0.0F;
 
-  /* SystemInitialize for MATLAB Function: '<S38>/MATLAB Function' */
+  /* SystemInitialize for MATLAB Function: '<S38>/PI_Controller_Iq' */
   mcb_pmsm_foc_sensorless_d_DWork.integrator_state_p = 0.0F;
 
   /* SystemInitialize for IfAction SubSystem: '<S189>/Flux Observer' */
@@ -1706,10 +1706,10 @@ void mcb_FOCAlgorithmMotor1_Init(void)
 /* System reset for function-call system: '<Root>/FOC Algorithm Motor 1' */
 void mc_FOCAlgorithmMotor1_Reset(void)
 {
-  /* SystemReset for MATLAB Function: '<S38>/MATLAB Function' */
+  /* SystemReset for MATLAB Function: '<S38>/PI_Controller_Iq' */
   mcb_pmsm_foc_sensorless_d_DWork.integrator_state_p = 0.0F;
 
-  /* SystemReset for MATLAB Function: '<S37>/MATLAB Function' */
+  /* SystemReset for MATLAB Function: '<S37>/PI_Controller_Id' */
   mcb_pmsm_foc_sensorless_d_DWork.integrator_state_j = 0.0F;
 }
 
@@ -2061,11 +2061,11 @@ void mcb_pmsm_FOCAlgorithmMotor1(void)
   mcb_pmsm_foc_sensorless_dyno__B.UnitDelay_de =
     mcb_pmsm_foc_sensorless_d_DWork.UnitDelay_DSTATE_bc;
 
-  /* MATLAB Function: '<S38>/MATLAB Function' incorporates:
+  /* MATLAB Function: '<S38>/PI_Controller_Iq' incorporates:
    *  Constant: '<S38>/Ki'
    *  Constant: '<S38>/Kp'
    */
-  /* MATLAB Function 'FOC Algorithm Motor 1/Closed Loop/Current_Controllers/PI_Controller_Iq/MATLAB Function': '<S110>:1' */
+  /* MATLAB Function 'FOC Algorithm Motor 1/Closed Loop/Current_Controllers/PI_Controller_Iq/PI_Controller_Iq': '<S110>:1' */
   if (mcb_pmsm_foc_sensorless_dyno__B.LogicalOperator_j) {
     /* '<S110>:1:21' */
     /* '<S110>:1:22' */
@@ -2102,7 +2102,7 @@ void mcb_pmsm_FOCAlgorithmMotor1(void)
       mcb_pmsm_foc_sensorless_dyno__B.Sum_b;
   }
 
-  /* End of MATLAB Function: '<S38>/MATLAB Function' */
+  /* End of MATLAB Function: '<S38>/PI_Controller_Iq' */
 
   /* Switch: '<S38>/Switch' */
   if (mcb_pmsm_foc_sensorless_dyno__B.DataStoreRead1_j) {
@@ -2134,11 +2134,11 @@ void mcb_pmsm_FOCAlgorithmMotor1(void)
   mcb_pmsm_foc_sensorless_dyno__B.UnitDelay_p =
     mcb_pmsm_foc_sensorless_d_DWork.UnitDelay_DSTATE_k;
 
-  /* MATLAB Function: '<S37>/MATLAB Function' incorporates:
+  /* MATLAB Function: '<S37>/PI_Controller_Id' incorporates:
    *  Constant: '<S37>/Ki'
    *  Constant: '<S37>/Kp'
    */
-  /* MATLAB Function 'FOC Algorithm Motor 1/Closed Loop/Current_Controllers/PI_Controller_Id/MATLAB Function': '<S54>:1' */
+  /* MATLAB Function 'FOC Algorithm Motor 1/Closed Loop/Current_Controllers/PI_Controller_Id/PI_Controller_Id': '<S54>:1' */
   if (mcb_pmsm_foc_sensorless_dyno__B.LogicalOperator_f) {
     /* '<S54>:1:21' */
     /* '<S54>:1:22' */
@@ -2175,7 +2175,7 @@ void mcb_pmsm_FOCAlgorithmMotor1(void)
       mcb_pmsm_foc_sensorless_dyno__B.Sum_oh;
   }
 
-  /* End of MATLAB Function: '<S37>/MATLAB Function' */
+  /* End of MATLAB Function: '<S37>/PI_Controller_Id' */
 
   /* Switch: '<S37>/Switch' */
   if (mcb_pmsm_foc_sensorless_dyno__B.DataStoreRead1_i) {
@@ -3617,10 +3617,10 @@ void mcb_FOCAlgorithmMotor2_Init(void)
   /* End of SystemInitialize for SubSystem: '<S381>/Enable EnMtr2TrqCtrl after 2 sec delay' */
   /* End of SystemInitialize for SubSystem: '<S274>/Delay to start motor2 (codegen)' */
 
-  /* SystemInitialize for MATLAB Function: '<S289>/MATLAB Function' */
+  /* SystemInitialize for MATLAB Function: '<S289>/PI_Controller_Id' */
   mcb_pmsm_foc_sensorless_d_DWork.integrator_state_l = 0.0F;
 
-  /* SystemInitialize for MATLAB Function: '<S290>/MATLAB Function' */
+  /* SystemInitialize for MATLAB Function: '<S290>/PI_Controller_Iq' */
   mcb_pmsm_foc_sensorless_d_DWork.integrator_state = 0.0F;
 
   /* SystemInitialize for IfAction SubSystem: '<S387>/Flux Observer' */
@@ -3657,10 +3657,10 @@ void mcb_FOCAlgorithmMotor2_Init(void)
 /* System reset for function-call system: '<Root>/FOC Algorithm Motor 2' */
 void mc_FOCAlgorithmMotor2_Reset(void)
 {
-  /* SystemReset for MATLAB Function: '<S290>/MATLAB Function' */
+  /* SystemReset for MATLAB Function: '<S290>/PI_Controller_Iq' */
   mcb_pmsm_foc_sensorless_d_DWork.integrator_state = 0.0F;
 
-  /* SystemReset for MATLAB Function: '<S289>/MATLAB Function' */
+  /* SystemReset for MATLAB Function: '<S289>/PI_Controller_Id' */
   mcb_pmsm_foc_sensorless_d_DWork.integrator_state_l = 0.0F;
 }
 
@@ -4052,12 +4052,12 @@ void mcb_pmsm_FOCAlgorithmMotor2(void)
   mcb_pmsm_foc_sensorless_dyno__B.LogicalOperator =
     !mcb_pmsm_foc_sensorless_dyno__B.Enable;
 
-  /* MATLAB Function: '<S290>/MATLAB Function' incorporates:
+  /* MATLAB Function: '<S290>/PI_Controller_Iq' incorporates:
    *  Constant: '<S290>/Ki'
    *  Constant: '<S290>/Kp'
    *  Constant: '<S290>/Kp1'
    */
-  /* MATLAB Function 'FOC Algorithm Motor 2/Closed loop/Current_Controllers/PI_Controller_Iq/MATLAB Function': '<S361>:1' */
+  /* MATLAB Function 'FOC Algorithm Motor 2/Closed loop/Current_Controllers/PI_Controller_Iq/PI_Controller_Iq': '<S361>:1' */
   if (mcb_pmsm_foc_sensorless_dyno__B.LogicalOperator) {
     /* '<S361>:1:21' */
     /* '<S361>:1:22' */
@@ -4093,7 +4093,7 @@ void mcb_pmsm_FOCAlgorithmMotor2(void)
       mcb_pmsm_foc_sensorless_dyno__B.Sum_g;
   }
 
-  /* End of MATLAB Function: '<S290>/MATLAB Function' */
+  /* End of MATLAB Function: '<S290>/PI_Controller_Iq' */
 
   /* Sum: '<S289>/Sum' */
   mcb_pmsm_foc_sensorless_dyno__B.Sum_k = mcb_pmsm_foc_sensorless_dyno__B.RT6[0]
@@ -4103,12 +4103,12 @@ void mcb_pmsm_FOCAlgorithmMotor2(void)
   mcb_pmsm_foc_sensorless_dyno__B.LogicalOperator_a =
     !mcb_pmsm_foc_sensorless_dyno__B.Enable;
 
-  /* MATLAB Function: '<S289>/MATLAB Function' incorporates:
+  /* MATLAB Function: '<S289>/PI_Controller_Id' incorporates:
    *  Constant: '<S289>/Ki'
    *  Constant: '<S289>/Ki1'
    *  Constant: '<S289>/Kp'
    */
-  /* MATLAB Function 'FOC Algorithm Motor 2/Closed loop/Current_Controllers/PI_Controller_Id/MATLAB Function': '<S306>:1' */
+  /* MATLAB Function 'FOC Algorithm Motor 2/Closed loop/Current_Controllers/PI_Controller_Id/PI_Controller_Id': '<S306>:1' */
   if (mcb_pmsm_foc_sensorless_dyno__B.LogicalOperator_a) {
     /* '<S306>:1:21' */
     /* '<S306>:1:22' */
@@ -4144,7 +4144,7 @@ void mcb_pmsm_FOCAlgorithmMotor2(void)
       mcb_pmsm_foc_sensorless_dyno__B.Sum_k;
   }
 
-  /* End of MATLAB Function: '<S289>/MATLAB Function' */
+  /* End of MATLAB Function: '<S289>/PI_Controller_Id' */
 
   /* Switch: '<S293>/Switch' incorporates:
    *  Constant: '<S293>/Constant3'
@@ -4571,7 +4571,7 @@ void mcb_pmsm__SpeedControl_Init(rtB_SpeedControl_mcb_pmsm_foc_s *localB,
   /* SystemInitialize for Merge: '<S8>/Merge' */
   localB->Merge = 0.0F;
 
-  /* SystemInitialize for MATLAB Function: '<S555>/MATLAB Function' */
+  /* SystemInitialize for MATLAB Function: '<S555>/PI_Controller_Speed' */
   localDW->integrator_state = 0.0F;
 }
 
@@ -4726,12 +4726,12 @@ void mcb_pmsm_foc_s_SpeedControl(real_T rtu_EstimatorSelect, real32_T
   /* Sum: '<S555>/Sum' */
   localB->Sum = localB->Add1 - rtu_Speed_Meas_PU;
 
-  /* MATLAB Function: '<S555>/MATLAB Function' incorporates:
+  /* MATLAB Function: '<S555>/PI_Controller_Speed' incorporates:
    *  Constant: '<S555>/Ki1'
    *  Constant: '<S555>/Ki2'
    *  Constant: '<S555>/Kp1'
    */
-  /* MATLAB Function 'Speed Control/PI_Controller_Speed/MATLAB Function': '<S560>:1' */
+  /* MATLAB Function 'Speed Control/PI_Controller_Speed/PI_Controller_Speed': '<S560>:1' */
   if (localB->LogicalOperator) {
     /* '<S560>:1:21' */
     /* '<S560>:1:22' */
@@ -4764,7 +4764,7 @@ void mcb_pmsm_foc_s_SpeedControl(real_T rtu_EstimatorSelect, real32_T
     localDW->integrator_state -= 0.0532323F * localB->Sum;
   }
 
-  /* End of MATLAB Function: '<S555>/MATLAB Function' */
+  /* End of MATLAB Function: '<S555>/PI_Controller_Speed' */
 
   /* Update for UnitDelay: '<S618>/Unit Delay' */
   localDW->UnitDelay_DSTATE = localB->Add1;

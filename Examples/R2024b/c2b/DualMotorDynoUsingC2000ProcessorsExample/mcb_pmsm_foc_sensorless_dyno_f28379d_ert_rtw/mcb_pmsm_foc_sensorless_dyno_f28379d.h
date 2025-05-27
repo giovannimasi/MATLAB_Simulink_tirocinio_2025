@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'mcb_pmsm_foc_sensorless_dyno_f28379d'.
  *
- * Model version                  : 9.7
+ * Model version                  : 9.12
  * Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
- * C/C++ source code generated on : Tue Apr 15 14:21:51 2025
+ * C/C++ source code generated on : Tue May 27 11:59:56 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -312,7 +312,7 @@ typedef struct {
   real32_T RateLimiter1;               /* '<S557>/Rate Limiter1' */
   real32_T DataStoreRead;              /* '<S558>/Data Store Read' */
   real32_T Switch1_n;                  /* '<S558>/Switch1' */
-  real32_T Trq_ref;                    /* '<S555>/MATLAB Function' */
+  real32_T Trq_ref;                    /* '<S555>/PI_Controller_Speed' */
   boolean_T DataStoreRead1;            /* '<S555>/Data Store Read1' */
   boolean_T DataStoreRead2;            /* '<S555>/Data Store Read2' */
   boolean_T AND;                       /* '<S555>/AND' */
@@ -325,7 +325,7 @@ typedef struct {
   real32_T UnitDelay_DSTATE;           /* '<S618>/Unit Delay' */
   real32_T PrevY;                      /* '<S557>/Rate Limiter' */
   real32_T PrevY_a;                    /* '<S557>/Rate Limiter1' */
-  real32_T integrator_state;           /* '<S555>/MATLAB Function' */
+  real32_T integrator_state;           /* '<S555>/PI_Controller_Speed' */
 } rtDW_SpeedControl_mcb_pmsm_foc_;
 
 /* Block signals (default storage) */
@@ -590,8 +590,8 @@ typedef struct {
   real32_T Add1_jc;                    /* '<S453>/Add1' */
   real32_T UnitDelay_n;                /* '<S383>/Unit Delay' */
   real32_T Add_cd;                     /* '<S383>/Add' */
-  real32_T V_q_ref;                    /* '<S290>/MATLAB Function' */
-  real32_T V_d_ref;                    /* '<S289>/MATLAB Function' */
+  real32_T V_q_ref;                    /* '<S290>/PI_Controller_Iq' */
+  real32_T V_d_ref;                    /* '<S289>/PI_Controller_Id' */
   real32_T DataStoreRead;              /* '<S30>/Data Store Read' */
   real32_T Abs;                        /* '<S30>/Abs' */
   real32_T Gain_a;                     /* '<S30>/Gain' */
@@ -706,11 +706,11 @@ typedef struct {
   real32_T DataTypeConversion1_d;      /* '<S168>/Data Type Conversion1' */
   real32_T Add1_pp;                    /* '<S168>/Add1' */
   real32_T Input;                      /* '<S169>/Input' */
-  real32_T V_q_ref_m;                  /* '<S38>/MATLAB Function' */
+  real32_T V_q_ref_m;                  /* '<S38>/PI_Controller_Iq' */
   real32_T Vd_OpenLoop;                /* '<S37>/Vd_OpenLoop' */
   real32_T Abs_k;                      /* '<S37>/Abs' */
   real32_T Saturation;                 /* '<S37>/Saturation' */
-  real32_T V_d_ref_a;                  /* '<S37>/MATLAB Function' */
+  real32_T V_d_ref_a;                  /* '<S37>/PI_Controller_Id' */
   int32_T DataTypeConversion_n[2];     /* '<S386>/Data Type Conversion' */
   int32_T Add_bh[2];                   /* '<S386>/Add' */
   int32_T SpeedCount;                  /* '<S438>/SpeedCount' */
@@ -863,10 +863,10 @@ typedef struct {
   volatile real32_T RT8_5_Buffer[4];   /* '<Root>/RT8' */
   volatile real32_T RT8_6_Buffer[2];   /* '<Root>/RT8' */
   real32_T Add_DWORK1;                 /* '<S383>/Add' */
-  real32_T integrator_state;           /* '<S290>/MATLAB Function' */
-  real32_T integrator_state_l;         /* '<S289>/MATLAB Function' */
-  real32_T integrator_state_p;         /* '<S38>/MATLAB Function' */
-  real32_T integrator_state_j;         /* '<S37>/MATLAB Function' */
+  real32_T integrator_state;           /* '<S290>/PI_Controller_Iq' */
+  real32_T integrator_state_l;         /* '<S289>/PI_Controller_Id' */
+  real32_T integrator_state_p;         /* '<S38>/PI_Controller_Iq' */
+  real32_T integrator_state_j;         /* '<S37>/PI_Controller_Id' */
   int32_T DigitalOutput_FRAC_LEN;      /* '<S483>/Digital Output' */
   int32_T DigitalOutput_FRAC_LEN_o;    /* '<S466>/Digital Output' */
   int32_T BottomDRV8305EN_FRAC_LEN;    /* '<S466>/Bottom DRV8305 EN' */
@@ -1136,7 +1136,7 @@ extern "C"
  * '<S51>'  : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 1/Closed Loop/Current_Controllers/DQ Limiter/D//Q Axis Priority/limiter/limitRef2'
  * '<S52>'  : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 1/Closed Loop/Current_Controllers/DQ Limiter/D//Q Axis Priority/limiter/passThrough'
  * '<S53>'  : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 1/Closed Loop/Current_Controllers/PI_Controller_Id/Discrete PI Controller  with anti-windup & reset'
- * '<S54>'  : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 1/Closed Loop/Current_Controllers/PI_Controller_Id/MATLAB Function'
+ * '<S54>'  : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 1/Closed Loop/Current_Controllers/PI_Controller_Id/PI_Controller_Id'
  * '<S55>'  : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 1/Closed Loop/Current_Controllers/PI_Controller_Id/Discrete PI Controller  with anti-windup & reset/Anti-windup'
  * '<S56>'  : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 1/Closed Loop/Current_Controllers/PI_Controller_Id/Discrete PI Controller  with anti-windup & reset/D Gain'
  * '<S57>'  : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 1/Closed Loop/Current_Controllers/PI_Controller_Id/Discrete PI Controller  with anti-windup & reset/External Derivative'
@@ -1192,7 +1192,7 @@ extern "C"
  * '<S107>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 1/Closed Loop/Current_Controllers/PI_Controller_Id/Discrete PI Controller  with anti-windup & reset/preInt Signal/Internal PreInt'
  * '<S108>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 1/Closed Loop/Current_Controllers/PI_Controller_Id/Discrete PI Controller  with anti-windup & reset/preSat Signal/Forward_Path'
  * '<S109>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 1/Closed Loop/Current_Controllers/PI_Controller_Iq/Discrete PI Controller  with anti-windup & reset'
- * '<S110>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 1/Closed Loop/Current_Controllers/PI_Controller_Iq/MATLAB Function'
+ * '<S110>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 1/Closed Loop/Current_Controllers/PI_Controller_Iq/PI_Controller_Iq'
  * '<S111>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 1/Closed Loop/Current_Controllers/PI_Controller_Iq/Discrete PI Controller  with anti-windup & reset/Anti-windup'
  * '<S112>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 1/Closed Loop/Current_Controllers/PI_Controller_Iq/Discrete PI Controller  with anti-windup & reset/D Gain'
  * '<S113>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 1/Closed Loop/Current_Controllers/PI_Controller_Iq/Discrete PI Controller  with anti-windup & reset/External Derivative'
@@ -1388,7 +1388,7 @@ extern "C"
  * '<S303>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 2/Closed loop/Current_Controllers/DQ Limiter/D//Q Axis Priority/limiter/limitRef2'
  * '<S304>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 2/Closed loop/Current_Controllers/DQ Limiter/D//Q Axis Priority/limiter/passThrough'
  * '<S305>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 2/Closed loop/Current_Controllers/PI_Controller_Id/Discrete PI Controller  with anti-windup & reset'
- * '<S306>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 2/Closed loop/Current_Controllers/PI_Controller_Id/MATLAB Function'
+ * '<S306>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 2/Closed loop/Current_Controllers/PI_Controller_Id/PI_Controller_Id'
  * '<S307>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 2/Closed loop/Current_Controllers/PI_Controller_Id/Discrete PI Controller  with anti-windup & reset/Anti-windup'
  * '<S308>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 2/Closed loop/Current_Controllers/PI_Controller_Id/Discrete PI Controller  with anti-windup & reset/D Gain'
  * '<S309>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 2/Closed loop/Current_Controllers/PI_Controller_Id/Discrete PI Controller  with anti-windup & reset/External Derivative'
@@ -1443,7 +1443,7 @@ extern "C"
  * '<S358>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 2/Closed loop/Current_Controllers/PI_Controller_Id/Discrete PI Controller  with anti-windup & reset/postSat Signal/Forward_Path'
  * '<S359>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 2/Closed loop/Current_Controllers/PI_Controller_Id/Discrete PI Controller  with anti-windup & reset/preInt Signal/Internal PreInt'
  * '<S360>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 2/Closed loop/Current_Controllers/PI_Controller_Id/Discrete PI Controller  with anti-windup & reset/preSat Signal/Forward_Path'
- * '<S361>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 2/Closed loop/Current_Controllers/PI_Controller_Iq/MATLAB Function'
+ * '<S361>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 2/Closed loop/Current_Controllers/PI_Controller_Iq/PI_Controller_Iq'
  * '<S362>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 2/Closed loop/Inverse Park Transform/Two inputs CRL'
  * '<S363>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 2/Closed loop/Inverse Park Transform/Two inputs CRL/Switch_Axis'
  * '<S364>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/FOC Algorithm Motor 2/Closed loop/Park Transform/Two inputs CRL'
@@ -1642,7 +1642,7 @@ extern "C"
  * '<S557>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/Speed Control/Rate Limiter for SMO'
  * '<S558>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/Speed Control/Speed_Ref_Selector'
  * '<S559>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset'
- * '<S560>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/Speed Control/PI_Controller_Speed/MATLAB Function'
+ * '<S560>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/Speed Control/PI_Controller_Speed/PI_Controller_Speed'
  * '<S561>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/Speed Control/PI_Controller_Speed/Zero_Cancellation'
  * '<S562>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/Anti-windup'
  * '<S563>' : 'mcb_pmsm_foc_sensorless_dyno_f28379d/Speed Control/PI_Controller_Speed/Discrete PI Controller  with anti-windup & reset/D Gain'

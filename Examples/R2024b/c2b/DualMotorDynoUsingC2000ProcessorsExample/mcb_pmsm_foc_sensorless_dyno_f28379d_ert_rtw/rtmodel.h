@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'mcb_pmsm_foc_sensorless_dyno_f28379d'.
  *
- * Model version                  : 9.7
+ * Model version                  : 9.12
  * Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
- * C/C++ source code generated on : Tue Apr 15 14:21:51 2025
+ * C/C++ source code generated on : Tue May 27 11:59:56 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000

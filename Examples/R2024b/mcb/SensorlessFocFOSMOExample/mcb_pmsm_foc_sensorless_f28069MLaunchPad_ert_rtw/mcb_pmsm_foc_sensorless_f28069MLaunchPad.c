@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'mcb_pmsm_foc_sensorless_f28069MLaunchPad'.
  *
- * Model version                  : 9.18
+ * Model version                  : 9.20
  * Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
- * C/C++ source code generated on : Wed Apr  2 15:33:15 2025
+ * C/C++ source code generated on : Tue May 27 12:41:05 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -98,7 +98,7 @@ static void rate_monotonic_scheduler(void)
 /*
  * Output and update for atomic system:
  *    '<S23>/Two phase CRL wrap'
- *    '<S393>/Two phase CRL wrap'
+ *    '<S394>/Two phase CRL wrap'
  */
 void mcb_pmsm_fo_TwophaseCRLwrap(real32_T rtu_a, real32_T rtu_b,
   rtB_TwophaseCRLwrap_mcb_pmsm_fo *localB)
@@ -119,71 +119,52 @@ void mcb_pmsm_fo_TwophaseCRLwrap(real32_T rtu_a, real32_T rtu_b,
 /*
  * Output and update for atomic system:
  *    '<S20>/Two inputs CRL'
- *    '<S390>/Two inputs CRL'
- *    '<S392>/Two inputs CRL'
+ *    '<S391>/Two inputs CRL'
+ *    '<S393>/Two inputs CRL'
  */
 void mcb_pmsm_foc_s_TwoinputsCRL(real32_T rtu_Alpha, real32_T rtu_Beta, real32_T
   rtu_sine, real32_T rtu_cos, rtB_TwoinputsCRL_mcb_pmsm_foc_s *localB)
 {
-  /* Product: '<S52>/acos' */
+  /* Product: '<S53>/acos' */
   localB->acos_a = rtu_Alpha * rtu_cos;
 
-  /* Product: '<S52>/bsin' */
+  /* Product: '<S53>/bsin' */
   localB->bsin = rtu_Beta * rtu_sine;
 
-  /* Sum: '<S52>/sum_Ds' */
+  /* Sum: '<S53>/sum_Ds' */
   localB->sum_Ds = localB->acos_a + localB->bsin;
 
-  /* Product: '<S52>/bcos' */
+  /* Product: '<S53>/bcos' */
   localB->bcos = rtu_Beta * rtu_cos;
 
-  /* Product: '<S52>/asin' */
+  /* Product: '<S53>/asin' */
   localB->asin_p = rtu_Alpha * rtu_sine;
 
-  /* Sum: '<S52>/sum_Qs' */
+  /* Sum: '<S53>/sum_Qs' */
   localB->sum_Qs = localB->bcos - localB->asin_p;
 
-  /* Switch: '<S53>/Switch' */
+  /* Switch: '<S54>/Switch' */
   localB->Switch[0] = localB->sum_Ds;
   localB->Switch[1] = localB->sum_Qs;
 
-  /* AlgorithmDescriptorDelegate generated from: '<S52>/a16' */
+  /* AlgorithmDescriptorDelegate generated from: '<S53>/a16' */
   localB->algDD_o1 = localB->Switch[0];
 
-  /* AlgorithmDescriptorDelegate generated from: '<S52>/a16' */
+  /* AlgorithmDescriptorDelegate generated from: '<S53>/a16' */
   localB->algDD_o2 = localB->Switch[1];
 }
 
 /*
  * Output and update for action system:
- *    '<S56>/If Action Subsystem'
- *    '<S226>/If Action Subsystem'
- *    '<S399>/If Action Subsystem'
+ *    '<S57>/If Action Subsystem'
+ *    '<S227>/If Action Subsystem'
+ *    '<S400>/If Action Subsystem'
  */
 void mcb_pmsm__IfActionSubsystem(real32_T rtu_In1, real32_T *rty_Out1,
   rtB_IfActionSubsystem_mcb_pmsm_ *localB)
 {
-  /* DataTypeConversion: '<S59>/Convert_uint16' */
-  localB->Convert_uint16 = (int16_T)(real32_T)floor(rtu_In1);
-
-  /* DataTypeConversion: '<S59>/Convert_back' */
-  localB->Convert_back = localB->Convert_uint16;
-
-  /* Sum: '<S59>/Sum' */
-  *rty_Out1 = rtu_In1 - localB->Convert_back;
-}
-
-/*
- * Output and update for action system:
- *    '<S56>/If Action Subsystem1'
- *    '<S226>/If Action Subsystem1'
- *    '<S399>/If Action Subsystem1'
- */
-void mcb_pmsm_IfActionSubsystem1(real32_T rtu_In1, real32_T *rty_Out1,
-  rtB_IfActionSubsystem1_mcb_pmsm *localB)
-{
   /* DataTypeConversion: '<S60>/Convert_uint16' */
-  localB->Convert_uint16 = (int16_T)rtu_In1;
+  localB->Convert_uint16 = (int16_T)(real32_T)floor(rtu_In1);
 
   /* DataTypeConversion: '<S60>/Convert_back' */
   localB->Convert_back = localB->Convert_uint16;
@@ -193,9 +174,28 @@ void mcb_pmsm_IfActionSubsystem1(real32_T rtu_In1, real32_T *rty_Out1,
 }
 
 /*
+ * Output and update for action system:
+ *    '<S57>/If Action Subsystem1'
+ *    '<S227>/If Action Subsystem1'
+ *    '<S400>/If Action Subsystem1'
+ */
+void mcb_pmsm_IfActionSubsystem1(real32_T rtu_In1, real32_T *rty_Out1,
+  rtB_IfActionSubsystem1_mcb_pmsm *localB)
+{
+  /* DataTypeConversion: '<S61>/Convert_uint16' */
+  localB->Convert_uint16 = (int16_T)rtu_In1;
+
+  /* DataTypeConversion: '<S61>/Convert_back' */
+  localB->Convert_back = localB->Convert_uint16;
+
+  /* Sum: '<S61>/Sum' */
+  *rty_Out1 = rtu_In1 - localB->Convert_back;
+}
+
+/*
  * Output and update for trigger system:
- *    '<S272>/Dir_Sense'
- *    '<S100>/Dir_Sense'
+ *    '<S273>/Dir_Sense'
+ *    '<S101>/Dir_Sense'
  */
 void mcb_pmsm_foc_sens_Dir_Sense(boolean_T rtu_A, boolean_T rtu_B,
   rtB_Dir_Sense_mcb_pmsm_foc_sens *localB, rtZCE_Dir_Sense_mcb_pmsm_foc_se
@@ -203,54 +203,54 @@ void mcb_pmsm_foc_sens_Dir_Sense(boolean_T rtu_A, boolean_T rtu_B,
 {
   boolean_T zcEvent;
 
-  /* Outputs for Triggered SubSystem: '<S272>/Dir_Sense' incorporates:
-   *  TriggerPort: '<S280>/Trigger'
+  /* Outputs for Triggered SubSystem: '<S273>/Dir_Sense' incorporates:
+   *  TriggerPort: '<S281>/Trigger'
    */
   zcEvent = (rtu_A && (localZCE->Dir_Sense_Trig_ZCE != POS_ZCSIG));
   if (zcEvent) {
-    /* Logic: '<S280>/Logical Operator' */
+    /* Logic: '<S281>/Logical Operator' */
     localB->LogicalOperator = (rtu_A && rtu_B);
 
-    /* Switch: '<S280>/Switch' */
+    /* Switch: '<S281>/Switch' */
     if (localB->LogicalOperator) {
-      /* Switch: '<S280>/Switch' incorporates:
-       *  Constant: '<S280>/Constant'
+      /* Switch: '<S281>/Switch' incorporates:
+       *  Constant: '<S281>/Constant'
        */
       localB->Switch = -1;
     } else {
-      /* Switch: '<S280>/Switch' incorporates:
-       *  Constant: '<S280>/Constant1'
+      /* Switch: '<S281>/Switch' incorporates:
+       *  Constant: '<S281>/Constant1'
        */
       localB->Switch = 1;
     }
 
-    /* End of Switch: '<S280>/Switch' */
+    /* End of Switch: '<S281>/Switch' */
   }
 
   localZCE->Dir_Sense_Trig_ZCE = rtu_A;
 
-  /* End of Outputs for SubSystem: '<S272>/Dir_Sense' */
+  /* End of Outputs for SubSystem: '<S273>/Dir_Sense' */
 }
 
 /*
  * Output and update for action system:
- *    '<S272>/Subsystem2'
- *    '<S100>/Subsystem2'
+ *    '<S273>/Subsystem2'
+ *    '<S101>/Subsystem2'
  */
 void mcb_pmsm_foc_sen_Subsystem2(real32_T rtu_SigmaAlpha, real32_T rtu_SigmaBeta,
   real32_T *rty_Out1, real32_T *rty_Out2)
 {
-  /* UnaryMinus: '<S281>/Unary Minus' */
+  /* UnaryMinus: '<S282>/Unary Minus' */
   *rty_Out1 = -rtu_SigmaAlpha;
 
-  /* SignalConversion generated from: '<S281>/SigmaBeta' */
+  /* SignalConversion generated from: '<S282>/SigmaBeta' */
   *rty_Out2 = rtu_SigmaBeta;
 }
 
 /* System initialize for function-call system: '<Root>/Current Control' */
 void mcb_pms_CurrentControl_Init(void)
 {
-  /* Start for S-Function (c2802xadc): '<S76>/IA//IB Measurement' */
+  /* Start for S-Function (c2802xadc): '<S77>/IA//IB Measurement' */
   if (MW_adcInitFlag == 0U) {
     InitAdc();
     MW_adcInitFlag = 1U;
@@ -258,13 +258,13 @@ void mcb_pms_CurrentControl_Init(void)
 
   config_ADC_SOC0_SOC1 ();
 
-  /* Start for S-Function (c280xgpio_do): '<S298>/Digital Output' */
+  /* Start for S-Function (c280xgpio_do): '<S299>/Digital Output' */
   EALLOW;
   GpioCtrlRegs.GPBMUX2.all &= 0xFFFFFFCFU;
   GpioCtrlRegs.GPBDIR.all |= 0x40000U;
   EDIS;
 
-  /* Start for S-Function (c2802xpwm): '<S298>/ePWM1' */
+  /* Start for S-Function (c2802xpwm): '<S299>/ePWM1' */
   real32_T tbprdValue1 = (real32_T)EPwm1Regs.TBPRD;
 
   /*** Initialize ePWM1 modules ***/
@@ -443,7 +443,7 @@ void mcb_pms_CurrentControl_Init(void)
     EDIS;
   }
 
-  /* Start for S-Function (c2802xpwm): '<S298>/ePWM2' */
+  /* Start for S-Function (c2802xpwm): '<S299>/ePWM2' */
   real32_T tbprdValue2 = (real32_T)EPwm2Regs.TBPRD;
 
   /*** Initialize ePWM2 modules ***/
@@ -622,7 +622,7 @@ void mcb_pms_CurrentControl_Init(void)
     EDIS;
   }
 
-  /* Start for S-Function (c2802xpwm): '<S298>/ePWM3' */
+  /* Start for S-Function (c2802xpwm): '<S299>/ePWM3' */
   real32_T tbprdValue3 = (real32_T)EPwm3Regs.TBPRD;
 
   /*** Initialize ePWM3 modules ***/
@@ -804,127 +804,127 @@ void mcb_pms_CurrentControl_Init(void)
   /* InitializeConditions for Delay: '<S19>/Delay' */
   mcb_pmsm_foc_sensorless_f_DWork.icLoad = true;
 
-  /* SystemInitialize for MATLAB Function: '<S26>/MATLAB Function' */
+  /* SystemInitialize for MATLAB Function: '<S27>/MATLAB Function' */
   mcb_pmsm_foc_sensorless_f_DWork.integrator_state_a = 0.0F;
 
-  /* SystemInitialize for MATLAB Function: '<S27>/MATLAB Function' */
+  /* SystemInitialize for MATLAB Function: '<S28>/MATLAB Function' */
   mcb_pmsm_foc_sensorless_f_DWork.integrator_state = 0.0F;
 
-  /* SystemInitialize for IfAction SubSystem: '<S78>/Extended EMF Observer' */
-  /* InitializeConditions for Delay: '<S82>/Delay1' */
+  /* SystemInitialize for IfAction SubSystem: '<S79>/Extended EMF Observer' */
+  /* InitializeConditions for Delay: '<S83>/Delay1' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay1_DSTATE = 0.0F;
 
-  /* InitializeConditions for Delay: '<S219>/Delay' */
+  /* InitializeConditions for Delay: '<S220>/Delay' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay_DSTATE_a = 0.0F;
 
-  /* InitializeConditions for DiscreteIntegrator: '<S151>/Integrator' */
+  /* InitializeConditions for DiscreteIntegrator: '<S152>/Integrator' */
   mcb_pmsm_foc_sensorless_f_DWork.Integrator_PrevResetState = 0;
 
-  /* SystemInitialize for IfAction SubSystem: '<S108>/DifferentiationMethod' */
-  /* InitializeConditions for Delay: '<S173>/Delay2' */
+  /* SystemInitialize for IfAction SubSystem: '<S109>/DifferentiationMethod' */
+  /* InitializeConditions for Delay: '<S174>/Delay2' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay2_DSTATE_c = 0.0F;
 
-  /* InitializeConditions for Delay: '<S173>/Delay3' */
+  /* InitializeConditions for Delay: '<S174>/Delay3' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay3_DSTATE_d = 0.0F;
 
-  /* InitializeConditions for Delay: '<S174>/Delay2' */
+  /* InitializeConditions for Delay: '<S175>/Delay2' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay2_DSTATE_p = 0.0F;
 
-  /* InitializeConditions for Delay: '<S174>/Delay3' */
+  /* InitializeConditions for Delay: '<S175>/Delay3' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay3_DSTATE_ds = 0.0F;
 
-  /* End of SystemInitialize for SubSystem: '<S108>/DifferentiationMethod' */
+  /* End of SystemInitialize for SubSystem: '<S109>/DifferentiationMethod' */
 
-  /* SystemInitialize for IfAction SubSystem: '<S108>/IntegralMethod' */
-  /* InitializeConditions for Delay: '<S198>/Delay1' */
+  /* SystemInitialize for IfAction SubSystem: '<S109>/IntegralMethod' */
+  /* InitializeConditions for Delay: '<S199>/Delay1' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay1_DSTATE_o = 0.0F;
 
-  /* InitializeConditions for Delay: '<S198>/Delay' */
+  /* InitializeConditions for Delay: '<S199>/Delay' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay_DSTATE_ao = 0.0F;
 
-  /* InitializeConditions for Delay: '<S199>/Delay1' */
+  /* InitializeConditions for Delay: '<S200>/Delay1' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay1_DSTATE_n = 0.0F;
 
-  /* InitializeConditions for Delay: '<S199>/Delay' */
+  /* InitializeConditions for Delay: '<S200>/Delay' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay_DSTATE_oe = 0.0F;
 
-  /* End of SystemInitialize for SubSystem: '<S108>/IntegralMethod' */
+  /* End of SystemInitialize for SubSystem: '<S109>/IntegralMethod' */
 
-  /* SystemInitialize for IfAction SubSystem: '<S108>/OptimizedDifferentiationMethod' */
-  /* InitializeConditions for Delay: '<S206>/Delay2' */
+  /* SystemInitialize for IfAction SubSystem: '<S109>/OptimizedDifferentiationMethod' */
+  /* InitializeConditions for Delay: '<S207>/Delay2' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay2_DSTATE = 0.0F;
 
-  /* InitializeConditions for Delay: '<S206>/Delay3' */
+  /* InitializeConditions for Delay: '<S207>/Delay3' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay3_DSTATE = 0.0F;
 
-  /* InitializeConditions for Delay: '<S207>/Delay2' */
+  /* InitializeConditions for Delay: '<S208>/Delay2' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay2_DSTATE_i = 0.0F;
 
-  /* InitializeConditions for Delay: '<S207>/Delay3' */
+  /* InitializeConditions for Delay: '<S208>/Delay3' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay3_DSTATE_b = 0.0F;
 
-  /* End of SystemInitialize for SubSystem: '<S108>/OptimizedDifferentiationMethod' */
+  /* End of SystemInitialize for SubSystem: '<S109>/OptimizedDifferentiationMethod' */
 
-  /* SystemInitialize for Merge: '<S108>/Merge' */
+  /* SystemInitialize for Merge: '<S109>/Merge' */
   mcb_pmsm_foc_sensorless_f2806_B.Merge_i = 0.0F;
 
-  /* End of SystemInitialize for SubSystem: '<S78>/Extended EMF Observer' */
+  /* End of SystemInitialize for SubSystem: '<S79>/Extended EMF Observer' */
 
-  /* SystemInitialize for IfAction SubSystem: '<S78>/Flux Observer' */
-  /* InitializeConditions for Delay: '<S261>/Delay1' */
+  /* SystemInitialize for IfAction SubSystem: '<S79>/Flux Observer' */
+  /* InitializeConditions for Delay: '<S262>/Delay1' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay1_DSTATE_e = 0.0F;
 
-  /* InitializeConditions for Delay: '<S261>/Delay' */
+  /* InitializeConditions for Delay: '<S262>/Delay' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay_DSTATE_m = 0.0F;
 
-  /* InitializeConditions for Delay: '<S253>/Delay1' */
+  /* InitializeConditions for Delay: '<S254>/Delay1' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay1_DSTATE_m = 0.0F;
 
-  /* InitializeConditions for Delay: '<S253>/Delay' */
+  /* InitializeConditions for Delay: '<S254>/Delay' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay_DSTATE_p = 0.0F;
 
-  /* InitializeConditions for Delay: '<S235>/Delay' */
+  /* InitializeConditions for Delay: '<S236>/Delay' */
   mcb_pmsm_foc_sensorless_f_DWork.CircBufIdx = 0U;
 
-  /* End of SystemInitialize for SubSystem: '<S78>/Flux Observer' */
+  /* End of SystemInitialize for SubSystem: '<S79>/Flux Observer' */
 
-  /* SystemInitialize for IfAction SubSystem: '<S78>/Sliding Mode Observer' */
-  /* InitializeConditions for Delay: '<S273>/Delay' */
+  /* SystemInitialize for IfAction SubSystem: '<S79>/Sliding Mode Observer' */
+  /* InitializeConditions for Delay: '<S274>/Delay' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay_DSTATE_nd = 0.0F;
 
-  /* InitializeConditions for Delay: '<S283>/Delay1' */
+  /* InitializeConditions for Delay: '<S284>/Delay1' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay1_DSTATE_l = 0.0F;
 
-  /* InitializeConditions for Delay: '<S274>/Delay' */
+  /* InitializeConditions for Delay: '<S275>/Delay' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay_DSTATE_e = 0.0F;
 
-  /* InitializeConditions for Delay: '<S284>/Delay1' */
+  /* InitializeConditions for Delay: '<S285>/Delay1' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay1_DSTATE_j = 0.0F;
 
-  /* InitializeConditions for Delay: '<S271>/Delay' */
+  /* InitializeConditions for Delay: '<S272>/Delay' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay_DSTATE_nm = 0.0F;
 
-  /* InitializeConditions for Delay: '<S278>/Delay' */
+  /* InitializeConditions for Delay: '<S279>/Delay' */
   mcb_pmsm_foc_sensorless_f_DWork.CircBufIdx_n = 0U;
 
-  /* End of SystemInitialize for SubSystem: '<S78>/Sliding Mode Observer' */
+  /* End of SystemInitialize for SubSystem: '<S79>/Sliding Mode Observer' */
 
-  /* SystemInitialize for IfAction SubSystem: '<S78>/Extended EMF Observer' */
-  /* InitializeConditions for Delay: '<S83>/Delay' */
+  /* SystemInitialize for IfAction SubSystem: '<S79>/Extended EMF Observer' */
+  /* InitializeConditions for Delay: '<S84>/Delay' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay_DSTATE_o[0] = 0.0F;
 
-  /* End of SystemInitialize for SubSystem: '<S78>/Extended EMF Observer' */
+  /* End of SystemInitialize for SubSystem: '<S79>/Extended EMF Observer' */
 
-  /* SystemInitialize for Merge: '<S78>/Merge' */
+  /* SystemInitialize for Merge: '<S79>/Merge' */
   mcb_pmsm_foc_sensorless_f2806_B.Merge_k[0] = 0.0F;
 
-  /* SystemInitialize for IfAction SubSystem: '<S78>/Extended EMF Observer' */
-  /* InitializeConditions for Delay: '<S83>/Delay' */
+  /* SystemInitialize for IfAction SubSystem: '<S79>/Extended EMF Observer' */
+  /* InitializeConditions for Delay: '<S84>/Delay' */
   mcb_pmsm_foc_sensorless_f_DWork.Delay_DSTATE_o[1] = 0.0F;
 
-  /* End of SystemInitialize for SubSystem: '<S78>/Extended EMF Observer' */
+  /* End of SystemInitialize for SubSystem: '<S79>/Extended EMF Observer' */
 
-  /* SystemInitialize for Merge: '<S78>/Merge' */
+  /* SystemInitialize for Merge: '<S79>/Merge' */
   mcb_pmsm_foc_sensorless_f2806_B.Merge_k[1] = 0.0F;
 }
 
@@ -934,10 +934,10 @@ void mcb_pm_CurrentControl_Reset(void)
   /* InitializeConditions for Delay: '<S19>/Delay' */
   mcb_pmsm_foc_sensorless_f_DWork.icLoad = true;
 
-  /* SystemReset for MATLAB Function: '<S27>/MATLAB Function' */
+  /* SystemReset for MATLAB Function: '<S28>/MATLAB Function' */
   mcb_pmsm_foc_sensorless_f_DWork.integrator_state = 0.0F;
 
-  /* SystemReset for MATLAB Function: '<S26>/MATLAB Function' */
+  /* SystemReset for MATLAB Function: '<S27>/MATLAB Function' */
   mcb_pmsm_foc_sensorless_f_DWork.integrator_state_a = 0.0F;
 }
 
@@ -951,19 +951,19 @@ void mcb_pmsm_foc_CurrentControl(void)
   real32_T UnitDelay_a;
   real32_T V_q_ref_unsat;
   uint32_T Sum_k;
-  int16_T s300_iter;
+  int16_T s301_iter;
   uint16_T Data;
   boolean_T zcEvent;
 
-  /* DataStoreRead: '<S77>/Data Store Read' */
+  /* DataStoreRead: '<S78>/Data Store Read' */
   mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead_m =
     mcb_pmsm_foc_sensorless_f_DWork.IaOffset;
 
-  /* DataStoreRead: '<S77>/Data Store Read1' */
+  /* DataStoreRead: '<S78>/Data Store Read1' */
   mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead1_p =
     mcb_pmsm_foc_sensorless_f_DWork.IbOffset;
 
-  /* S-Function (c2802xadc): '<S76>/IA//IB Measurement' */
+  /* S-Function (c2802xadc): '<S77>/IA//IB Measurement' */
   {
     /*  Internal Reference Voltage : Fixed scale 0 to 3.3 V range.  */
     /*  External Reference Voltage : Allowable ranges of VREFHI(ADCINA0) = 3.3 and VREFLO(tied to ground) = 0  */
@@ -971,13 +971,13 @@ void mcb_pmsm_foc_CurrentControl(void)
     mcb_pmsm_foc_sensorless_f2806_B.IAIBMeasurement_k[1] = (AdcResult.ADCRESULT1);
   }
 
-  /* DataTypeConversion: '<S77>/Data Type Conversion' */
+  /* DataTypeConversion: '<S78>/Data Type Conversion' */
   mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion_ch[0] =
     mcb_pmsm_foc_sensorless_f2806_B.IAIBMeasurement_k[0];
   mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion_ch[1] =
     mcb_pmsm_foc_sensorless_f2806_B.IAIBMeasurement_k[1];
 
-  /* Sum: '<S77>/Add' */
+  /* Sum: '<S78>/Add' */
   mcb_pmsm_foc_sensorless_f2806_B.Add_k[0] =
     mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion_ch[0] -
     mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead_m;
@@ -985,26 +985,26 @@ void mcb_pmsm_foc_CurrentControl(void)
     mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion_ch[1] -
     mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead1_p;
 
-  /* ArithShift: '<S77>/Q17 per unit conversion' incorporates:
-   *  Sum: '<S77>/Add'
+  /* ArithShift: '<S78>/Q17 per unit conversion' incorporates:
+   *  Sum: '<S78>/Add'
    */
   Q17perunitconversion = mcb_pmsm_foc_sensorless_f2806_B.Add_k[0] << 6U;
   mcb_pmsm_foc_sensorless_f2806_B.Q17perunitconversion[0] = Q17perunitconversion;
 
-  /* DataTypeConversion: '<S77>/Data Type Conversion1' incorporates:
-   *  ArithShift: '<S77>/Q17 per unit conversion'
+  /* DataTypeConversion: '<S78>/Data Type Conversion1' incorporates:
+   *  ArithShift: '<S78>/Q17 per unit conversion'
    */
   mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion1_p[0] = (real32_T)
     Q17perunitconversion * 7.62939453E-6F;
 
-  /* ArithShift: '<S77>/Q17 per unit conversion' incorporates:
-   *  Sum: '<S77>/Add'
+  /* ArithShift: '<S78>/Q17 per unit conversion' incorporates:
+   *  Sum: '<S78>/Add'
    */
   Q17perunitconversion = mcb_pmsm_foc_sensorless_f2806_B.Add_k[1] << 6U;
   mcb_pmsm_foc_sensorless_f2806_B.Q17perunitconversion[1] = Q17perunitconversion;
 
-  /* DataTypeConversion: '<S77>/Data Type Conversion1' incorporates:
-   *  ArithShift: '<S77>/Q17 per unit conversion'
+  /* DataTypeConversion: '<S78>/Data Type Conversion1' incorporates:
+   *  ArithShift: '<S78>/Q17 per unit conversion'
    */
   mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion1_p[1] = (real32_T)
     Q17perunitconversion * 7.62939453E-6F;
@@ -1013,8 +1013,8 @@ void mcb_pmsm_foc_CurrentControl(void)
   mcb_pmsm_foc_sensorless_f_DWork.Ia_meas_PU =
     mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion1_p[0];
 
-  /* Switch: '<S30>/Switch1' incorporates:
-   *  Constant: '<S30>/ChosenMethod'
+  /* Switch: '<S31>/Switch1' incorporates:
+   *  Constant: '<S31>/ChosenMethod'
    */
   mcb_pmsm_foc_sensorless_f2806_B.Switch1_fg = 3U;
 
@@ -1036,298 +1036,298 @@ void mcb_pmsm_foc_CurrentControl(void)
   mcb_pmsm_foc_sensorless_f2806_B.Delay5[3] =
     mcb_pmsm_foc_sensorless_f_DWork.Delay5_DSTATE[3];
 
-  /* Outputs for IfAction SubSystem: '<S78>/Flux Observer' incorporates:
-   *  ActionPort: '<S80>/Action Port'
+  /* Outputs for IfAction SubSystem: '<S79>/Flux Observer' incorporates:
+   *  ActionPort: '<S81>/Action Port'
    */
-  /* SwitchCase: '<S78>/Switch Case' incorporates:
-   *  Constant: '<S236>/FilterConstant'
-   *  Constant: '<S236>/OneMinusFilterConstant'
-   *  Product: '<S239>/Product'
-   *  Switch: '<S236>/Switch1'
+  /* SwitchCase: '<S79>/Switch Case' incorporates:
+   *  Constant: '<S237>/FilterConstant'
+   *  Constant: '<S237>/OneMinusFilterConstant'
+   *  Product: '<S240>/Product'
+   *  Switch: '<S237>/Switch1'
    */
   mcb_pmsm_foc_sensorless_f2806_B.Switch1_dz[0] = 0.0005F;
   mcb_pmsm_foc_sensorless_f2806_B.Switch1_dz[1] = 0.9995F;
   V_q_ref_unsat = mcb_pmsm_foc_sensorless_f2806_B.Delay5[0];
   Product_am = V_q_ref_unsat * 0.0005F;
 
-  /* End of Outputs for SubSystem: '<S78>/Flux Observer' */
+  /* End of Outputs for SubSystem: '<S79>/Flux Observer' */
 
-  /* Product: '<S239>/Product' */
+  /* Product: '<S240>/Product' */
   mcb_pmsm_foc_sensorless_f2806_B.Product_am[0] = Product_am;
 
-  /* Outputs for IfAction SubSystem: '<S78>/Flux Observer' incorporates:
-   *  ActionPort: '<S80>/Action Port'
+  /* Outputs for IfAction SubSystem: '<S79>/Flux Observer' incorporates:
+   *  ActionPort: '<S81>/Action Port'
    */
-  /* SwitchCase: '<S78>/Switch Case' incorporates:
-   *  UnitDelay: '<S239>/Unit Delay'
+  /* SwitchCase: '<S79>/Switch Case' incorporates:
+   *  UnitDelay: '<S240>/Unit Delay'
    */
   UnitDelay_a = mcb_pmsm_foc_sensorless_f_DWork.UnitDelay_DSTATE_d5[0];
 
-  /* End of Outputs for SubSystem: '<S78>/Flux Observer' */
+  /* End of Outputs for SubSystem: '<S79>/Flux Observer' */
 
-  /* UnitDelay: '<S239>/Unit Delay' */
+  /* UnitDelay: '<S240>/Unit Delay' */
   mcb_pmsm_foc_sensorless_f2806_B.UnitDelay_a[0] = UnitDelay_a;
 
-  /* Outputs for IfAction SubSystem: '<S78>/Flux Observer' incorporates:
-   *  ActionPort: '<S80>/Action Port'
+  /* Outputs for IfAction SubSystem: '<S79>/Flux Observer' incorporates:
+   *  ActionPort: '<S81>/Action Port'
    */
-  /* SwitchCase: '<S78>/Switch Case' incorporates:
-   *  Product: '<S239>/Product1'
+  /* SwitchCase: '<S79>/Switch Case' incorporates:
+   *  Product: '<S240>/Product1'
    */
   UnitDelay_a *= 0.9995F;
 
-  /* End of Outputs for SubSystem: '<S78>/Flux Observer' */
+  /* End of Outputs for SubSystem: '<S79>/Flux Observer' */
 
-  /* Product: '<S239>/Product1' */
+  /* Product: '<S240>/Product1' */
   mcb_pmsm_foc_sensorless_f2806_B.Product1_j[0] = UnitDelay_a;
 
-  /* Outputs for IfAction SubSystem: '<S78>/Flux Observer' incorporates:
-   *  ActionPort: '<S80>/Action Port'
+  /* Outputs for IfAction SubSystem: '<S79>/Flux Observer' incorporates:
+   *  ActionPort: '<S81>/Action Port'
    */
-  /* SwitchCase: '<S78>/Switch Case' incorporates:
-   *  Sum: '<S239>/Add1'
+  /* SwitchCase: '<S79>/Switch Case' incorporates:
+   *  Sum: '<S240>/Add1'
    */
   Product_am += UnitDelay_a;
 
-  /* End of Outputs for SubSystem: '<S78>/Flux Observer' */
+  /* End of Outputs for SubSystem: '<S79>/Flux Observer' */
 
-  /* Sum: '<S239>/Add1' */
+  /* Sum: '<S240>/Add1' */
   mcb_pmsm_foc_sensorless_f2806_B.Add1_jy[0] = Product_am;
 
-  /* Outputs for IfAction SubSystem: '<S78>/Flux Observer' incorporates:
-   *  ActionPort: '<S80>/Action Port'
+  /* Outputs for IfAction SubSystem: '<S79>/Flux Observer' incorporates:
+   *  ActionPort: '<S81>/Action Port'
    */
-  /* SwitchCase: '<S78>/Switch Case' incorporates:
-   *  Product: '<S239>/Product'
-   *  Sum: '<S238>/Sum'
+  /* SwitchCase: '<S79>/Switch Case' incorporates:
+   *  Product: '<S240>/Product'
+   *  Sum: '<S239>/Sum'
    */
   mcb_pmsm_foc_sensorless_f2806_B.Sum_bf[0] = V_q_ref_unsat - Product_am;
   V_q_ref_unsat = mcb_pmsm_foc_sensorless_f2806_B.Delay5[1];
   Product_am = V_q_ref_unsat * 0.0005F;
 
-  /* End of Outputs for SubSystem: '<S78>/Flux Observer' */
+  /* End of Outputs for SubSystem: '<S79>/Flux Observer' */
 
-  /* Product: '<S239>/Product' */
+  /* Product: '<S240>/Product' */
   mcb_pmsm_foc_sensorless_f2806_B.Product_am[1] = Product_am;
 
-  /* Outputs for IfAction SubSystem: '<S78>/Flux Observer' incorporates:
-   *  ActionPort: '<S80>/Action Port'
+  /* Outputs for IfAction SubSystem: '<S79>/Flux Observer' incorporates:
+   *  ActionPort: '<S81>/Action Port'
    */
-  /* SwitchCase: '<S78>/Switch Case' incorporates:
-   *  UnitDelay: '<S239>/Unit Delay'
+  /* SwitchCase: '<S79>/Switch Case' incorporates:
+   *  UnitDelay: '<S240>/Unit Delay'
    */
   UnitDelay_a = mcb_pmsm_foc_sensorless_f_DWork.UnitDelay_DSTATE_d5[1];
 
-  /* End of Outputs for SubSystem: '<S78>/Flux Observer' */
+  /* End of Outputs for SubSystem: '<S79>/Flux Observer' */
 
-  /* UnitDelay: '<S239>/Unit Delay' */
+  /* UnitDelay: '<S240>/Unit Delay' */
   mcb_pmsm_foc_sensorless_f2806_B.UnitDelay_a[1] = UnitDelay_a;
 
-  /* Outputs for IfAction SubSystem: '<S78>/Flux Observer' incorporates:
-   *  ActionPort: '<S80>/Action Port'
+  /* Outputs for IfAction SubSystem: '<S79>/Flux Observer' incorporates:
+   *  ActionPort: '<S81>/Action Port'
    */
-  /* SwitchCase: '<S78>/Switch Case' incorporates:
-   *  Product: '<S239>/Product1'
+  /* SwitchCase: '<S79>/Switch Case' incorporates:
+   *  Product: '<S240>/Product1'
    */
   UnitDelay_a *= 0.9995F;
 
-  /* End of Outputs for SubSystem: '<S78>/Flux Observer' */
+  /* End of Outputs for SubSystem: '<S79>/Flux Observer' */
 
-  /* Product: '<S239>/Product1' */
+  /* Product: '<S240>/Product1' */
   mcb_pmsm_foc_sensorless_f2806_B.Product1_j[1] = UnitDelay_a;
 
-  /* Outputs for IfAction SubSystem: '<S78>/Flux Observer' incorporates:
-   *  ActionPort: '<S80>/Action Port'
+  /* Outputs for IfAction SubSystem: '<S79>/Flux Observer' incorporates:
+   *  ActionPort: '<S81>/Action Port'
    */
-  /* SwitchCase: '<S78>/Switch Case' incorporates:
-   *  Sum: '<S239>/Add1'
+  /* SwitchCase: '<S79>/Switch Case' incorporates:
+   *  Sum: '<S240>/Add1'
    */
   Product_am += UnitDelay_a;
 
-  /* End of Outputs for SubSystem: '<S78>/Flux Observer' */
+  /* End of Outputs for SubSystem: '<S79>/Flux Observer' */
 
-  /* Sum: '<S239>/Add1' */
+  /* Sum: '<S240>/Add1' */
   mcb_pmsm_foc_sensorless_f2806_B.Add1_jy[1] = Product_am;
 
-  /* Outputs for IfAction SubSystem: '<S78>/Flux Observer' incorporates:
-   *  ActionPort: '<S80>/Action Port'
+  /* Outputs for IfAction SubSystem: '<S79>/Flux Observer' incorporates:
+   *  ActionPort: '<S81>/Action Port'
    */
-  /* SwitchCase: '<S78>/Switch Case' incorporates:
-   *  Product: '<S239>/Product'
-   *  Sum: '<S238>/Sum'
+  /* SwitchCase: '<S79>/Switch Case' incorporates:
+   *  Product: '<S240>/Product'
+   *  Sum: '<S239>/Sum'
    */
   mcb_pmsm_foc_sensorless_f2806_B.Sum_bf[1] = V_q_ref_unsat - Product_am;
   V_q_ref_unsat = mcb_pmsm_foc_sensorless_f2806_B.Delay5[2];
   Product_am = V_q_ref_unsat * 0.0005F;
 
-  /* End of Outputs for SubSystem: '<S78>/Flux Observer' */
+  /* End of Outputs for SubSystem: '<S79>/Flux Observer' */
 
-  /* Product: '<S239>/Product' */
+  /* Product: '<S240>/Product' */
   mcb_pmsm_foc_sensorless_f2806_B.Product_am[2] = Product_am;
 
-  /* Outputs for IfAction SubSystem: '<S78>/Flux Observer' incorporates:
-   *  ActionPort: '<S80>/Action Port'
+  /* Outputs for IfAction SubSystem: '<S79>/Flux Observer' incorporates:
+   *  ActionPort: '<S81>/Action Port'
    */
-  /* SwitchCase: '<S78>/Switch Case' incorporates:
-   *  UnitDelay: '<S239>/Unit Delay'
+  /* SwitchCase: '<S79>/Switch Case' incorporates:
+   *  UnitDelay: '<S240>/Unit Delay'
    */
   UnitDelay_a = mcb_pmsm_foc_sensorless_f_DWork.UnitDelay_DSTATE_d5[2];
 
-  /* End of Outputs for SubSystem: '<S78>/Flux Observer' */
+  /* End of Outputs for SubSystem: '<S79>/Flux Observer' */
 
-  /* UnitDelay: '<S239>/Unit Delay' */
+  /* UnitDelay: '<S240>/Unit Delay' */
   mcb_pmsm_foc_sensorless_f2806_B.UnitDelay_a[2] = UnitDelay_a;
 
-  /* Outputs for IfAction SubSystem: '<S78>/Flux Observer' incorporates:
-   *  ActionPort: '<S80>/Action Port'
+  /* Outputs for IfAction SubSystem: '<S79>/Flux Observer' incorporates:
+   *  ActionPort: '<S81>/Action Port'
    */
-  /* SwitchCase: '<S78>/Switch Case' incorporates:
-   *  Product: '<S239>/Product1'
+  /* SwitchCase: '<S79>/Switch Case' incorporates:
+   *  Product: '<S240>/Product1'
    */
   UnitDelay_a *= 0.9995F;
 
-  /* End of Outputs for SubSystem: '<S78>/Flux Observer' */
+  /* End of Outputs for SubSystem: '<S79>/Flux Observer' */
 
-  /* Product: '<S239>/Product1' */
+  /* Product: '<S240>/Product1' */
   mcb_pmsm_foc_sensorless_f2806_B.Product1_j[2] = UnitDelay_a;
 
-  /* Outputs for IfAction SubSystem: '<S78>/Flux Observer' incorporates:
-   *  ActionPort: '<S80>/Action Port'
+  /* Outputs for IfAction SubSystem: '<S79>/Flux Observer' incorporates:
+   *  ActionPort: '<S81>/Action Port'
    */
-  /* SwitchCase: '<S78>/Switch Case' incorporates:
-   *  Sum: '<S239>/Add1'
+  /* SwitchCase: '<S79>/Switch Case' incorporates:
+   *  Sum: '<S240>/Add1'
    */
   Product_am += UnitDelay_a;
 
-  /* End of Outputs for SubSystem: '<S78>/Flux Observer' */
+  /* End of Outputs for SubSystem: '<S79>/Flux Observer' */
 
-  /* Sum: '<S239>/Add1' */
+  /* Sum: '<S240>/Add1' */
   mcb_pmsm_foc_sensorless_f2806_B.Add1_jy[2] = Product_am;
 
-  /* Outputs for IfAction SubSystem: '<S78>/Flux Observer' incorporates:
-   *  ActionPort: '<S80>/Action Port'
+  /* Outputs for IfAction SubSystem: '<S79>/Flux Observer' incorporates:
+   *  ActionPort: '<S81>/Action Port'
    */
-  /* SwitchCase: '<S78>/Switch Case' incorporates:
-   *  Product: '<S239>/Product'
-   *  Sum: '<S238>/Sum'
+  /* SwitchCase: '<S79>/Switch Case' incorporates:
+   *  Product: '<S240>/Product'
+   *  Sum: '<S239>/Sum'
    */
   mcb_pmsm_foc_sensorless_f2806_B.Sum_bf[2] = V_q_ref_unsat - Product_am;
   V_q_ref_unsat = mcb_pmsm_foc_sensorless_f2806_B.Delay5[3];
   Product_am = V_q_ref_unsat * 0.0005F;
 
-  /* End of Outputs for SubSystem: '<S78>/Flux Observer' */
+  /* End of Outputs for SubSystem: '<S79>/Flux Observer' */
 
-  /* Product: '<S239>/Product' */
+  /* Product: '<S240>/Product' */
   mcb_pmsm_foc_sensorless_f2806_B.Product_am[3] = Product_am;
 
-  /* Outputs for IfAction SubSystem: '<S78>/Flux Observer' incorporates:
-   *  ActionPort: '<S80>/Action Port'
+  /* Outputs for IfAction SubSystem: '<S79>/Flux Observer' incorporates:
+   *  ActionPort: '<S81>/Action Port'
    */
-  /* SwitchCase: '<S78>/Switch Case' incorporates:
-   *  UnitDelay: '<S239>/Unit Delay'
+  /* SwitchCase: '<S79>/Switch Case' incorporates:
+   *  UnitDelay: '<S240>/Unit Delay'
    */
   UnitDelay_a = mcb_pmsm_foc_sensorless_f_DWork.UnitDelay_DSTATE_d5[3];
 
-  /* End of Outputs for SubSystem: '<S78>/Flux Observer' */
+  /* End of Outputs for SubSystem: '<S79>/Flux Observer' */
 
-  /* UnitDelay: '<S239>/Unit Delay' */
+  /* UnitDelay: '<S240>/Unit Delay' */
   mcb_pmsm_foc_sensorless_f2806_B.UnitDelay_a[3] = UnitDelay_a;
 
-  /* Outputs for IfAction SubSystem: '<S78>/Flux Observer' incorporates:
-   *  ActionPort: '<S80>/Action Port'
+  /* Outputs for IfAction SubSystem: '<S79>/Flux Observer' incorporates:
+   *  ActionPort: '<S81>/Action Port'
    */
-  /* SwitchCase: '<S78>/Switch Case' incorporates:
-   *  Product: '<S239>/Product1'
+  /* SwitchCase: '<S79>/Switch Case' incorporates:
+   *  Product: '<S240>/Product1'
    */
   UnitDelay_a *= 0.9995F;
 
-  /* End of Outputs for SubSystem: '<S78>/Flux Observer' */
+  /* End of Outputs for SubSystem: '<S79>/Flux Observer' */
 
-  /* Product: '<S239>/Product1' */
+  /* Product: '<S240>/Product1' */
   mcb_pmsm_foc_sensorless_f2806_B.Product1_j[3] = UnitDelay_a;
 
-  /* Outputs for IfAction SubSystem: '<S78>/Flux Observer' incorporates:
-   *  ActionPort: '<S80>/Action Port'
+  /* Outputs for IfAction SubSystem: '<S79>/Flux Observer' incorporates:
+   *  ActionPort: '<S81>/Action Port'
    */
-  /* SwitchCase: '<S78>/Switch Case' incorporates:
-   *  Sum: '<S239>/Add1'
+  /* SwitchCase: '<S79>/Switch Case' incorporates:
+   *  Sum: '<S240>/Add1'
    */
   Product_am += UnitDelay_a;
 
-  /* End of Outputs for SubSystem: '<S78>/Flux Observer' */
+  /* End of Outputs for SubSystem: '<S79>/Flux Observer' */
 
-  /* Sum: '<S239>/Add1' */
+  /* Sum: '<S240>/Add1' */
   mcb_pmsm_foc_sensorless_f2806_B.Add1_jy[3] = Product_am;
 
-  /* Outputs for IfAction SubSystem: '<S78>/Flux Observer' incorporates:
-   *  ActionPort: '<S80>/Action Port'
+  /* Outputs for IfAction SubSystem: '<S79>/Flux Observer' incorporates:
+   *  ActionPort: '<S81>/Action Port'
    */
-  /* SwitchCase: '<S78>/Switch Case' incorporates:
-   *  AlgorithmDescriptorDelegate generated from: '<S248>/a16'
-   *  Constant: '<S234>/FilterConstant'
-   *  Constant: '<S234>/OneMinusFilterConstant'
-   *  Constant: '<S243>/p1'
-   *  Constant: '<S243>/p2'
-   *  Constant: '<S243>/p3'
-   *  Constant: '<S243>/p4'
-   *  Constant: '<S243>/p5'
-   *  Constant: '<S252>/One'
-   *  Constant: '<S260>/One'
-   *  DataStoreRead: '<S80>/Data Store Read1'
-   *  DataTypeConversion: '<S270>/DTC'
-   *  Delay: '<S235>/Delay'
-   *  Delay: '<S253>/Delay'
-   *  Delay: '<S253>/Delay1'
-   *  Delay: '<S261>/Delay'
-   *  Delay: '<S261>/Delay1'
-   *  Gain: '<S235>/PositionToCount'
-   *  Gain: '<S235>/SpeedGain'
-   *  Gain: '<S249>/Gain'
-   *  Gain: '<S80>/elect2mech'
-   *  Logic: '<S80>/Logical Operator'
-   *  Merge: '<S78>/Merge'
-   *  Product: '<S253>/Product'
-   *  Product: '<S253>/Product1'
+  /* SwitchCase: '<S79>/Switch Case' incorporates:
+   *  AlgorithmDescriptorDelegate generated from: '<S249>/a16'
+   *  Constant: '<S235>/FilterConstant'
+   *  Constant: '<S235>/OneMinusFilterConstant'
+   *  Constant: '<S244>/p1'
+   *  Constant: '<S244>/p2'
+   *  Constant: '<S244>/p3'
+   *  Constant: '<S244>/p4'
+   *  Constant: '<S244>/p5'
+   *  Constant: '<S253>/One'
+   *  Constant: '<S261>/One'
+   *  DataStoreRead: '<S81>/Data Store Read1'
+   *  DataTypeConversion: '<S271>/DTC'
+   *  Delay: '<S236>/Delay'
+   *  Delay: '<S254>/Delay'
+   *  Delay: '<S254>/Delay1'
+   *  Delay: '<S262>/Delay'
+   *  Delay: '<S262>/Delay1'
+   *  Gain: '<S236>/PositionToCount'
+   *  Gain: '<S236>/SpeedGain'
+   *  Gain: '<S250>/Gain'
+   *  Gain: '<S81>/elect2mech'
+   *  Logic: '<S81>/Logical Operator'
+   *  Merge: '<S79>/Merge'
    *  Product: '<S254>/Product'
-   *  Product: '<S254>/Product2'
-   *  Product: '<S257>/Product'
-   *  Product: '<S257>/Product1'
-   *  Product: '<S261>/Product'
-   *  Product: '<S261>/Product1'
+   *  Product: '<S254>/Product1'
+   *  Product: '<S255>/Product'
+   *  Product: '<S255>/Product2'
+   *  Product: '<S258>/Product'
+   *  Product: '<S258>/Product1'
    *  Product: '<S262>/Product'
-   *  Product: '<S262>/Product2'
-   *  Product: '<S265>/Product'
-   *  Product: '<S265>/Product1'
-   *  Product: '<S268>/Product'
-   *  Product: '<S268>/Product1'
-   *  SignalConversion generated from: '<S80>/Position//Speed'
-   *  Sum: '<S235>/SpeedCount'
-   *  Sum: '<S238>/Sum'
-   *  Sum: '<S251>/Sum1'
-   *  Sum: '<S251>/Sum3'
-   *  Sum: '<S252>/Sum'
+   *  Product: '<S262>/Product1'
+   *  Product: '<S263>/Product'
+   *  Product: '<S263>/Product2'
+   *  Product: '<S266>/Product'
+   *  Product: '<S266>/Product1'
+   *  Product: '<S269>/Product'
+   *  Product: '<S269>/Product1'
+   *  SignalConversion generated from: '<S81>/Position//Speed'
+   *  Sum: '<S236>/SpeedCount'
+   *  Sum: '<S239>/Sum'
+   *  Sum: '<S252>/Sum1'
+   *  Sum: '<S252>/Sum3'
    *  Sum: '<S253>/Sum'
-   *  Sum: '<S253>/Sum1'
-   *  Sum: '<S257>/Add1'
-   *  Sum: '<S259>/Sum1'
-   *  Sum: '<S259>/Sum3'
-   *  Sum: '<S260>/Sum'
+   *  Sum: '<S254>/Sum'
+   *  Sum: '<S254>/Sum1'
+   *  Sum: '<S258>/Add1'
+   *  Sum: '<S260>/Sum1'
+   *  Sum: '<S260>/Sum3'
    *  Sum: '<S261>/Sum'
-   *  Sum: '<S261>/Sum1'
-   *  Sum: '<S265>/Add1'
-   *  Sum: '<S268>/Add1'
-   *  Switch: '<S234>/Switch1'
-   *  Switch: '<S248>/Switch'
+   *  Sum: '<S262>/Sum'
+   *  Sum: '<S262>/Sum1'
+   *  Sum: '<S266>/Add1'
+   *  Sum: '<S269>/Add1'
+   *  Switch: '<S235>/Switch1'
    *  Switch: '<S249>/Switch'
    *  Switch: '<S250>/Switch'
-   *  Switch: '<S252>/Switch1'
-   *  Switch: '<S258>/Switch'
-   *  Switch: '<S260>/Switch1'
-   *  Trigonometry: '<S248>/Atan2'
-   *  UnitDelay: '<S239>/Unit Delay'
-   *  UnitDelay: '<S257>/Unit Delay'
-   *  UnitDelay: '<S265>/Unit Delay'
-   *  UnitDelay: '<S268>/Unit Delay'
+   *  Switch: '<S251>/Switch'
+   *  Switch: '<S253>/Switch1'
+   *  Switch: '<S259>/Switch'
+   *  Switch: '<S261>/Switch1'
+   *  Trigonometry: '<S249>/Atan2'
+   *  UnitDelay: '<S240>/Unit Delay'
+   *  UnitDelay: '<S258>/Unit Delay'
+   *  UnitDelay: '<S266>/Unit Delay'
+   *  UnitDelay: '<S269>/Unit Delay'
    * */
   mcb_pmsm_foc_sensorless_f2806_B.Sum_bf[3] = V_q_ref_unsat - Product_am;
   mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead1_c =
@@ -1391,17 +1391,17 @@ void mcb_pmsm_foc_CurrentControl(void)
     mcb_pmsm_foc_sensorless_f2806_B.Product_fdo +
     mcb_pmsm_foc_sensorless_f2806_B.Product1_k;
   if (mcb_pmsm_foc_sensorless_f2806_B.LogicalOperator_ed) {
-    /* Switch: '<S258>/Switch' incorporates:
-     *  Constant: '<S258>/Constant'
+    /* Switch: '<S259>/Switch' incorporates:
+     *  Constant: '<S259>/Constant'
      */
     mcb_pmsm_foc_sensorless_f2806_B.Switch_g = 0.0F;
   } else {
-    /* Sum: '<S264>/Sum' */
+    /* Sum: '<S265>/Sum' */
     mcb_pmsm_foc_sensorless_f2806_B.Sum_dj =
       mcb_pmsm_foc_sensorless_f2806_B.Sum1_p -
       mcb_pmsm_foc_sensorless_f2806_B.Add1_jx;
 
-    /* Switch: '<S258>/Switch' */
+    /* Switch: '<S259>/Switch' */
     mcb_pmsm_foc_sensorless_f2806_B.Switch_g =
       mcb_pmsm_foc_sensorless_f2806_B.Sum_dj;
   }
@@ -1463,50 +1463,50 @@ void mcb_pmsm_foc_CurrentControl(void)
     mcb_pmsm_foc_sensorless_f2806_B.Product_lm +
     mcb_pmsm_foc_sensorless_f2806_B.Product1_ba;
   if (mcb_pmsm_foc_sensorless_f2806_B.LogicalOperator_ed) {
-    /* Switch: '<S250>/Switch' incorporates:
-     *  Constant: '<S250>/Constant'
+    /* Switch: '<S251>/Switch' incorporates:
+     *  Constant: '<S251>/Constant'
      */
     mcb_pmsm_foc_sensorless_f2806_B.Switch_h = 1.0E-6F;
   } else {
-    /* Sum: '<S256>/Sum' */
+    /* Sum: '<S257>/Sum' */
     mcb_pmsm_foc_sensorless_f2806_B.Sum_ac =
       mcb_pmsm_foc_sensorless_f2806_B.Sum1_as -
       mcb_pmsm_foc_sensorless_f2806_B.Add1_i;
 
-    /* Switch: '<S250>/Switch' */
+    /* Switch: '<S251>/Switch' */
     mcb_pmsm_foc_sensorless_f2806_B.Switch_h =
       mcb_pmsm_foc_sensorless_f2806_B.Sum_ac;
   }
 
-  /* Outputs for Atomic SubSystem: '<S247>/atan2' */
+  /* Outputs for Atomic SubSystem: '<S248>/atan2' */
   mcb_pmsm_foc_sensorless_f2806_B.Atan2 = atan2f
     (mcb_pmsm_foc_sensorless_f2806_B.Switch_g,
      mcb_pmsm_foc_sensorless_f2806_B.Switch_h);
 
-  /* Outputs for Atomic SubSystem: '<S248>/Per Unit' */
+  /* Outputs for Atomic SubSystem: '<S249>/Per Unit' */
   mcb_pmsm_foc_sensorless_f2806_B.Gain_f = 0.159154937F *
     mcb_pmsm_foc_sensorless_f2806_B.Atan2;
   if (mcb_pmsm_foc_sensorless_f2806_B.Gain_f >= 0.0F) {
-    /* Switch: '<S249>/Switch' */
+    /* Switch: '<S250>/Switch' */
     mcb_pmsm_foc_sensorless_f2806_B.Switch_c =
       mcb_pmsm_foc_sensorless_f2806_B.Gain_f;
   } else {
-    /* Bias: '<S249>/Bias' */
+    /* Bias: '<S250>/Bias' */
     mcb_pmsm_foc_sensorless_f2806_B.Bias =
       mcb_pmsm_foc_sensorless_f2806_B.Gain_f + 1.0F;
 
-    /* Switch: '<S249>/Switch' */
+    /* Switch: '<S250>/Switch' */
     mcb_pmsm_foc_sensorless_f2806_B.Switch_c =
       mcb_pmsm_foc_sensorless_f2806_B.Bias;
   }
 
-  /* End of Outputs for SubSystem: '<S248>/Per Unit' */
+  /* End of Outputs for SubSystem: '<S249>/Per Unit' */
   mcb_pmsm_foc_sensorless_f2806_B.Switch_ds =
     mcb_pmsm_foc_sensorless_f2806_B.Switch_c;
   mcb_pmsm_foc_sensorless_f2806_B.algDD =
     mcb_pmsm_foc_sensorless_f2806_B.Switch_ds;
 
-  /* End of Outputs for SubSystem: '<S247>/atan2' */
+  /* End of Outputs for SubSystem: '<S248>/atan2' */
   mcb_pmsm_foc_sensorless_f2806_B.PositionToCount = (uint32_T)(4.2949673E+9F *
     mcb_pmsm_foc_sensorless_f2806_B.algDD);
   mcb_pmsm_foc_sensorless_f2806_B.Delay =
@@ -1566,7 +1566,7 @@ void mcb_pmsm_foc_CurrentControl(void)
   mcb_pmsm_foc_sensorless_f_DWork.UnitDelay_DSTATE_a1 =
     mcb_pmsm_foc_sensorless_f2806_B.Add1_p;
 
-  /* End of Outputs for SubSystem: '<S78>/Flux Observer' */
+  /* End of Outputs for SubSystem: '<S79>/Flux Observer' */
 
   /* DataStoreRead: '<S19>/Data Store Read1' */
   mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead1_n =
@@ -1580,20 +1580,20 @@ void mcb_pmsm_foc_CurrentControl(void)
   mcb_pmsm_foc_sensorless_f2806_B.Gain = 0.01678F *
     mcb_pmsm_foc_sensorless_f2806_B.Spd_Pos;
 
-  /* Delay: '<S50>/Delay' */
+  /* Delay: '<S51>/Delay' */
   mcb_pmsm_foc_sensorless_f2806_B.Delay_kh =
     mcb_pmsm_foc_sensorless_f_DWork.Delay_DSTATE_d;
 
-  /* Outputs for Enabled SubSystem: '<S50>/Subsystem' incorporates:
-   *  EnablePort: '<S51>/Enable'
+  /* Outputs for Enabled SubSystem: '<S51>/Subsystem' incorporates:
+   *  EnablePort: '<S52>/Enable'
    */
   if (mcb_pmsm_foc_sensorless_f2806_B.Delay_kh) {
-    /* SignalConversion generated from: '<S51>/Input' */
+    /* SignalConversion generated from: '<S52>/Input' */
     mcb_pmsm_foc_sensorless_f2806_B.Input_h =
       mcb_pmsm_foc_sensorless_f2806_B.Gain;
   }
 
-  /* End of Outputs for SubSystem: '<S50>/Subsystem' */
+  /* End of Outputs for SubSystem: '<S51>/Subsystem' */
 
   /* DataStoreRead: '<S19>/Data Store Read2' */
   mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead2_m =
@@ -1615,20 +1615,20 @@ void mcb_pmsm_foc_CurrentControl(void)
   mcb_pmsm_foc_sensorless_f2806_B.Delay_g =
     mcb_pmsm_foc_sensorless_f_DWork.Delay_DSTATE;
 
-  /* Sum: '<S50>/Add' */
+  /* Sum: '<S51>/Add' */
   mcb_pmsm_foc_sensorless_f2806_B.Add_g =
     mcb_pmsm_foc_sensorless_f2806_B.Input_h +
     mcb_pmsm_foc_sensorless_f2806_B.Delay_g;
 
-  /* DataTypeConversion: '<S50>/Data Type Conversion' */
+  /* DataTypeConversion: '<S51>/Data Type Conversion' */
   mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion_ey = (int16_T)(real32_T)
     floor(mcb_pmsm_foc_sensorless_f2806_B.Add_g);
 
-  /* DataTypeConversion: '<S50>/Data Type Conversion1' */
+  /* DataTypeConversion: '<S51>/Data Type Conversion1' */
   mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion1_d =
     mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion_ey;
 
-  /* Sum: '<S50>/Add1' */
+  /* Sum: '<S51>/Add1' */
   mcb_pmsm_foc_sensorless_f2806_B.Add1_f = mcb_pmsm_foc_sensorless_f2806_B.Add_g
     - mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion1_d;
 
@@ -1645,128 +1645,128 @@ void mcb_pmsm_foc_CurrentControl(void)
 
   /* End of Switch: '<S19>/Switch' */
 
-  /* RelationalOperator: '<S58>/Compare' incorporates:
-   *  Constant: '<S58>/Constant'
+  /* RelationalOperator: '<S59>/Compare' incorporates:
+   *  Constant: '<S59>/Constant'
    */
   mcb_pmsm_foc_sensorless_f2806_B.Compare_d =
     (mcb_pmsm_foc_sensorless_f2806_B.Switch < 0.0F);
 
-  /* DataTypeConversion: '<S56>/Data Type Conversion' */
+  /* DataTypeConversion: '<S57>/Data Type Conversion' */
   mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion_e =
     mcb_pmsm_foc_sensorless_f2806_B.Compare_d;
 
-  /* If: '<S56>/If' */
+  /* If: '<S57>/If' */
   if (mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion_e > 0U) {
-    /* Outputs for IfAction SubSystem: '<S56>/If Action Subsystem' incorporates:
-     *  ActionPort: '<S59>/Action Port'
+    /* Outputs for IfAction SubSystem: '<S57>/If Action Subsystem' incorporates:
+     *  ActionPort: '<S60>/Action Port'
      */
     mcb_pmsm__IfActionSubsystem(mcb_pmsm_foc_sensorless_f2806_B.Switch,
       &mcb_pmsm_foc_sensorless_f2806_B.Merge_c,
       &mcb_pmsm_foc_sensorless_f2806_B.IfActionSubsystem);
 
-    /* End of Outputs for SubSystem: '<S56>/If Action Subsystem' */
+    /* End of Outputs for SubSystem: '<S57>/If Action Subsystem' */
   } else {
-    /* Outputs for IfAction SubSystem: '<S56>/If Action Subsystem1' incorporates:
-     *  ActionPort: '<S60>/Action Port'
+    /* Outputs for IfAction SubSystem: '<S57>/If Action Subsystem1' incorporates:
+     *  ActionPort: '<S61>/Action Port'
      */
     mcb_pmsm_IfActionSubsystem1(mcb_pmsm_foc_sensorless_f2806_B.Switch,
       &mcb_pmsm_foc_sensorless_f2806_B.Merge_c,
       &mcb_pmsm_foc_sensorless_f2806_B.IfActionSubsystem1);
 
-    /* End of Outputs for SubSystem: '<S56>/If Action Subsystem1' */
+    /* End of Outputs for SubSystem: '<S57>/If Action Subsystem1' */
   }
 
-  /* End of If: '<S56>/If' */
+  /* End of If: '<S57>/If' */
 
-  /* Gain: '<S54>/indexing' */
+  /* Gain: '<S55>/indexing' */
   mcb_pmsm_foc_sensorless_f2806_B.indexing_d = 800.0F *
     mcb_pmsm_foc_sensorless_f2806_B.Merge_c;
 
-  /* DataTypeConversion: '<S54>/Get_Integer' */
+  /* DataTypeConversion: '<S55>/Get_Integer' */
   mcb_pmsm_foc_sensorless_f2806_B.Get_Integer_i = (uint16_T)
     mcb_pmsm_foc_sensorless_f2806_B.indexing_d;
 
-  /* Sum: '<S54>/Sum' incorporates:
-   *  Constant: '<S54>/offset'
+  /* Sum: '<S55>/Sum' incorporates:
+   *  Constant: '<S55>/offset'
    */
   Sum_k = mcb_pmsm_foc_sensorless_f2806_B.Get_Integer_i + 1UL;
   mcb_pmsm_foc_sensorless_f2806_B.Sum_k[0] = Sum_k;
 
-  /* Selector: '<S54>/Lookup' incorporates:
-   *  Constant: '<S54>/sine_table_values'
+  /* Selector: '<S55>/Lookup' incorporates:
+   *  Constant: '<S55>/sine_table_values'
    */
   mcb_pmsm_foc_sensorless_f2806_B.Lookup_f[0] =
     mcb_pmsm_foc_sensorless__ConstP.pooled31[(int16_T)Sum_k];
 
-  /* Sum: '<S54>/Sum' */
+  /* Sum: '<S55>/Sum' */
   Sum_k = mcb_pmsm_foc_sensorless_f2806_B.Get_Integer_i;
   mcb_pmsm_foc_sensorless_f2806_B.Sum_k[1] = Sum_k;
 
-  /* Selector: '<S54>/Lookup' incorporates:
-   *  Constant: '<S54>/sine_table_values'
+  /* Selector: '<S55>/Lookup' incorporates:
+   *  Constant: '<S55>/sine_table_values'
    */
   mcb_pmsm_foc_sensorless_f2806_B.Lookup_f[1] =
     mcb_pmsm_foc_sensorless__ConstP.pooled31[(int16_T)Sum_k];
 
-  /* Sum: '<S54>/Sum' incorporates:
-   *  Constant: '<S54>/offset'
+  /* Sum: '<S55>/Sum' incorporates:
+   *  Constant: '<S55>/offset'
    */
   Sum_k = mcb_pmsm_foc_sensorless_f2806_B.Get_Integer_i + 201UL;
   mcb_pmsm_foc_sensorless_f2806_B.Sum_k[2] = Sum_k;
 
-  /* Selector: '<S54>/Lookup' incorporates:
-   *  Constant: '<S54>/sine_table_values'
+  /* Selector: '<S55>/Lookup' incorporates:
+   *  Constant: '<S55>/sine_table_values'
    */
   mcb_pmsm_foc_sensorless_f2806_B.Lookup_f[2] =
     mcb_pmsm_foc_sensorless__ConstP.pooled31[(int16_T)Sum_k];
 
-  /* Sum: '<S54>/Sum' incorporates:
-   *  Constant: '<S54>/offset'
+  /* Sum: '<S55>/Sum' incorporates:
+   *  Constant: '<S55>/offset'
    */
   Sum_k = mcb_pmsm_foc_sensorless_f2806_B.Get_Integer_i + 200UL;
   mcb_pmsm_foc_sensorless_f2806_B.Sum_k[3] = Sum_k;
 
-  /* Selector: '<S54>/Lookup' incorporates:
-   *  Constant: '<S54>/sine_table_values'
+  /* Selector: '<S55>/Lookup' incorporates:
+   *  Constant: '<S55>/sine_table_values'
    */
   mcb_pmsm_foc_sensorless_f2806_B.Lookup_f[3] =
     mcb_pmsm_foc_sensorless__ConstP.pooled31[(int16_T)Sum_k];
 
-  /* Sum: '<S55>/Sum3' */
+  /* Sum: '<S56>/Sum3' */
   mcb_pmsm_foc_sensorless_f2806_B.Sum3_b =
     mcb_pmsm_foc_sensorless_f2806_B.Lookup_f[0] -
     mcb_pmsm_foc_sensorless_f2806_B.Lookup_f[1];
 
-  /* DataTypeConversion: '<S54>/Data Type Conversion1' */
+  /* DataTypeConversion: '<S55>/Data Type Conversion1' */
   mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion1_c =
     mcb_pmsm_foc_sensorless_f2806_B.Get_Integer_i;
 
-  /* Sum: '<S54>/Sum2' */
+  /* Sum: '<S55>/Sum2' */
   mcb_pmsm_foc_sensorless_f2806_B.Sum2_e =
     mcb_pmsm_foc_sensorless_f2806_B.indexing_d -
     mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion1_c;
 
-  /* Product: '<S55>/Product' */
+  /* Product: '<S56>/Product' */
   mcb_pmsm_foc_sensorless_f2806_B.Product_g =
     mcb_pmsm_foc_sensorless_f2806_B.Sum3_b *
     mcb_pmsm_foc_sensorless_f2806_B.Sum2_e;
 
-  /* Sum: '<S55>/Sum4' */
+  /* Sum: '<S56>/Sum4' */
   mcb_pmsm_foc_sensorless_f2806_B.Sum4_h =
     mcb_pmsm_foc_sensorless_f2806_B.Product_g +
     mcb_pmsm_foc_sensorless_f2806_B.Lookup_f[1];
 
-  /* Sum: '<S55>/Sum5' */
+  /* Sum: '<S56>/Sum5' */
   mcb_pmsm_foc_sensorless_f2806_B.Sum5_l =
     mcb_pmsm_foc_sensorless_f2806_B.Lookup_f[2] -
     mcb_pmsm_foc_sensorless_f2806_B.Lookup_f[3];
 
-  /* Product: '<S55>/Product1' */
+  /* Product: '<S56>/Product1' */
   mcb_pmsm_foc_sensorless_f2806_B.Product1_e =
     mcb_pmsm_foc_sensorless_f2806_B.Sum5_l *
     mcb_pmsm_foc_sensorless_f2806_B.Sum2_e;
 
-  /* Sum: '<S55>/Sum6' */
+  /* Sum: '<S56>/Sum6' */
   mcb_pmsm_foc_sensorless_f2806_B.Sum6_c =
     mcb_pmsm_foc_sensorless_f2806_B.Product1_e +
     mcb_pmsm_foc_sensorless_f2806_B.Lookup_f[3];
@@ -1781,55 +1781,55 @@ void mcb_pmsm_foc_CurrentControl(void)
 
   /* End of Outputs for SubSystem: '<S20>/Two inputs CRL' */
 
-  /* Sum: '<S27>/Sum' */
+  /* Sum: '<S28>/Sum' */
   mcb_pmsm_foc_sensorless_f2806_B.Sum_m = mcb_pmsm_foc_sensorless_f2806_B.RT2[1]
     - mcb_pmsm_foc_sensorless_f2806_B.TwoinputsCRL_m.algDD_o2;
 
-  /* DataStoreRead: '<S27>/Data Store Read1' */
+  /* DataStoreRead: '<S28>/Data Store Read1' */
   mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead1_b =
     mcb_pmsm_foc_sensorless_f_DWork.EnClosedLoop;
 
-  /* Logic: '<S27>/Logical Operator' */
+  /* Logic: '<S28>/Logical Operator' */
   mcb_pmsm_foc_sensorless_f2806_B.LogicalOperator =
     !mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead1_b;
 
-  /* DataStoreRead: '<S27>/Vq_computed1' */
+  /* DataStoreRead: '<S28>/Vq_computed1' */
   mcb_pmsm_foc_sensorless_f2806_B.Vq_computed =
     mcb_pmsm_foc_sensorless_f_DWork.Vq_out_initial;
 
-  /* Product: '<S27>/Product' incorporates:
-   *  Constant: '<S27>/Kp'
+  /* Product: '<S28>/Product' incorporates:
+   *  Constant: '<S28>/Kp'
    */
   mcb_pmsm_foc_sensorless_f2806_B.Product_bk =
     mcb_pmsm_foc_sensorless_f2806_B.Sum_m * 3.6F;
 
-  /* Sum: '<S27>/Sum1' */
+  /* Sum: '<S28>/Sum1' */
   mcb_pmsm_foc_sensorless_f2806_B.Sum1 =
     mcb_pmsm_foc_sensorless_f2806_B.Vq_computed -
     mcb_pmsm_foc_sensorless_f2806_B.Product_bk;
 
-  /* MATLAB Function: '<S27>/MATLAB Function' incorporates:
-   *  Constant: '<S27>/Ki'
-   *  Constant: '<S27>/Kp'
+  /* MATLAB Function: '<S28>/MATLAB Function' incorporates:
+   *  Constant: '<S28>/Ki'
+   *  Constant: '<S28>/Kp'
    */
-  /* MATLAB Function 'Current Control/Closed Loop/Current_Controllers/PI_Controller_Iq/MATLAB Function': '<S47>:1' */
+  /* MATLAB Function 'Current Control/Closed Loop/Current_Controllers/PI_Controller_Iq/MATLAB Function': '<S48>:1' */
   if (mcb_pmsm_foc_sensorless_f2806_B.LogicalOperator) {
-    /* '<S47>:1:21' */
-    /* '<S47>:1:22' */
+    /* '<S48>:1:21' */
+    /* '<S48>:1:22' */
     mcb_pmsm_foc_sensorless_f_DWork.integrator_state =
       mcb_pmsm_foc_sensorless_f2806_B.Sum1;
   }
 
-  /* '<S47>:1:26' */
-  /* '<S47>:1:29' */
+  /* '<S48>:1:26' */
+  /* '<S48>:1:29' */
   mcb_pmsm_foc_sensorless_f_DWork.integrator_state += 0.333333343F *
     mcb_pmsm_foc_sensorless_f2806_B.Sum_m;
 
-  /* '<S47>:1:32' */
+  /* '<S48>:1:32' */
   V_q_ref_unsat = 3.6F * mcb_pmsm_foc_sensorless_f2806_B.Sum_m +
     mcb_pmsm_foc_sensorless_f_DWork.integrator_state;
 
-  /* '<S47>:1:35' */
+  /* '<S48>:1:35' */
   if (V_q_ref_unsat <= 1.0F) {
     Product_am = V_q_ref_unsat;
   } else {
@@ -1843,77 +1843,77 @@ void mcb_pmsm_foc_CurrentControl(void)
   }
 
   if (mcb_pmsm_foc_sensorless_f2806_B.V_q_ref != V_q_ref_unsat) {
-    /* '<S47>:1:38' */
-    /* '<S47>:1:39' */
+    /* '<S48>:1:38' */
+    /* '<S48>:1:39' */
     mcb_pmsm_foc_sensorless_f_DWork.integrator_state -= 0.333333343F *
       mcb_pmsm_foc_sensorless_f2806_B.Sum_m;
   }
 
-  /* End of MATLAB Function: '<S27>/MATLAB Function' */
+  /* End of MATLAB Function: '<S28>/MATLAB Function' */
 
-  /* Switch: '<S27>/Switch' */
+  /* Switch: '<S28>/Switch' */
   if (mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead1_b) {
-    /* Switch: '<S27>/Switch' */
+    /* Switch: '<S28>/Switch' */
     mcb_pmsm_foc_sensorless_f2806_B.Switch_j =
       mcb_pmsm_foc_sensorless_f2806_B.V_q_ref;
   } else {
-    /* Switch: '<S27>/Switch' incorporates:
-     *  Constant: '<S27>/Vq_OpenLoop'
+    /* Switch: '<S28>/Switch' incorporates:
+     *  Constant: '<S28>/Vq_OpenLoop'
      */
     mcb_pmsm_foc_sensorless_f2806_B.Switch_j = 0.0F;
   }
 
-  /* End of Switch: '<S27>/Switch' */
+  /* End of Switch: '<S28>/Switch' */
 
-  /* Sum: '<S26>/Sum' */
+  /* Sum: '<S27>/Sum' */
   mcb_pmsm_foc_sensorless_f2806_B.Sum_g = mcb_pmsm_foc_sensorless_f2806_B.RT2[0]
     - mcb_pmsm_foc_sensorless_f2806_B.TwoinputsCRL_m.algDD_o1;
 
-  /* DataStoreRead: '<S26>/Data Store Read1' */
+  /* DataStoreRead: '<S27>/Data Store Read1' */
   mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead1_f =
     mcb_pmsm_foc_sensorless_f_DWork.EnClosedLoop;
 
-  /* Logic: '<S26>/Logical Operator' */
+  /* Logic: '<S27>/Logical Operator' */
   mcb_pmsm_foc_sensorless_f2806_B.LogicalOperator_e =
     !mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead1_f;
 
-  /* DataStoreRead: '<S26>/Vd_computed1' */
+  /* DataStoreRead: '<S27>/Vd_computed1' */
   mcb_pmsm_foc_sensorless_f2806_B.Vd_computed1 =
     mcb_pmsm_foc_sensorless_f_DWork.Vd_out_initial;
 
-  /* Product: '<S26>/Product' incorporates:
-   *  Constant: '<S26>/Kp'
+  /* Product: '<S27>/Product' incorporates:
+   *  Constant: '<S27>/Kp'
    */
   mcb_pmsm_foc_sensorless_f2806_B.Product_e =
     mcb_pmsm_foc_sensorless_f2806_B.Sum_g * 3.6F;
 
-  /* Sum: '<S26>/Sum1' */
+  /* Sum: '<S27>/Sum1' */
   mcb_pmsm_foc_sensorless_f2806_B.Sum1_a =
     mcb_pmsm_foc_sensorless_f2806_B.Vd_computed1 -
     mcb_pmsm_foc_sensorless_f2806_B.Product_e;
 
-  /* MATLAB Function: '<S26>/MATLAB Function' incorporates:
-   *  Constant: '<S26>/Ki'
-   *  Constant: '<S26>/Kp'
+  /* MATLAB Function: '<S27>/MATLAB Function' incorporates:
+   *  Constant: '<S27>/Ki'
+   *  Constant: '<S27>/Kp'
    */
-  /* MATLAB Function 'Current Control/Closed Loop/Current_Controllers/PI_Controller_Id/MATLAB Function': '<S43>:1' */
+  /* MATLAB Function 'Current Control/Closed Loop/Current_Controllers/PI_Controller_Id/MATLAB Function': '<S44>:1' */
   if (mcb_pmsm_foc_sensorless_f2806_B.LogicalOperator_e) {
-    /* '<S43>:1:21' */
-    /* '<S43>:1:22' */
+    /* '<S44>:1:21' */
+    /* '<S44>:1:22' */
     mcb_pmsm_foc_sensorless_f_DWork.integrator_state_a =
       mcb_pmsm_foc_sensorless_f2806_B.Sum1_a;
   }
 
-  /* '<S43>:1:26' */
-  /* '<S43>:1:29' */
+  /* '<S44>:1:26' */
+  /* '<S44>:1:29' */
   mcb_pmsm_foc_sensorless_f_DWork.integrator_state_a += 0.333333343F *
     mcb_pmsm_foc_sensorless_f2806_B.Sum_g;
 
-  /* '<S43>:1:32' */
+  /* '<S44>:1:32' */
   V_q_ref_unsat = 3.6F * mcb_pmsm_foc_sensorless_f2806_B.Sum_g +
     mcb_pmsm_foc_sensorless_f_DWork.integrator_state_a;
 
-  /* '<S43>:1:35' */
+  /* '<S44>:1:35' */
   if (V_q_ref_unsat <= 1.0F) {
     Product_am = V_q_ref_unsat;
   } else {
@@ -1927,142 +1927,142 @@ void mcb_pmsm_foc_CurrentControl(void)
   }
 
   if (mcb_pmsm_foc_sensorless_f2806_B.V_d_ref != V_q_ref_unsat) {
-    /* '<S43>:1:38' */
-    /* '<S43>:1:39' */
+    /* '<S44>:1:38' */
+    /* '<S44>:1:39' */
     mcb_pmsm_foc_sensorless_f_DWork.integrator_state_a -= 0.333333343F *
       mcb_pmsm_foc_sensorless_f2806_B.Sum_g;
   }
 
-  /* End of MATLAB Function: '<S26>/MATLAB Function' */
+  /* End of MATLAB Function: '<S27>/MATLAB Function' */
 
-  /* DataStoreRead: '<S26>/Vd_OpenLoop' */
+  /* DataStoreRead: '<S27>/Vd_OpenLoop' */
   mcb_pmsm_foc_sensorless_f2806_B.Vd_OpenLoop =
     mcb_pmsm_foc_sensorless_f_DWork.SpdCtrlRef;
 
-  /* Abs: '<S26>/Abs' */
+  /* Abs: '<S27>/Abs' */
   mcb_pmsm_foc_sensorless_f2806_B.Abs = fabsf
     (mcb_pmsm_foc_sensorless_f2806_B.Vd_OpenLoop);
 
-  /* Switch: '<S42>/Switch1' incorporates:
-   *  Constant: '<S42>/FilterConstant'
-   *  Constant: '<S42>/OneMinusFilterConstant'
+  /* Switch: '<S43>/Switch1' incorporates:
+   *  Constant: '<S43>/FilterConstant'
+   *  Constant: '<S43>/OneMinusFilterConstant'
    */
   mcb_pmsm_foc_sensorless_f2806_B.Switch1[0] = 0.1F;
   mcb_pmsm_foc_sensorless_f2806_B.Switch1[1] = 0.9F;
 
-  /* Product: '<S46>/Product' */
+  /* Product: '<S47>/Product' */
   mcb_pmsm_foc_sensorless_f2806_B.Product_bh =
     mcb_pmsm_foc_sensorless_f2806_B.Abs * 0.1F;
 
-  /* UnitDelay: '<S46>/Unit Delay' */
+  /* UnitDelay: '<S47>/Unit Delay' */
   mcb_pmsm_foc_sensorless_f2806_B.UnitDelay_n =
     mcb_pmsm_foc_sensorless_f_DWork.UnitDelay_DSTATE_g;
 
-  /* Product: '<S46>/Product1' */
+  /* Product: '<S47>/Product1' */
   mcb_pmsm_foc_sensorless_f2806_B.Product1_p = 0.9F *
     mcb_pmsm_foc_sensorless_f2806_B.UnitDelay_n;
 
-  /* Sum: '<S46>/Add1' */
+  /* Sum: '<S47>/Add1' */
   mcb_pmsm_foc_sensorless_f2806_B.Add1_l =
     mcb_pmsm_foc_sensorless_f2806_B.Product_bh +
     mcb_pmsm_foc_sensorless_f2806_B.Product1_p;
 
-  /* Switch: '<S26>/Switch' */
+  /* Switch: '<S27>/Switch' */
   if (mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead1_f) {
-    /* Switch: '<S26>/Switch' */
+    /* Switch: '<S27>/Switch' */
     mcb_pmsm_foc_sensorless_f2806_B.Switch_d =
       mcb_pmsm_foc_sensorless_f2806_B.V_d_ref;
   } else {
-    /* Saturate: '<S26>/Saturation' */
+    /* Saturate: '<S27>/Saturation' */
     Product_am = mcb_pmsm_foc_sensorless_f2806_B.Add1_l;
     if (Product_am > 0.6F) {
-      /* Saturate: '<S26>/Saturation' */
+      /* Saturate: '<S27>/Saturation' */
       mcb_pmsm_foc_sensorless_f2806_B.Saturation = 0.6F;
     } else if (Product_am < 0.15F) {
-      /* Saturate: '<S26>/Saturation' */
+      /* Saturate: '<S27>/Saturation' */
       mcb_pmsm_foc_sensorless_f2806_B.Saturation = 0.15F;
     } else {
-      /* Saturate: '<S26>/Saturation' */
+      /* Saturate: '<S27>/Saturation' */
       mcb_pmsm_foc_sensorless_f2806_B.Saturation = Product_am;
     }
 
-    /* End of Saturate: '<S26>/Saturation' */
+    /* End of Saturate: '<S27>/Saturation' */
 
-    /* Switch: '<S26>/Switch' */
+    /* Switch: '<S27>/Switch' */
     mcb_pmsm_foc_sensorless_f2806_B.Switch_d =
       mcb_pmsm_foc_sensorless_f2806_B.Saturation;
   }
 
-  /* End of Switch: '<S26>/Switch' */
+  /* End of Switch: '<S27>/Switch' */
 
-  /* Switch: '<S30>/Switch' incorporates:
-   *  Constant: '<S30>/Constant3'
+  /* Switch: '<S31>/Switch' incorporates:
+   *  Constant: '<S31>/Constant3'
    */
   mcb_pmsm_foc_sensorless_f2806_B.Switch_jv = 1.0F;
 
-  /* Product: '<S30>/Product' */
+  /* Product: '<S31>/Product' */
   mcb_pmsm_foc_sensorless_f2806_B.Product_l = 1.0F;
 
-  /* Product: '<S31>/Product' */
+  /* Product: '<S32>/Product' */
   mcb_pmsm_foc_sensorless_f2806_B.Product_o =
     mcb_pmsm_foc_sensorless_f2806_B.Switch_d *
     mcb_pmsm_foc_sensorless_f2806_B.Switch_d;
 
-  /* Product: '<S31>/Product1' */
+  /* Product: '<S32>/Product1' */
   mcb_pmsm_foc_sensorless_f2806_B.Product1_ad =
     mcb_pmsm_foc_sensorless_f2806_B.Switch_j *
     mcb_pmsm_foc_sensorless_f2806_B.Switch_j;
 
-  /* Sum: '<S31>/Sum1' */
+  /* Sum: '<S32>/Sum1' */
   mcb_pmsm_foc_sensorless_f2806_B.Sum1_e =
     mcb_pmsm_foc_sensorless_f2806_B.Product_o +
     mcb_pmsm_foc_sensorless_f2806_B.Product1_ad;
 
   /* Outputs for IfAction SubSystem: '<S25>/D-Q Equivalence' incorporates:
-   *  ActionPort: '<S28>/Action Port'
+   *  ActionPort: '<S29>/Action Port'
    */
   /* If: '<S25>/If' incorporates:
-   *  DataTypeConversion: '<S28>/Data Type Conversion'
-   *  RelationalOperator: '<S28>/Relational Operator'
+   *  DataTypeConversion: '<S29>/Data Type Conversion'
+   *  RelationalOperator: '<S29>/Relational Operator'
    */
   mcb_pmsm_foc_sensorless_f2806_B.RelationalOperator =
     (mcb_pmsm_foc_sensorless_f2806_B.Sum1_e > 1.0F);
   mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion_k =
     mcb_pmsm_foc_sensorless_f2806_B.RelationalOperator;
 
-  /* If: '<S28>/If' incorporates:
+  /* If: '<S29>/If' incorporates:
    *  If: '<S25>/If'
    */
   if (mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion_k != 0U) {
-    /* Outputs for IfAction SubSystem: '<S28>/Limiter' incorporates:
-     *  ActionPort: '<S32>/Action Port'
+    /* Outputs for IfAction SubSystem: '<S29>/Limiter' incorporates:
+     *  ActionPort: '<S33>/Action Port'
      */
-    /* Product: '<S32>/Product' */
+    /* Product: '<S33>/Product' */
     mcb_pmsm_foc_sensorless_f2806_B.Product_ch[0] =
       mcb_pmsm_foc_sensorless_f2806_B.Switch_d;
     mcb_pmsm_foc_sensorless_f2806_B.Product_ch[1] =
       mcb_pmsm_foc_sensorless_f2806_B.Switch_j;
 
-    /* Sqrt: '<S32>/Square Root' */
+    /* Sqrt: '<S33>/Square Root' */
     mcb_pmsm_foc_sensorless_f2806_B.SquareRoot = (real32_T)sqrt
       (mcb_pmsm_foc_sensorless_f2806_B.Sum1_e);
 
-    /* Switch: '<S32>/Switch' */
+    /* Switch: '<S33>/Switch' */
     if (mcb_pmsm_foc_sensorless_f2806_B.SquareRoot != 0.0F) {
-      /* Switch: '<S32>/Switch' */
+      /* Switch: '<S33>/Switch' */
       mcb_pmsm_foc_sensorless_f2806_B.Switch_o =
         mcb_pmsm_foc_sensorless_f2806_B.SquareRoot;
     } else {
-      /* Switch: '<S32>/Switch' incorporates:
-       *  Constant: '<S32>/Constant'
+      /* Switch: '<S33>/Switch' incorporates:
+       *  Constant: '<S33>/Constant'
        */
       mcb_pmsm_foc_sensorless_f2806_B.Switch_o = 1.0F;
     }
 
-    /* End of Switch: '<S32>/Switch' */
+    /* End of Switch: '<S33>/Switch' */
 
     /* Merge: '<S25>/Merge' incorporates:
-     *  Product: '<S32>/Divide'
+     *  Product: '<S33>/Divide'
      */
     mcb_pmsm_foc_sensorless_f2806_B.Merge_m[0] =
       mcb_pmsm_foc_sensorless_f2806_B.Product_ch[0] /
@@ -2071,83 +2071,95 @@ void mcb_pmsm_foc_CurrentControl(void)
       mcb_pmsm_foc_sensorless_f2806_B.Product_ch[1] /
       mcb_pmsm_foc_sensorless_f2806_B.Switch_o;
 
-    /* End of Outputs for SubSystem: '<S28>/Limiter' */
+    /* End of Outputs for SubSystem: '<S29>/Limiter' */
   } else {
-    /* Outputs for IfAction SubSystem: '<S28>/Passthrough' incorporates:
-     *  ActionPort: '<S33>/Action Port'
+    /* Outputs for IfAction SubSystem: '<S29>/Passthrough' incorporates:
+     *  ActionPort: '<S34>/Action Port'
      */
     /* Merge: '<S25>/Merge' incorporates:
-     *  SignalConversion generated from: '<S33>/dqRef'
+     *  SignalConversion generated from: '<S34>/dqRef'
      */
     mcb_pmsm_foc_sensorless_f2806_B.Merge_m[0] =
       mcb_pmsm_foc_sensorless_f2806_B.Switch_d;
     mcb_pmsm_foc_sensorless_f2806_B.Merge_m[1] =
       mcb_pmsm_foc_sensorless_f2806_B.Switch_j;
 
-    /* End of Outputs for SubSystem: '<S28>/Passthrough' */
+    /* End of Outputs for SubSystem: '<S29>/Passthrough' */
   }
 
-  /* End of If: '<S28>/If' */
+  /* End of If: '<S29>/If' */
   /* End of Outputs for SubSystem: '<S25>/D-Q Equivalence' */
 
-  /* Product: '<S17>/Product' incorporates:
-   *  Constant: '<S17>/Constant'
+  /* Product: '<S26>/Product' incorporates:
+   *  Constant: '<S26>/Lq'
    */
   mcb_pmsm_foc_sensorless_f2806_B.Product =
     mcb_pmsm_foc_sensorless_f2806_B.TwoinputsCRL_m.algDD_o2 * 0.0 * 0.0006;
 
-  /* Sum: '<S17>/Add' */
+  /* Sum: '<S26>/Add' */
   mcb_pmsm_foc_sensorless_f2806_B.Add = mcb_pmsm_foc_sensorless_f2806_B.Merge_m
     [0] + mcb_pmsm_foc_sensorless_f2806_B.Product;
 
-  /* Product: '<S17>/Product1' incorporates:
-   *  Constant: '<S17>/Constant1'
+  /* DataTypeConversion: '<S26>/Cast To Single1' */
+  mcb_pmsm_foc_sensorless_f2806_B.CastToSingle1 = (real32_T)
+    mcb_pmsm_foc_sensorless_f2806_B.Add;
+
+  /* Product: '<S26>/Product1' incorporates:
+   *  Constant: '<S26>/Ld'
    */
   mcb_pmsm_foc_sensorless_f2806_B.Product1 =
     mcb_pmsm_foc_sensorless_f2806_B.TwoinputsCRL_m.algDD_o1 * 0.0006 * 0.0;
 
-  /* Sum: '<S17>/Add1' */
+  /* Sum: '<S26>/Add1' */
   mcb_pmsm_foc_sensorless_f2806_B.Add1 =
     (mcb_pmsm_foc_sensorless_f2806_B.Merge_m[1] +
      mcb_pmsm_foc_sensorless_f2806_B.Product1) +
     mcb_pmsm_foc_sensorless__ConstB.Product2;
 
+  /* DataTypeConversion: '<S26>/Cast To Single' */
+  mcb_pmsm_foc_sensorless_f2806_B.CastToSingle = (real32_T)
+    mcb_pmsm_foc_sensorless_f2806_B.Add1;
+
   /* Outputs for Atomic SubSystem: '<S18>/Two inputs CRL' */
-  /* Product: '<S48>/qcos' */
-  mcb_pmsm_foc_sensorless_f2806_B.qcos = mcb_pmsm_foc_sensorless_f2806_B.Add1 *
+  /* Product: '<S49>/qcos' */
+  mcb_pmsm_foc_sensorless_f2806_B.qcos =
+    mcb_pmsm_foc_sensorless_f2806_B.CastToSingle *
     mcb_pmsm_foc_sensorless_f2806_B.Sum6_c;
 
-  /* Product: '<S48>/dsin' */
-  mcb_pmsm_foc_sensorless_f2806_B.dsin = mcb_pmsm_foc_sensorless_f2806_B.Add *
+  /* Product: '<S49>/dsin' */
+  mcb_pmsm_foc_sensorless_f2806_B.dsin =
+    mcb_pmsm_foc_sensorless_f2806_B.CastToSingle1 *
     mcb_pmsm_foc_sensorless_f2806_B.Sum4_h;
 
-  /* Sum: '<S48>/sum_beta' */
+  /* Sum: '<S49>/sum_beta' */
   mcb_pmsm_foc_sensorless_f2806_B.sum_beta =
     mcb_pmsm_foc_sensorless_f2806_B.qcos + mcb_pmsm_foc_sensorless_f2806_B.dsin;
 
-  /* Product: '<S48>/dcos' */
-  mcb_pmsm_foc_sensorless_f2806_B.dcos = mcb_pmsm_foc_sensorless_f2806_B.Add *
+  /* Product: '<S49>/dcos' */
+  mcb_pmsm_foc_sensorless_f2806_B.dcos =
+    mcb_pmsm_foc_sensorless_f2806_B.CastToSingle1 *
     mcb_pmsm_foc_sensorless_f2806_B.Sum6_c;
 
-  /* Product: '<S48>/qsin' */
-  mcb_pmsm_foc_sensorless_f2806_B.qsin = mcb_pmsm_foc_sensorless_f2806_B.Add1 *
+  /* Product: '<S49>/qsin' */
+  mcb_pmsm_foc_sensorless_f2806_B.qsin =
+    mcb_pmsm_foc_sensorless_f2806_B.CastToSingle *
     mcb_pmsm_foc_sensorless_f2806_B.Sum4_h;
 
-  /* Sum: '<S48>/sum_alpha' */
+  /* Sum: '<S49>/sum_alpha' */
   mcb_pmsm_foc_sensorless_f2806_B.sum_alpha =
     mcb_pmsm_foc_sensorless_f2806_B.dcos - mcb_pmsm_foc_sensorless_f2806_B.qsin;
 
-  /* Switch: '<S49>/Switch' */
-  mcb_pmsm_foc_sensorless_f2806_B.Switch_f[0] = (real32_T)
+  /* Switch: '<S50>/Switch' */
+  mcb_pmsm_foc_sensorless_f2806_B.Switch_f[0] =
     mcb_pmsm_foc_sensorless_f2806_B.sum_alpha;
-  mcb_pmsm_foc_sensorless_f2806_B.Switch_f[1] = (real32_T)
+  mcb_pmsm_foc_sensorless_f2806_B.Switch_f[1] =
     mcb_pmsm_foc_sensorless_f2806_B.sum_beta;
 
-  /* AlgorithmDescriptorDelegate generated from: '<S48>/a16' */
+  /* AlgorithmDescriptorDelegate generated from: '<S49>/a16' */
   mcb_pmsm_foc_sensorless_f2806_B.algDD_o1 =
     mcb_pmsm_foc_sensorless_f2806_B.Switch_f[0];
 
-  /* AlgorithmDescriptorDelegate generated from: '<S48>/a16' */
+  /* AlgorithmDescriptorDelegate generated from: '<S49>/a16' */
   mcb_pmsm_foc_sensorless_f2806_B.algDD_o2 =
     mcb_pmsm_foc_sensorless_f2806_B.Switch_f[1];
 
@@ -2169,18 +2181,18 @@ void mcb_pmsm_foc_CurrentControl(void)
   mcb_pmsm_foc_sensorless_f_DWork.V_beta =
     mcb_pmsm_foc_sensorless_f2806_B.algDD_o2;
 
-  /* UnitDelay: '<S69>/Output' */
+  /* UnitDelay: '<S70>/Output' */
   mcb_pmsm_foc_sensorless_f2806_B.Output =
     mcb_pmsm_foc_sensorless_f_DWork.Output_DSTATE;
 
-  /* DataTypeConversion: '<S71>/Data Type Conversion' */
+  /* DataTypeConversion: '<S72>/Data Type Conversion' */
   mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion_l[0] = (int16_T)
     (mcb_pmsm_foc_sensorless_f2806_B.Merge_k[1] * 4096.0F);
   mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion_l[1] = (int16_T)
     (mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion1_p[0] * 4096.0F);
 
-  /* DataTypeConversion: '<S71>/Data Type Conversion3' incorporates:
-   *  DataTypeConversion: '<S71>/Data Type Conversion'
+  /* DataTypeConversion: '<S72>/Data Type Conversion3' incorporates:
+   *  DataTypeConversion: '<S72>/Data Type Conversion'
    */
   mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion3[0] = (uint16_T)
     mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion_l[0];
@@ -2190,44 +2202,44 @@ void mcb_pmsm_foc_CurrentControl(void)
   /* If: '<S10>/If' */
   if (mcb_pmsm_foc_sensorless_f2806_B.Output == 0U) {
     /* Outputs for IfAction SubSystem: '<S10>/Start' incorporates:
-     *  ActionPort: '<S73>/Action Port'
+     *  ActionPort: '<S74>/Action Port'
      */
     /* Merge: '<S10>/Merge' incorporates:
-     *  Constant: '<S73>/End'
-     *  SignalConversion generated from: '<S73>/Data_out'
+     *  Constant: '<S74>/End'
+     *  SignalConversion generated from: '<S74>/Data_out'
      */
     mcb_pmsm_foc_sensorless_f2806_B.SCI_Tx_Data[0] = 21331U;
 
-    /* SignalConversion generated from: '<S73>/Data' */
+    /* SignalConversion generated from: '<S74>/Data' */
     Data = mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion3[0];
 
     /* End of Outputs for SubSystem: '<S10>/Start' */
     mcb_pmsm_foc_sensorless_f2806_B.Data_fw[0] = Data;
 
     /* Outputs for IfAction SubSystem: '<S10>/Start' incorporates:
-     *  ActionPort: '<S73>/Action Port'
+     *  ActionPort: '<S74>/Action Port'
      */
     /* Merge: '<S10>/Merge' incorporates:
-     *  SignalConversion generated from: '<S73>/Data_out'
+     *  SignalConversion generated from: '<S74>/Data_out'
      */
     mcb_pmsm_foc_sensorless_f2806_B.SCI_Tx_Data[1] = Data;
 
-    /* SignalConversion generated from: '<S73>/Data' */
+    /* SignalConversion generated from: '<S74>/Data' */
     Data = mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion3[1];
 
     /* End of Outputs for SubSystem: '<S10>/Start' */
     mcb_pmsm_foc_sensorless_f2806_B.Data_fw[1] = Data;
 
     /* Outputs for IfAction SubSystem: '<S10>/Start' incorporates:
-     *  ActionPort: '<S73>/Action Port'
+     *  ActionPort: '<S74>/Action Port'
      */
     /* Merge: '<S10>/Merge' incorporates:
-     *  SignalConversion generated from: '<S73>/Data_out'
+     *  SignalConversion generated from: '<S74>/Data_out'
      */
     mcb_pmsm_foc_sensorless_f2806_B.SCI_Tx_Data[2] = Data;
 
     /* Merge: '<S10>/Merge1' incorporates:
-     *  Bias: '<S73>/Bias'
+     *  Bias: '<S74>/Bias'
      */
     mcb_pmsm_foc_sensorless_f2806_B.SCI_Tx_Iteration =
       mcb_pmsm_foc_sensorless__ConstB.Width + 1U;
@@ -2235,40 +2247,40 @@ void mcb_pmsm_foc_CurrentControl(void)
     /* End of Outputs for SubSystem: '<S10>/Start' */
   } else if (mcb_pmsm_foc_sensorless_f2806_B.Output == 599U) {
     /* Outputs for IfAction SubSystem: '<S10>/End' incorporates:
-     *  ActionPort: '<S72>/Action Port'
+     *  ActionPort: '<S73>/Action Port'
      */
-    /* SignalConversion generated from: '<S72>/Data' */
+    /* SignalConversion generated from: '<S73>/Data' */
     Data = mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion3[0];
 
     /* End of Outputs for SubSystem: '<S10>/End' */
     mcb_pmsm_foc_sensorless_f2806_B.Data_f[0] = Data;
 
     /* Outputs for IfAction SubSystem: '<S10>/End' incorporates:
-     *  ActionPort: '<S72>/Action Port'
+     *  ActionPort: '<S73>/Action Port'
      */
     /* Merge: '<S10>/Merge' incorporates:
-     *  SignalConversion generated from: '<S72>/Data_out'
+     *  SignalConversion generated from: '<S73>/Data_out'
      */
     mcb_pmsm_foc_sensorless_f2806_B.SCI_Tx_Data[0] = Data;
 
-    /* SignalConversion generated from: '<S72>/Data' */
+    /* SignalConversion generated from: '<S73>/Data' */
     Data = mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion3[1];
 
     /* End of Outputs for SubSystem: '<S10>/End' */
     mcb_pmsm_foc_sensorless_f2806_B.Data_f[1] = Data;
 
     /* Outputs for IfAction SubSystem: '<S10>/End' incorporates:
-     *  ActionPort: '<S72>/Action Port'
+     *  ActionPort: '<S73>/Action Port'
      */
     /* Merge: '<S10>/Merge' incorporates:
-     *  Constant: '<S72>/Start'
-     *  SignalConversion generated from: '<S72>/Data_out'
+     *  Constant: '<S73>/Start'
+     *  SignalConversion generated from: '<S73>/Data_out'
      */
     mcb_pmsm_foc_sensorless_f2806_B.SCI_Tx_Data[1] = Data;
     mcb_pmsm_foc_sensorless_f2806_B.SCI_Tx_Data[2] = 17733U;
 
     /* Merge: '<S10>/Merge1' incorporates:
-     *  Bias: '<S72>/Bias'
+     *  Bias: '<S73>/Bias'
      */
     mcb_pmsm_foc_sensorless_f2806_B.SCI_Tx_Iteration =
       mcb_pmsm_foc_sensorless__ConstB.Width + 1U;
@@ -2276,40 +2288,40 @@ void mcb_pmsm_foc_CurrentControl(void)
     /* End of Outputs for SubSystem: '<S10>/End' */
   } else {
     /* Outputs for IfAction SubSystem: '<S10>/Data' incorporates:
-     *  ActionPort: '<S70>/Action Port'
+     *  ActionPort: '<S71>/Action Port'
      */
-    /* SignalConversion generated from: '<S70>/Data' */
+    /* SignalConversion generated from: '<S71>/Data' */
     Data = mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion3[0];
 
     /* End of Outputs for SubSystem: '<S10>/Data' */
     mcb_pmsm_foc_sensorless_f2806_B.Data[0] = Data;
 
     /* Outputs for IfAction SubSystem: '<S10>/Data' incorporates:
-     *  ActionPort: '<S70>/Action Port'
+     *  ActionPort: '<S71>/Action Port'
      */
     /* Merge: '<S10>/Merge' incorporates:
-     *  SignalConversion generated from: '<S70>/Data_out'
+     *  SignalConversion generated from: '<S71>/Data_out'
      */
     mcb_pmsm_foc_sensorless_f2806_B.SCI_Tx_Data[0] = Data;
 
-    /* SignalConversion generated from: '<S70>/Data' */
+    /* SignalConversion generated from: '<S71>/Data' */
     Data = mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion3[1];
 
     /* End of Outputs for SubSystem: '<S10>/Data' */
     mcb_pmsm_foc_sensorless_f2806_B.Data[1] = Data;
 
     /* Outputs for IfAction SubSystem: '<S10>/Data' incorporates:
-     *  ActionPort: '<S70>/Action Port'
+     *  ActionPort: '<S71>/Action Port'
      */
     /* Merge: '<S10>/Merge' incorporates:
-     *  Constant: '<S70>/Start'
-     *  SignalConversion generated from: '<S70>/Data_out'
+     *  Constant: '<S71>/Start'
+     *  SignalConversion generated from: '<S71>/Data_out'
      */
     mcb_pmsm_foc_sensorless_f2806_B.SCI_Tx_Data[1] = Data;
     mcb_pmsm_foc_sensorless_f2806_B.SCI_Tx_Data[2] = 0U;
 
     /* Merge: '<S10>/Merge1' incorporates:
-     *  SignalConversion generated from: '<S70>/Data_width'
+     *  SignalConversion generated from: '<S71>/Data_width'
      */
     mcb_pmsm_foc_sensorless_f2806_B.SCI_Tx_Iteration =
       mcb_pmsm_foc_sensorless__ConstB.Width;
@@ -2319,12 +2331,12 @@ void mcb_pmsm_foc_CurrentControl(void)
 
   /* End of If: '<S10>/If' */
 
-  /* Outputs for Iterator SubSystem: '<S299>/CodeGeneration' incorporates:
-   *  WhileIterator: '<S300>/While Iterator'
+  /* Outputs for Iterator SubSystem: '<S300>/CodeGeneration' incorporates:
+   *  WhileIterator: '<S301>/While Iterator'
    */
-  s300_iter = 1;
+  s301_iter = 1;
   do {
-    mcb_pmsm_foc_sensorless_f2806_B.WhileIterator = s300_iter;
+    mcb_pmsm_foc_sensorless_f2806_B.WhileIterator = s301_iter;
     mcb_pmsm_foc_sensorless_f2806_B.IndexVector =
       mcb_pmsm_foc_sensorless_f2806_B.SCI_Tx_Data[mcb_pmsm_foc_sensorless_f2806_B.WhileIterator
       - 1];
@@ -2344,30 +2356,30 @@ void mcb_pmsm_foc_CurrentControl(void)
     mcb_pmsm_foc_sensorless_f2806_B.Add_m =
       mcb_pmsm_foc_sensorless_f2806_B.SCI_Tx_Iteration - (uint16_T)
       mcb_pmsm_foc_sensorless_f2806_B.WhileIterator;
-    s300_iter++;
+    s301_iter++;
   } while (mcb_pmsm_foc_sensorless_f2806_B.Add_m != 0U);
 
-  /* End of Outputs for SubSystem: '<S299>/CodeGeneration' */
+  /* End of Outputs for SubSystem: '<S300>/CodeGeneration' */
 
-  /* Sum: '<S74>/FixPt Sum1' incorporates:
-   *  Constant: '<S74>/FixPt Constant'
+  /* Sum: '<S75>/FixPt Sum1' incorporates:
+   *  Constant: '<S75>/FixPt Constant'
    */
   mcb_pmsm_foc_sensorless_f2806_B.FixPtSum1 =
     mcb_pmsm_foc_sensorless_f2806_B.Output + 1U;
 
-  /* Switch: '<S75>/FixPt Switch' */
+  /* Switch: '<S76>/FixPt Switch' */
   if (mcb_pmsm_foc_sensorless_f2806_B.FixPtSum1 > 599U) {
-    /* Switch: '<S75>/FixPt Switch' incorporates:
-     *  Constant: '<S75>/Constant'
+    /* Switch: '<S76>/FixPt Switch' incorporates:
+     *  Constant: '<S76>/Constant'
      */
     mcb_pmsm_foc_sensorless_f2806_B.FixPtSwitch = 0U;
   } else {
-    /* Switch: '<S75>/FixPt Switch' */
+    /* Switch: '<S76>/FixPt Switch' */
     mcb_pmsm_foc_sensorless_f2806_B.FixPtSwitch =
       mcb_pmsm_foc_sensorless_f2806_B.FixPtSum1;
   }
 
-  /* End of Switch: '<S75>/FixPt Switch' */
+  /* End of Switch: '<S76>/FixPt Switch' */
 
   /* DataStoreRead: '<S14>/Enable' */
   mcb_pmsm_foc_sensorless_f2806_B.Enable_l =
@@ -2377,7 +2389,7 @@ void mcb_pmsm_foc_CurrentControl(void)
   mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion_c =
     mcb_pmsm_foc_sensorless_f2806_B.Enable_l;
 
-  /* S-Function (c280xgpio_do): '<S298>/Digital Output' */
+  /* S-Function (c280xgpio_do): '<S299>/Digital Output' */
   {
     if (mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion_c) {
       GpioDataRegs.GPBSET.bit.GPIO50 = 1U;
@@ -2386,27 +2398,27 @@ void mcb_pmsm_foc_CurrentControl(void)
     }
   }
 
-  /* Switch: '<S298>/Switch1' */
+  /* Switch: '<S299>/Switch1' */
   if (mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion_c >= 0.5F) {
-    /* Gain: '<S68>/sqrt3_by_two' */
+    /* Gain: '<S69>/sqrt3_by_two' */
     mcb_pmsm_foc_sensorless_f2806_B.sqrt3_by_two = 0.866025388F *
       mcb_pmsm_foc_sensorless_f2806_B.algDD_o2;
 
-    /* Gain: '<S68>/one_by_two' */
+    /* Gain: '<S69>/one_by_two' */
     mcb_pmsm_foc_sensorless_f2806_B.one_by_two = 0.5F *
       mcb_pmsm_foc_sensorless_f2806_B.algDD_o1;
 
-    /* Sum: '<S68>/add_c' */
+    /* Sum: '<S69>/add_c' */
     mcb_pmsm_foc_sensorless_f2806_B.add_c = (0.0F -
       mcb_pmsm_foc_sensorless_f2806_B.one_by_two) -
       mcb_pmsm_foc_sensorless_f2806_B.sqrt3_by_two;
 
-    /* Sum: '<S68>/add_b' */
+    /* Sum: '<S69>/add_b' */
     mcb_pmsm_foc_sensorless_f2806_B.add_b =
       mcb_pmsm_foc_sensorless_f2806_B.sqrt3_by_two -
       mcb_pmsm_foc_sensorless_f2806_B.one_by_two;
 
-    /* MinMax: '<S65>/Min' */
+    /* MinMax: '<S66>/Min' */
     Product_am = mcb_pmsm_foc_sensorless_f2806_B.algDD_o1;
     V_q_ref_unsat = mcb_pmsm_foc_sensorless_f2806_B.add_b;
     if ((Product_am <= V_q_ref_unsat) || rtIsNaNF(V_q_ref_unsat)) {
@@ -2418,10 +2430,10 @@ void mcb_pmsm_foc_CurrentControl(void)
       V_q_ref_unsat = Product_am;
     }
 
-    /* MinMax: '<S65>/Min' */
+    /* MinMax: '<S66>/Min' */
     mcb_pmsm_foc_sensorless_f2806_B.Min = V_q_ref_unsat;
 
-    /* MinMax: '<S65>/Max' */
+    /* MinMax: '<S66>/Max' */
     Product_am = mcb_pmsm_foc_sensorless_f2806_B.algDD_o1;
     V_q_ref_unsat = mcb_pmsm_foc_sensorless_f2806_B.add_b;
     if ((Product_am >= V_q_ref_unsat) || rtIsNaNF(V_q_ref_unsat)) {
@@ -2433,33 +2445,33 @@ void mcb_pmsm_foc_CurrentControl(void)
       V_q_ref_unsat = Product_am;
     }
 
-    /* MinMax: '<S65>/Max' */
+    /* MinMax: '<S66>/Max' */
     mcb_pmsm_foc_sensorless_f2806_B.Max = V_q_ref_unsat;
 
-    /* Sum: '<S65>/Add' */
+    /* Sum: '<S66>/Add' */
     mcb_pmsm_foc_sensorless_f2806_B.Add_i = mcb_pmsm_foc_sensorless_f2806_B.Max
       + mcb_pmsm_foc_sensorless_f2806_B.Min;
 
-    /* Gain: '<S65>/one_by_two' */
+    /* Gain: '<S66>/one_by_two' */
     mcb_pmsm_foc_sensorless_f2806_B.one_by_two_d = -0.5F *
       mcb_pmsm_foc_sensorless_f2806_B.Add_i;
 
-    /* Sum: '<S64>/Add3' */
+    /* Sum: '<S65>/Add3' */
     mcb_pmsm_foc_sensorless_f2806_B.Add3 =
       mcb_pmsm_foc_sensorless_f2806_B.algDD_o1 +
       mcb_pmsm_foc_sensorless_f2806_B.one_by_two_d;
 
-    /* Sum: '<S64>/Add2' */
+    /* Sum: '<S65>/Add2' */
     mcb_pmsm_foc_sensorless_f2806_B.Add2 =
       mcb_pmsm_foc_sensorless_f2806_B.one_by_two_d +
       mcb_pmsm_foc_sensorless_f2806_B.add_c;
 
-    /* Sum: '<S64>/Add1' */
+    /* Sum: '<S65>/Add1' */
     mcb_pmsm_foc_sensorless_f2806_B.Add1_b =
       mcb_pmsm_foc_sensorless_f2806_B.add_b +
       mcb_pmsm_foc_sensorless_f2806_B.one_by_two_d;
 
-    /* Gain: '<S64>/Gain' */
+    /* Gain: '<S65>/Gain' */
     mcb_pmsm_foc_sensorless_f2806_B.Gain_c[0] = 1.15470052F *
       mcb_pmsm_foc_sensorless_f2806_B.Add3;
     mcb_pmsm_foc_sensorless_f2806_B.Gain_c[1] = 1.15470052F *
@@ -2477,11 +2489,11 @@ void mcb_pmsm_foc_CurrentControl(void)
     V_q_ref_unsat += 0.5F;
     mcb_pmsm_foc_sensorless_f2806_B.PWM_Duty_Cycles[0] = V_q_ref_unsat;
 
-    /* Gain: '<S298>/Scale_to_PWM_Counter_PRD' */
+    /* Gain: '<S299>/Scale_to_PWM_Counter_PRD' */
     Data = (uint16_T)(2250.0F * V_q_ref_unsat);
     mcb_pmsm_foc_sensorless_f2806_B.Scale_to_PWM_Counter_PRD[0] = Data;
 
-    /* Switch: '<S298>/Switch1' */
+    /* Switch: '<S299>/Switch1' */
     mcb_pmsm_foc_sensorless_f2806_B.Switch1_c[0] = Data;
 
     /* Gain: '<S14>/Gain' */
@@ -2494,11 +2506,11 @@ void mcb_pmsm_foc_CurrentControl(void)
     V_q_ref_unsat += 0.5F;
     mcb_pmsm_foc_sensorless_f2806_B.PWM_Duty_Cycles[1] = V_q_ref_unsat;
 
-    /* Gain: '<S298>/Scale_to_PWM_Counter_PRD' */
+    /* Gain: '<S299>/Scale_to_PWM_Counter_PRD' */
     Data = (uint16_T)(2250.0F * V_q_ref_unsat);
     mcb_pmsm_foc_sensorless_f2806_B.Scale_to_PWM_Counter_PRD[1] = Data;
 
-    /* Switch: '<S298>/Switch1' */
+    /* Switch: '<S299>/Switch1' */
     mcb_pmsm_foc_sensorless_f2806_B.Switch1_c[1] = Data;
 
     /* Gain: '<S14>/Gain' */
@@ -2511,24 +2523,24 @@ void mcb_pmsm_foc_CurrentControl(void)
     V_q_ref_unsat += 0.5F;
     mcb_pmsm_foc_sensorless_f2806_B.PWM_Duty_Cycles[2] = V_q_ref_unsat;
 
-    /* Gain: '<S298>/Scale_to_PWM_Counter_PRD' */
+    /* Gain: '<S299>/Scale_to_PWM_Counter_PRD' */
     Data = (uint16_T)(2250.0F * V_q_ref_unsat);
     mcb_pmsm_foc_sensorless_f2806_B.Scale_to_PWM_Counter_PRD[2] = Data;
 
-    /* Switch: '<S298>/Switch1' */
+    /* Switch: '<S299>/Switch1' */
     mcb_pmsm_foc_sensorless_f2806_B.Switch1_c[2] = Data;
   } else {
-    /* Switch: '<S298>/Switch1' incorporates:
-     *  Constant: '<S298>/stop'
+    /* Switch: '<S299>/Switch1' incorporates:
+     *  Constant: '<S299>/stop'
      */
     mcb_pmsm_foc_sensorless_f2806_B.Switch1_c[0] = 0U;
     mcb_pmsm_foc_sensorless_f2806_B.Switch1_c[1] = 0U;
     mcb_pmsm_foc_sensorless_f2806_B.Switch1_c[2] = 0U;
   }
 
-  /* End of Switch: '<S298>/Switch1' */
+  /* End of Switch: '<S299>/Switch1' */
 
-  /* S-Function (c2802xpwm): '<S298>/ePWM1' */
+  /* S-Function (c2802xpwm): '<S299>/ePWM1' */
   uint16_T tbprdValue1Outputs = EPwm1Regs.TBPRD;
 
   /*-- Update CMPA value for ePWM1 --*/
@@ -2537,7 +2549,7 @@ void mcb_pmsm_foc_CurrentControl(void)
       (mcb_pmsm_foc_sensorless_f2806_B.Switch1_c[0]);
   }
 
-  /* S-Function (c2802xpwm): '<S298>/ePWM2' */
+  /* S-Function (c2802xpwm): '<S299>/ePWM2' */
   uint16_T tbprdValue2Outputs = EPwm2Regs.TBPRD;
 
   /*-- Update CMPA value for ePWM2 --*/
@@ -2546,7 +2558,7 @@ void mcb_pmsm_foc_CurrentControl(void)
       (mcb_pmsm_foc_sensorless_f2806_B.Switch1_c[1]);
   }
 
-  /* S-Function (c2802xpwm): '<S298>/ePWM3' */
+  /* S-Function (c2802xpwm): '<S299>/ePWM3' */
   uint16_T tbprdValue3Outputs = EPwm3Regs.TBPRD;
 
   /*-- Update CMPA value for ePWM3 --*/
@@ -2579,8 +2591,8 @@ void mcb_pmsm_foc_CurrentControl(void)
   mcb_pmsm_foc_sensorless_f_DWork.Delay5_DSTATE[3] =
     mcb_pmsm_foc_sensorless_f2806_B.TmpSignalConversionAtDelay5Inpo[3];
 
-  /* Update for Delay: '<S50>/Delay' incorporates:
-   *  Constant: '<S50>/Constant'
+  /* Update for Delay: '<S51>/Delay' incorporates:
+   *  Constant: '<S51>/Constant'
    */
   mcb_pmsm_foc_sensorless_f_DWork.Delay_DSTATE_d = true;
 
@@ -2589,11 +2601,11 @@ void mcb_pmsm_foc_CurrentControl(void)
   mcb_pmsm_foc_sensorless_f_DWork.Delay_DSTATE =
     mcb_pmsm_foc_sensorless_f2806_B.Add1_f;
 
-  /* Update for UnitDelay: '<S46>/Unit Delay' */
+  /* Update for UnitDelay: '<S47>/Unit Delay' */
   mcb_pmsm_foc_sensorless_f_DWork.UnitDelay_DSTATE_g =
     mcb_pmsm_foc_sensorless_f2806_B.Add1_l;
 
-  /* Update for UnitDelay: '<S69>/Output' */
+  /* Update for UnitDelay: '<S70>/Output' */
   mcb_pmsm_foc_sensorless_f_DWork.Output_DSTATE =
     mcb_pmsm_foc_sensorless_f2806_B.FixPtSwitch;
 }
@@ -2603,7 +2615,7 @@ void mcb__SPIMasterTransfer_Init(rtDW_SPIMasterTransfer_mcb_pmsm *localDW)
 {
   uint32_T SPIPinsLoc;
 
-  /* Start for MATLABSystem: '<S311>/SPI Master Transfer' */
+  /* Start for MATLABSystem: '<S312>/SPI Master Transfer' */
   localDW->obj.matlabCodegenIsDeleted = false;
   localDW->objisempty = true;
   localDW->obj.isInitialized = 1L;
@@ -2622,7 +2634,7 @@ void mcb_pmsm__SPIMasterTransfer(uint16_T rtu_0, rtB_SPIMasterTransfer_mcb_pmsm_
   uint16_T rdDataRaw;
   uint16_T status;
 
-  /* MATLABSystem: '<S311>/SPI Master Transfer' */
+  /* MATLABSystem: '<S312>/SPI Master Transfer' */
   MW_SPI_SetSlaveSelect(localDW->obj.MW_SPI_HANDLE, 0U, true);
   status = MW_SPI_SetFormat(localDW->obj.MW_SPI_HANDLE, 16U, MW_SPI_MODE_0,
     MW_SPI_MOST_SIGNIFICANT_BIT_FIRST);
@@ -2631,7 +2643,7 @@ void mcb_pmsm__SPIMasterTransfer(uint16_T rtu_0, rtB_SPIMasterTransfer_mcb_pmsm_
       1UL);
   }
 
-  /* MATLABSystem: '<S311>/SPI Master Transfer' */
+  /* MATLABSystem: '<S312>/SPI Master Transfer' */
   localB->SPIMasterTransfer = rdDataRaw;
 }
 
@@ -2640,7 +2652,7 @@ void mcb__SPIMasterTransfer_Term(rtDW_SPIMasterTransfer_mcb_pmsm *localDW)
 {
   uint32_T SPIPinsLoc;
 
-  /* Terminate for MATLABSystem: '<S311>/SPI Master Transfer' */
+  /* Terminate for MATLABSystem: '<S312>/SPI Master Transfer' */
   if (!localDW->obj.matlabCodegenIsDeleted) {
     localDW->obj.matlabCodegenIsDeleted = true;
     if ((localDW->obj.isInitialized == 1L) && localDW->obj.isSetupComplete) {
@@ -2650,19 +2662,19 @@ void mcb__SPIMasterTransfer_Term(rtDW_SPIMasterTransfer_mcb_pmsm *localDW)
     }
   }
 
-  /* End of Terminate for MATLABSystem: '<S311>/SPI Master Transfer' */
+  /* End of Terminate for MATLABSystem: '<S312>/SPI Master Transfer' */
 }
 
 /* System initialize for atomic system: '<Root>/Speed Control' */
 void mcb_pmsm__SpeedControl_Init(rtDW_SpeedControl_mcb_pmsm_foc_ *localDW)
 {
-  /* InitializeConditions for RateLimiter: '<S326>/Rate Limiter' */
+  /* InitializeConditions for RateLimiter: '<S327>/Rate Limiter' */
   localDW->PrevY = 0.2F;
 
-  /* InitializeConditions for RateLimiter: '<S326>/Rate Limiter1' */
+  /* InitializeConditions for RateLimiter: '<S327>/Rate Limiter1' */
   localDW->PrevY_f = -0.2F;
 
-  /* SystemInitialize for MATLAB Function: '<S325>/MATLAB Function' */
+  /* SystemInitialize for MATLAB Function: '<S326>/MATLAB Function' */
   localDW->integrator_state = 0.0F;
 }
 
@@ -2676,113 +2688,113 @@ void mcb_pmsm_foc_s_SpeedControl(real32_T rtu_Speed_Ref_PU, real32_T
   real32_T I_q_ref_unsat;
   real32_T y;
 
-  /* DataStoreRead: '<S325>/Data Store Read1' */
+  /* DataStoreRead: '<S326>/Data Store Read1' */
   localB->DataStoreRead1 = *rtd_Enable;
 
-  /* DataStoreRead: '<S325>/Data Store Read2' */
+  /* DataStoreRead: '<S326>/Data Store Read2' */
   localB->DataStoreRead2 = *rtd_EnClosedLoop;
 
-  /* Logic: '<S325>/AND' */
+  /* Logic: '<S326>/AND' */
   localB->AND = (localB->DataStoreRead1 && localB->DataStoreRead2);
 
-  /* DataStoreRead: '<S325>/Data Store Read3' */
+  /* DataStoreRead: '<S326>/Data Store Read3' */
   localB->Iq_switch_mem = *rtd_Iq_ref_initial;
 
-  /* Logic: '<S325>/Logical Operator' */
+  /* Logic: '<S326>/Logical Operator' */
   localB->LogicalOperator = !localB->AND;
 
-  /* RateLimiter: '<S326>/Rate Limiter' */
+  /* RateLimiter: '<S327>/Rate Limiter' */
   I_q_ref_unsat = rtu_Speed_Ref_PU - localDW->PrevY;
   if (I_q_ref_unsat > 0.000993246F) {
-    /* RateLimiter: '<S326>/Rate Limiter' */
+    /* RateLimiter: '<S327>/Rate Limiter' */
     localB->RateLimiter = localDW->PrevY + 0.000993246F;
   } else if (I_q_ref_unsat < -0.000993246F) {
-    /* RateLimiter: '<S326>/Rate Limiter' */
+    /* RateLimiter: '<S327>/Rate Limiter' */
     localB->RateLimiter = localDW->PrevY - 0.000993246F;
   } else {
-    /* RateLimiter: '<S326>/Rate Limiter' */
+    /* RateLimiter: '<S327>/Rate Limiter' */
     localB->RateLimiter = rtu_Speed_Ref_PU;
   }
 
   localDW->PrevY = localB->RateLimiter;
 
-  /* End of RateLimiter: '<S326>/Rate Limiter' */
+  /* End of RateLimiter: '<S327>/Rate Limiter' */
 
-  /* RateLimiter: '<S326>/Rate Limiter1' */
+  /* RateLimiter: '<S327>/Rate Limiter1' */
   I_q_ref_unsat = rtu_Speed_Ref_PU - localDW->PrevY_f;
   if (I_q_ref_unsat > 0.000993246F) {
-    /* RateLimiter: '<S326>/Rate Limiter1' */
+    /* RateLimiter: '<S327>/Rate Limiter1' */
     localB->RateLimiter1 = localDW->PrevY_f + 0.000993246F;
   } else if (I_q_ref_unsat < -0.000993246F) {
-    /* RateLimiter: '<S326>/Rate Limiter1' */
+    /* RateLimiter: '<S327>/Rate Limiter1' */
     localB->RateLimiter1 = localDW->PrevY_f - 0.000993246F;
   } else {
-    /* RateLimiter: '<S326>/Rate Limiter1' */
+    /* RateLimiter: '<S327>/Rate Limiter1' */
     localB->RateLimiter1 = rtu_Speed_Ref_PU;
   }
 
   localDW->PrevY_f = localB->RateLimiter1;
 
-  /* End of RateLimiter: '<S326>/Rate Limiter1' */
+  /* End of RateLimiter: '<S327>/Rate Limiter1' */
 
-  /* Switch: '<S326>/Switch' */
+  /* Switch: '<S327>/Switch' */
   if (rtu_Speed_Ref_PU >= 0.0F) {
-    /* Switch: '<S326>/Switch' */
+    /* Switch: '<S327>/Switch' */
     localB->Switch = localB->RateLimiter;
   } else {
-    /* Switch: '<S326>/Switch' */
+    /* Switch: '<S327>/Switch' */
     localB->Switch = localB->RateLimiter1;
   }
 
-  /* End of Switch: '<S326>/Switch' */
+  /* End of Switch: '<S327>/Switch' */
 
-  /* Switch: '<S329>/Switch1' incorporates:
-   *  Constant: '<S329>/FilterConstant'
-   *  Constant: '<S329>/OneMinusFilterConstant'
+  /* Switch: '<S330>/Switch1' incorporates:
+   *  Constant: '<S330>/FilterConstant'
+   *  Constant: '<S330>/OneMinusFilterConstant'
    */
   localB->Switch1[0] = 0.1F;
   localB->Switch1[1] = 0.9F;
 
-  /* Product: '<S386>/Product' */
+  /* Product: '<S387>/Product' */
   localB->Product = localB->Switch * 0.1F;
 
-  /* UnitDelay: '<S386>/Unit Delay' */
+  /* UnitDelay: '<S387>/Unit Delay' */
   localB->UnitDelay = localDW->UnitDelay_DSTATE;
 
-  /* Product: '<S386>/Product1' */
+  /* Product: '<S387>/Product1' */
   localB->Product1 = 0.9F * localB->UnitDelay;
 
-  /* Sum: '<S386>/Add1' */
+  /* Sum: '<S387>/Add1' */
   localB->Add1 = localB->Product + localB->Product1;
 
-  /* Sum: '<S325>/Sum' */
+  /* Sum: '<S326>/Sum' */
   localB->Sum = localB->Add1 - rtu_Speed_Meas_PU;
 
-  /* Product: '<S325>/Product' */
+  /* Product: '<S326>/Product' */
   localB->Product_g = 0.0F * localB->Sum;
 
-  /* Sum: '<S325>/Sum1' */
+  /* Sum: '<S326>/Sum1' */
   localB->Sum1 = localB->Iq_switch_mem - localB->Product_g;
 
-  /* MATLAB Function: '<S325>/MATLAB Function' incorporates:
-   *  Constant: '<S325>/Ki1'
-   *  Constant: '<S325>/Kp1'
+  /* MATLAB Function: '<S326>/MATLAB Function' incorporates:
+   *  Constant: '<S326>/Ki1'
+   *  Constant: '<S326>/Kp1'
    */
-  /* MATLAB Function 'Speed Control/PI_Controller_Speed/MATLAB Function': '<S328>:1' */
+  /* MATLAB Function 'Speed Control/PI_Controller_Speed/MATLAB Function': '<S329>:1' */
   if (localB->LogicalOperator) {
-    /* '<S328>:1:21' */
-    /* '<S328>:1:22' */
+    /* '<S329>:1:21' */
+    /* '<S329>:1:22' */
     localDW->integrator_state = localB->Sum1;
   }
 
-  /* '<S328>:1:26' */
-  /* '<S328>:1:29' */
+  /* '<S329>:1:26' */
+  /* '<S329>:1:29' */
   localDW->integrator_state += 0.0699827299F * localB->Sum;
 
-  /* '<S328>:1:32' */
+  /* '<S329>:1:32' */
   I_q_ref_unsat = 3.27852678F * localB->Sum + localDW->integrator_state;
 
-  /* '<S328>:1:35' */
+  /* '<S329>:1:35' */
   if (I_q_ref_unsat <= 1.0F) {
     y = I_q_ref_unsat;
   } else {
@@ -2796,41 +2808,41 @@ void mcb_pmsm_foc_s_SpeedControl(real32_T rtu_Speed_Ref_PU, real32_T
   }
 
   if (localB->I_q_ref != I_q_ref_unsat) {
-    /* '<S328>:1:38' */
-    /* '<S328>:1:39' */
+    /* '<S329>:1:38' */
+    /* '<S329>:1:39' */
     localDW->integrator_state -= 0.0699827299F * localB->Sum;
   }
 
-  /* End of MATLAB Function: '<S325>/MATLAB Function' */
+  /* End of MATLAB Function: '<S326>/MATLAB Function' */
 
-  /* Update for UnitDelay: '<S386>/Unit Delay' */
+  /* Update for UnitDelay: '<S387>/Unit Delay' */
   localDW->UnitDelay_DSTATE = localB->Add1;
 }
 
-/* Output and update for function-call system: '<S388>/RunMode.ComputeId0' */
+/* Output and update for function-call system: '<S389>/RunMode.ComputeId0' */
 void mcb_pmsm__RunModeComputeId0(real32_T rtu_Id0_in, real32_T
   rtu_RAMP_STEP_SIZE, rtB_RunModeComputeId0_mcb_pmsm_ *localB)
 {
-  /* Sum: '<S407>/Sum' */
+  /* Sum: '<S408>/Sum' */
   localB->Sum = rtu_Id0_in - rtu_RAMP_STEP_SIZE;
 
-  /* RelationalOperator: '<S408>/Compare' incorporates:
-   *  Constant: '<S408>/Constant'
+  /* RelationalOperator: '<S409>/Compare' incorporates:
+   *  Constant: '<S409>/Constant'
    */
   localB->Compare = (localB->Sum > 0.001F);
 
-  /* Switch: '<S407>/Switch' */
+  /* Switch: '<S408>/Switch' */
   if (localB->Compare) {
-    /* Switch: '<S407>/Switch' */
+    /* Switch: '<S408>/Switch' */
     localB->Switch = localB->Sum;
   } else {
-    /* Switch: '<S407>/Switch' incorporates:
-     *  Constant: '<S407>/Constant'
+    /* Switch: '<S408>/Switch' incorporates:
+     *  Constant: '<S408>/Constant'
      */
     localB->Switch = 0.0F;
   }
 
-  /* End of Switch: '<S407>/Switch' */
+  /* End of Switch: '<S408>/Switch' */
 }
 
 /* Model step function for TID0 */
@@ -2873,11 +2885,11 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_step0(void) /* Sample time: [0.000
     mcb_pmsm_foc_sensorless_f_DWork.is_active_c3_mcb_pmsm_foc_senso = 1U;
 
     /* Entry Internal: State Machine Handler/State Machine OL - CL */
-    /* Transition: '<S388>:39' */
+    /* Transition: '<S389>:39' */
     mcb_pmsm_foc_sensorless_f_DWork.is_c3_mcb_pmsm_foc_sensorless_f =
       mcb_pmsm_foc_sensorless_IN_Halt;
 
-    /* Entry 'Halt': '<S388>:25' */
+    /* Entry 'Halt': '<S389>:25' */
     mcb_pmsm_foc_sensorless_f2806_B.Enable = false;
     mcb_pmsm_foc_sensorless_f2806_B.SpdRef = 0.0F;
     mcb_pmsm_foc_sensorless_f2806_B.EnClosedLoop = false;
@@ -2886,46 +2898,46 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_step0(void) /* Sample time: [0.000
     mcb_pmsm_foc_sensorless_f2806_B.Enable = false;
     mcb_pmsm_foc_sensorless_f2806_B.EnClosedLoop = false;
 
-    /* During 'Halt': '<S388>:25' */
+    /* During 'Halt': '<S389>:25' */
     out = (mcb_pmsm_foc_sensorless_f2806_B.RT5 &&
            (mcb_pmsm_foc_sensorless_f2806_B.SpdCmd != 0.0F));
     if (out) {
-      /* Transition: '<S388>:30' */
+      /* Transition: '<S389>:30' */
       mcb_pmsm_foc_sensorless_f_DWork.is_c3_mcb_pmsm_foc_sensorless_f =
         mcb_pmsm_foc_sensorl_IN_RunMode;
 
-      /* Entry 'RunMode': '<S388>:24' */
-      /* Entry Internal 'RunMode': '<S388>:24' */
-      /* Transition: '<S388>:37' */
+      /* Entry 'RunMode': '<S389>:24' */
+      /* Entry Internal 'RunMode': '<S389>:24' */
+      /* Transition: '<S389>:37' */
       mcb_pmsm_foc_sensorless_f_DWork.is_RunMode =
         mcb_pmsm_foc_IN_InitOpenLoopRun;
 
-      /* Entry 'InitOpenLoopRun': '<S388>:36' */
+      /* Entry 'InitOpenLoopRun': '<S389>:36' */
       mcb_pmsm_foc_sensorless_f2806_B.Enable = true;
       mcb_pmsm_foc_sensorless_f2806_B.EnClosedLoop = false;
     }
   } else {
-    /* During 'RunMode': '<S388>:24' */
+    /* During 'RunMode': '<S389>:24' */
     out = ((!mcb_pmsm_foc_sensorless_f2806_B.RT5) ||
            (mcb_pmsm_foc_sensorless_f2806_B.SpdCmd == 0.0F));
     if (out) {
-      /* Transition: '<S388>:31' */
-      /* Exit Internal 'RunMode': '<S388>:24' */
-      /* Exit Internal 'NegativeSpeedRun': '<S388>:146' */
+      /* Transition: '<S389>:31' */
+      /* Exit Internal 'RunMode': '<S389>:24' */
+      /* Exit Internal 'NegativeSpeedRun': '<S389>:146' */
       mcb_pmsm_foc_sensorless_f_DWork.is_NegativeSpeedRun =
         mcb_pmsm_foc_IN_NO_ACTIVE_CHILD;
 
-      /* Exit Internal 'PositiveSpeedRun': '<S388>:156' */
+      /* Exit Internal 'PositiveSpeedRun': '<S389>:156' */
       mcb_pmsm_foc_sensorless_f_DWork.is_PositiveSpeedRun =
         mcb_pmsm_foc_IN_NO_ACTIVE_CHILD;
       mcb_pmsm_foc_sensorless_f_DWork.is_RunMode =
         mcb_pmsm_foc_IN_NO_ACTIVE_CHILD;
 
-      /* Exit 'RunMode': '<S388>:24' */
+      /* Exit 'RunMode': '<S389>:24' */
       mcb_pmsm_foc_sensorless_f_DWork.is_c3_mcb_pmsm_foc_sensorless_f =
         mcb_pmsm_foc_sensorless_IN_Halt;
 
-      /* Entry 'Halt': '<S388>:25' */
+      /* Entry 'Halt': '<S389>:25' */
       mcb_pmsm_foc_sensorless_f2806_B.Enable = false;
       mcb_pmsm_foc_sensorless_f2806_B.SpdRef = 0.0F;
       mcb_pmsm_foc_sensorless_f2806_B.EnClosedLoop = false;
@@ -2937,23 +2949,23 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_step0(void) /* Sample time: [0.000
         mcb_pmsm_foc_sensorless_f2806_B.Enable = true;
         mcb_pmsm_foc_sensorless_f2806_B.EnClosedLoop = false;
 
-        /* During 'InitOpenLoopRun': '<S388>:36' */
+        /* During 'InitOpenLoopRun': '<S389>:36' */
         if (mcb_pmsm_foc_sensorless_f2806_B.SpdCmd > 0.0F) {
-          /* Transition: '<S388>:83' */
+          /* Transition: '<S389>:83' */
           mcb_pmsm_foc_sensorless_f_DWork.is_RunMode =
             mcb_pmsm_fo_IN_PositiveSpeedRun;
           mcb_pmsm_foc_sensorless_f_DWork.is_PositiveSpeedRun =
             mcb_pmsm_foc__IN_OpenLoopPosRun;
 
-          /* Entry 'OpenLoopPosRun': '<S388>:82' */
+          /* Entry 'OpenLoopPosRun': '<S389>:82' */
         } else if (mcb_pmsm_foc_sensorless_f2806_B.SpdCmd < 0.0F) {
-          /* Transition: '<S388>:115' */
+          /* Transition: '<S389>:115' */
           mcb_pmsm_foc_sensorless_f_DWork.is_RunMode =
             mcb_pmsm_fo_IN_NegativeSpeedRun;
           mcb_pmsm_foc_sensorless_f_DWork.is_NegativeSpeedRun =
             mcb_pmsm_foc__IN_OpenLoopNegRun;
 
-          /* Entry 'OpenLoopNegRun': '<S388>:112' */
+          /* Entry 'OpenLoopNegRun': '<S389>:112' */
         } else {
           if (mcb_pmsm_foc_sensorless_f2806_B.SpdCmd > 0.2F) {
             mcb_pmsm_foc_sensorless_f2806_B.SpdRef = 0.2F;
@@ -2970,17 +2982,17 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_step0(void) /* Sample time: [0.000
         break;
 
        case mcb_pmsm_fo_IN_NegativeSpeedRun:
-        /* During 'NegativeSpeedRun': '<S388>:146' */
+        /* During 'NegativeSpeedRun': '<S389>:146' */
         switch (mcb_pmsm_foc_sensorless_f_DWork.is_NegativeSpeedRun) {
          case mcb_pmsm_f_IN_ClosedLoopRun_NEG:
-          /* During 'ClosedLoopRun_NEG': '<S388>:132' */
+          /* During 'ClosedLoopRun_NEG': '<S389>:132' */
           if (mcb_pmsm_foc_sensorless_f2806_B.SpdCmd > -0.15F) {
-            /* Transition: '<S388>:141' */
+            /* Transition: '<S389>:141' */
             mcb_pmsm_foc_sensorless_f_DWork.temporalCounter_i1 = 0U;
             mcb_pmsm_foc_sensorless_f_DWork.is_NegativeSpeedRun =
               mcb_p_IN_TransferToOpenLoop_NEG;
 
-            /* Entry 'TransferToOpenLoop_NEG': '<S388>:140' */
+            /* Entry 'TransferToOpenLoop_NEG': '<S389>:140' */
             mcb_pmsm_foc_sensorless_f2806_B.SpdRef = -0.206F;
           } else {
             mcb_pmsm_foc_sensorless_f2806_B.SpdRef =
@@ -2989,10 +3001,10 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_step0(void) /* Sample time: [0.000
           break;
 
          case mcb_pmsm_foc__IN_OpenLoopNegRun:
-          /* During 'OpenLoopNegRun': '<S388>:112' */
-          /* Transition: '<S388>:122' */
+          /* During 'OpenLoopNegRun': '<S389>:112' */
+          /* Transition: '<S389>:122' */
           if (mcb_pmsm_foc_sensorless_f2806_B.SpdCmd > 0.0F) {
-            /* Transition: '<S388>:123' */
+            /* Transition: '<S389>:123' */
             mcb_pmsm_foc_sensorless_f_DWork.is_NegativeSpeedRun =
               mcb_pmsm_foc_IN_NO_ACTIVE_CHILD;
             mcb_pmsm_foc_sensorless_f_DWork.is_RunMode =
@@ -3000,26 +3012,26 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_step0(void) /* Sample time: [0.000
             mcb_pmsm_foc_sensorless_f_DWork.is_PositiveSpeedRun =
               mcb_pmsm_foc__IN_OpenLoopPosRun;
 
-            /* Entry 'OpenLoopPosRun': '<S388>:82' */
+            /* Entry 'OpenLoopPosRun': '<S389>:82' */
           } else if (mcb_pmsm_foc_sensorless_f2806_B.SpdCmd < -0.2F) {
-            /* Transition: '<S388>:125' */
+            /* Transition: '<S389>:125' */
             if (mcb_pmsm_foc_sensorless_f2806_B.SpdRef > -0.2F) {
-              /* Transition: '<S388>:128' */
+              /* Transition: '<S389>:128' */
               mcb_pmsm_foc_sensorless_f_DWork.temporalCounter_i1 = 0U;
               mcb_pmsm_foc_sensorless_f_DWork.is_NegativeSpeedRun =
                 mcb_pmsm__IN_PrepareNegCLSwitch;
 
-              /* Entry 'PrepareNegCLSwitch': '<S388>:127' */
+              /* Entry 'PrepareNegCLSwitch': '<S389>:127' */
               mcb_pmsm_foc_sensorless_f2806_B.Id0_out =
                 mcb_pmsm_foc_sensorless_f2806_B.UnitDelay;
               mcb_pmsm_foc_sensorless_f2806_B.SpdRef = -0.2F;
             } else if (mcb_pmsm_foc_sensorless_f2806_B.SpdRef <= -0.2F) {
-              /* Transition: '<S388>:130' */
+              /* Transition: '<S389>:130' */
               mcb_pmsm_foc_sensorless_f_DWork.temporalCounter_i1 = 0U;
               mcb_pmsm_foc_sensorless_f_DWork.is_NegativeSpeedRun =
                 mcb__IN_TransferToNegClosedLoop;
 
-              /* Entry 'TransferToNegClosedLoop': '<S388>:129' */
+              /* Entry 'TransferToNegClosedLoop': '<S389>:129' */
               mcb_pmsm_foc_sensorless_f2806_B.EnClosedLoop = true;
               mcb_pmsm_foc_sensorless_f2806_B.Id0_out =
                 mcb_pmsm_foc_sensorless_f2806_B.UnitDelay;
@@ -3032,14 +3044,14 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_step0(void) /* Sample time: [0.000
           break;
 
          case mcb_pmsm__IN_PrepareNegCLSwitch:
-          /* During 'PrepareNegCLSwitch': '<S388>:127' */
+          /* During 'PrepareNegCLSwitch': '<S389>:127' */
           if (mcb_pmsm_foc_sensorless_f_DWork.temporalCounter_i1 >= 2000U) {
-            /* Transition: '<S388>:131' */
+            /* Transition: '<S389>:131' */
             mcb_pmsm_foc_sensorless_f_DWork.temporalCounter_i1 = 0U;
             mcb_pmsm_foc_sensorless_f_DWork.is_NegativeSpeedRun =
               mcb__IN_TransferToNegClosedLoop;
 
-            /* Entry 'TransferToNegClosedLoop': '<S388>:129' */
+            /* Entry 'TransferToNegClosedLoop': '<S389>:129' */
             mcb_pmsm_foc_sensorless_f2806_B.EnClosedLoop = true;
             mcb_pmsm_foc_sensorless_f2806_B.Id0_out =
               mcb_pmsm_foc_sensorless_f2806_B.UnitDelay;
@@ -3049,15 +3061,15 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_step0(void) /* Sample time: [0.000
          case mcb__IN_TransferToNegClosedLoop:
           mcb_pmsm_foc_sensorless_f2806_B.EnClosedLoop = true;
 
-          /* During 'TransferToNegClosedLoop': '<S388>:129' */
+          /* During 'TransferToNegClosedLoop': '<S389>:129' */
           out = ((mcb_pmsm_foc_sensorless_f_DWork.temporalCounter_i1 >= 4000U) &&
                  (mcb_pmsm_foc_sensorless_f2806_B.Id0_out <= 0.001F));
           if (out) {
-            /* Transition: '<S388>:133' */
+            /* Transition: '<S389>:133' */
             mcb_pmsm_foc_sensorless_f_DWork.is_NegativeSpeedRun =
               mcb_pmsm_f_IN_ClosedLoopRun_NEG;
 
-            /* Entry 'ClosedLoopRun_NEG': '<S388>:132' */
+            /* Entry 'ClosedLoopRun_NEG': '<S389>:132' */
             mcb_pmsm_foc_sensorless_f2806_B.SpdRef =
               mcb_pmsm_foc_sensorless_f2806_B.SpdCmd;
             mcb_pmsm_foc_sensorless_f2806_B.Id0_out = 0.0F;
@@ -3066,28 +3078,28 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_step0(void) /* Sample time: [0.000
               mcb_pmsm_foc_sensorless_f2806_B.Id0_out;
             mcb_pmsm_foc_sensorless_f2806_B.RAMP_STEP_SIZE = 0.001F;
 
-            /* Outputs for Function Call SubSystem: '<S388>/RunMode.ComputeId0' */
-            /* Simulink Function 'ComputeId0': '<S388>:103' */
+            /* Outputs for Function Call SubSystem: '<S389>/RunMode.ComputeId0' */
+            /* Simulink Function 'ComputeId0': '<S389>:103' */
             mcb_pmsm__RunModeComputeId0(mcb_pmsm_foc_sensorless_f2806_B.Id0_in,
               mcb_pmsm_foc_sensorless_f2806_B.RAMP_STEP_SIZE,
               &mcb_pmsm_foc_sensorless_f2806_B.RunModeComputeId0);
 
-            /* End of Outputs for SubSystem: '<S388>/RunMode.ComputeId0' */
+            /* End of Outputs for SubSystem: '<S389>/RunMode.ComputeId0' */
             mcb_pmsm_foc_sensorless_f2806_B.Id0_out =
               mcb_pmsm_foc_sensorless_f2806_B.RunModeComputeId0.Switch;
           }
           break;
 
          default:
-          /* During 'TransferToOpenLoop_NEG': '<S388>:140' */
+          /* During 'TransferToOpenLoop_NEG': '<S389>:140' */
           if (mcb_pmsm_foc_sensorless_f_DWork.temporalCounter_i1 >= 2000U) {
-            /* Transition: '<S388>:142' */
+            /* Transition: '<S389>:142' */
             mcb_pmsm_foc_sensorless_f_DWork.is_NegativeSpeedRun =
               mcb_pmsm_foc_IN_NO_ACTIVE_CHILD;
             mcb_pmsm_foc_sensorless_f_DWork.is_RunMode =
               mcb_pmsm_foc_IN_InitOpenLoopRun;
 
-            /* Entry 'InitOpenLoopRun': '<S388>:36' */
+            /* Entry 'InitOpenLoopRun': '<S389>:36' */
             mcb_pmsm_foc_sensorless_f2806_B.Enable = true;
             mcb_pmsm_foc_sensorless_f2806_B.EnClosedLoop = false;
           }
@@ -3096,17 +3108,17 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_step0(void) /* Sample time: [0.000
         break;
 
        default:
-        /* During 'PositiveSpeedRun': '<S388>:156' */
+        /* During 'PositiveSpeedRun': '<S389>:156' */
         switch (mcb_pmsm_foc_sensorless_f_DWork.is_PositiveSpeedRun) {
          case mcb_pmsm_fo_IN_ClosedLoopPosRun:
-          /* During 'ClosedLoopPosRun': '<S388>:55' */
+          /* During 'ClosedLoopPosRun': '<S389>:55' */
           if (mcb_pmsm_foc_sensorless_f2806_B.SpdCmd < 0.15F) {
-            /* Transition: '<S388>:46' */
+            /* Transition: '<S389>:46' */
             mcb_pmsm_foc_sensorless_f_DWork.temporalCounter_i1 = 0U;
             mcb_pmsm_foc_sensorless_f_DWork.is_PositiveSpeedRun =
               mcb_pmsm__IN_TransferToOpenLoop;
 
-            /* Entry 'TransferToOpenLoop': '<S388>:80' */
+            /* Entry 'TransferToOpenLoop': '<S389>:80' */
             mcb_pmsm_foc_sensorless_f2806_B.SpdRef = 0.206F;
           } else {
             mcb_pmsm_foc_sensorless_f2806_B.SpdRef =
@@ -3115,27 +3127,27 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_step0(void) /* Sample time: [0.000
           break;
 
          case mcb_pmsm_foc__IN_OpenLoopPosRun:
-          /* During 'OpenLoopPosRun': '<S388>:82' */
-          /* Transition: '<S388>:119' */
+          /* During 'OpenLoopPosRun': '<S389>:82' */
+          /* Transition: '<S389>:119' */
           if (mcb_pmsm_foc_sensorless_f2806_B.SpdCmd > 0.2F) {
-            /* Transition: '<S388>:75' */
+            /* Transition: '<S389>:75' */
             if (mcb_pmsm_foc_sensorless_f2806_B.SpdRef >= 0.2F) {
-              /* Transition: '<S388>:95' */
+              /* Transition: '<S389>:95' */
               mcb_pmsm_foc_sensorless_f_DWork.temporalCounter_i1 = 0U;
               mcb_pmsm_foc_sensorless_f_DWork.is_PositiveSpeedRun =
                 mcb__IN_TransferToPosClosedLoop;
 
-              /* Entry 'TransferToPosClosedLoop': '<S388>:40' */
+              /* Entry 'TransferToPosClosedLoop': '<S389>:40' */
               mcb_pmsm_foc_sensorless_f2806_B.EnClosedLoop = true;
               mcb_pmsm_foc_sensorless_f2806_B.Id0_out =
                 mcb_pmsm_foc_sensorless_f2806_B.UnitDelay;
             } else if (mcb_pmsm_foc_sensorless_f2806_B.SpdRef < 0.2F) {
-              /* Transition: '<S388>:97' */
+              /* Transition: '<S389>:97' */
               mcb_pmsm_foc_sensorless_f_DWork.temporalCounter_i1 = 0U;
               mcb_pmsm_foc_sensorless_f_DWork.is_PositiveSpeedRun =
                 mcb_pmsm__IN_PreparePosCLSwitch;
 
-              /* Entry 'PreparePosCLSwitch': '<S388>:96' */
+              /* Entry 'PreparePosCLSwitch': '<S389>:96' */
               mcb_pmsm_foc_sensorless_f2806_B.Id0_out =
                 mcb_pmsm_foc_sensorless_f2806_B.UnitDelay;
               mcb_pmsm_foc_sensorless_f2806_B.SpdRef = 0.2F;
@@ -3148,14 +3160,14 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_step0(void) /* Sample time: [0.000
           break;
 
          case mcb_pmsm__IN_PreparePosCLSwitch:
-          /* During 'PreparePosCLSwitch': '<S388>:96' */
+          /* During 'PreparePosCLSwitch': '<S389>:96' */
           if (mcb_pmsm_foc_sensorless_f_DWork.temporalCounter_i1 >= 2000U) {
-            /* Transition: '<S388>:98' */
+            /* Transition: '<S389>:98' */
             mcb_pmsm_foc_sensorless_f_DWork.temporalCounter_i1 = 0U;
             mcb_pmsm_foc_sensorless_f_DWork.is_PositiveSpeedRun =
               mcb__IN_TransferToPosClosedLoop;
 
-            /* Entry 'TransferToPosClosedLoop': '<S388>:40' */
+            /* Entry 'TransferToPosClosedLoop': '<S389>:40' */
             mcb_pmsm_foc_sensorless_f2806_B.EnClosedLoop = true;
             mcb_pmsm_foc_sensorless_f2806_B.Id0_out =
               mcb_pmsm_foc_sensorless_f2806_B.UnitDelay;
@@ -3163,15 +3175,15 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_step0(void) /* Sample time: [0.000
           break;
 
          case mcb_pmsm__IN_TransferToOpenLoop:
-          /* During 'TransferToOpenLoop': '<S388>:80' */
+          /* During 'TransferToOpenLoop': '<S389>:80' */
           if (mcb_pmsm_foc_sensorless_f_DWork.temporalCounter_i1 >= 2000U) {
-            /* Transition: '<S388>:81' */
+            /* Transition: '<S389>:81' */
             mcb_pmsm_foc_sensorless_f_DWork.is_PositiveSpeedRun =
               mcb_pmsm_foc_IN_NO_ACTIVE_CHILD;
             mcb_pmsm_foc_sensorless_f_DWork.is_RunMode =
               mcb_pmsm_foc_IN_InitOpenLoopRun;
 
-            /* Entry 'InitOpenLoopRun': '<S388>:36' */
+            /* Entry 'InitOpenLoopRun': '<S389>:36' */
             mcb_pmsm_foc_sensorless_f2806_B.Enable = true;
             mcb_pmsm_foc_sensorless_f2806_B.EnClosedLoop = false;
           }
@@ -3180,15 +3192,15 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_step0(void) /* Sample time: [0.000
          default:
           mcb_pmsm_foc_sensorless_f2806_B.EnClosedLoop = true;
 
-          /* During 'TransferToPosClosedLoop': '<S388>:40' */
+          /* During 'TransferToPosClosedLoop': '<S389>:40' */
           out = ((mcb_pmsm_foc_sensorless_f_DWork.temporalCounter_i1 >= 4000U) &&
                  (mcb_pmsm_foc_sensorless_f2806_B.Id0_out <= 0.001F));
           if (out) {
-            /* Transition: '<S388>:56' */
+            /* Transition: '<S389>:56' */
             mcb_pmsm_foc_sensorless_f_DWork.is_PositiveSpeedRun =
               mcb_pmsm_fo_IN_ClosedLoopPosRun;
 
-            /* Entry 'ClosedLoopPosRun': '<S388>:55' */
+            /* Entry 'ClosedLoopPosRun': '<S389>:55' */
             mcb_pmsm_foc_sensorless_f2806_B.SpdRef =
               mcb_pmsm_foc_sensorless_f2806_B.SpdCmd;
             mcb_pmsm_foc_sensorless_f2806_B.Id0_out = 0.0F;
@@ -3197,13 +3209,13 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_step0(void) /* Sample time: [0.000
               mcb_pmsm_foc_sensorless_f2806_B.Id0_out;
             mcb_pmsm_foc_sensorless_f2806_B.RAMP_STEP_SIZE = 0.001F;
 
-            /* Outputs for Function Call SubSystem: '<S388>/RunMode.ComputeId0' */
-            /* Simulink Function 'ComputeId0': '<S388>:103' */
+            /* Outputs for Function Call SubSystem: '<S389>/RunMode.ComputeId0' */
+            /* Simulink Function 'ComputeId0': '<S389>:103' */
             mcb_pmsm__RunModeComputeId0(mcb_pmsm_foc_sensorless_f2806_B.Id0_in,
               mcb_pmsm_foc_sensorless_f2806_B.RAMP_STEP_SIZE,
               &mcb_pmsm_foc_sensorless_f2806_B.RunModeComputeId0);
 
-            /* End of Outputs for SubSystem: '<S388>/RunMode.ComputeId0' */
+            /* End of Outputs for SubSystem: '<S389>/RunMode.ComputeId0' */
             mcb_pmsm_foc_sensorless_f2806_B.Id0_out =
               mcb_pmsm_foc_sensorless_f2806_B.RunModeComputeId0.Switch;
           }
@@ -3223,7 +3235,7 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_step0(void) /* Sample time: [0.000
 
       if (guard1) {
         if (mcb_pmsm_foc_sensorless_f2806_B.SpdCmd < 0.0F) {
-          /* Transition: '<S388>:120' */
+          /* Transition: '<S389>:120' */
           mcb_pmsm_foc_sensorless_f_DWork.is_PositiveSpeedRun =
             mcb_pmsm_foc_IN_NO_ACTIVE_CHILD;
           mcb_pmsm_foc_sensorless_f_DWork.is_RunMode =
@@ -3231,7 +3243,7 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_step0(void) /* Sample time: [0.000
           mcb_pmsm_foc_sensorless_f_DWork.is_NegativeSpeedRun =
             mcb_pmsm_foc__IN_OpenLoopNegRun;
 
-          /* Entry 'OpenLoopNegRun': '<S388>:112' */
+          /* Entry 'OpenLoopNegRun': '<S389>:112' */
         } else if (mcb_pmsm_foc_sensorless_f2806_B.SpdCmd > 0.2F) {
           mcb_pmsm_foc_sensorless_f2806_B.SpdRef = 0.2F;
         } else {
@@ -3265,179 +3277,179 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_step0(void) /* Sample time: [0.000
     !mcb_pmsm_foc_sensorless_f2806_B.EnClosedLoop;
 
   /* Outputs for Enabled SubSystem: '<S8>/Compute Control-loop Initial Values' incorporates:
-   *  EnablePort: '<S387>/Enable'
+   *  EnablePort: '<S388>/Enable'
    */
   if (mcb_pmsm_foc_sensorless_f2806_B.NOT) {
-    /* DataStoreRead: '<S387>/Data Store Read3' */
+    /* DataStoreRead: '<S388>/Data Store Read3' */
     mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead3 =
       mcb_pmsm_foc_sensorless_f_DWork.V_alpha;
 
-    /* DataStoreRead: '<S387>/Data Store Read1' */
+    /* DataStoreRead: '<S388>/Data Store Read1' */
     mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead1 =
       mcb_pmsm_foc_sensorless_f_DWork.V_beta;
 
-    /* DataStoreRead: '<S387>/Data Store Read2' */
+    /* DataStoreRead: '<S388>/Data Store Read2' */
     mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead2 =
       mcb_pmsm_foc_sensorless_f_DWork.Pos_meas_PU;
 
-    /* RelationalOperator: '<S401>/Compare' incorporates:
-     *  Constant: '<S401>/Constant'
+    /* RelationalOperator: '<S402>/Compare' incorporates:
+     *  Constant: '<S402>/Constant'
      */
     mcb_pmsm_foc_sensorless_f2806_B.Compare =
       (mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead2 < 0.0F);
 
-    /* DataTypeConversion: '<S399>/Data Type Conversion' */
+    /* DataTypeConversion: '<S400>/Data Type Conversion' */
     mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion_b =
       mcb_pmsm_foc_sensorless_f2806_B.Compare;
 
-    /* If: '<S399>/If' */
+    /* If: '<S400>/If' */
     if (mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion_b > 0U) {
-      /* Outputs for IfAction SubSystem: '<S399>/If Action Subsystem' incorporates:
-       *  ActionPort: '<S402>/Action Port'
+      /* Outputs for IfAction SubSystem: '<S400>/If Action Subsystem' incorporates:
+       *  ActionPort: '<S403>/Action Port'
        */
       mcb_pmsm__IfActionSubsystem(mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead2,
         &mcb_pmsm_foc_sensorless_f2806_B.Merge,
         &mcb_pmsm_foc_sensorless_f2806_B.IfActionSubsystem_ey);
 
-      /* End of Outputs for SubSystem: '<S399>/If Action Subsystem' */
+      /* End of Outputs for SubSystem: '<S400>/If Action Subsystem' */
     } else {
-      /* Outputs for IfAction SubSystem: '<S399>/If Action Subsystem1' incorporates:
-       *  ActionPort: '<S403>/Action Port'
+      /* Outputs for IfAction SubSystem: '<S400>/If Action Subsystem1' incorporates:
+       *  ActionPort: '<S404>/Action Port'
        */
       mcb_pmsm_IfActionSubsystem1(mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead2,
         &mcb_pmsm_foc_sensorless_f2806_B.Merge,
         &mcb_pmsm_foc_sensorless_f2806_B.IfActionSubsystem1_b);
 
-      /* End of Outputs for SubSystem: '<S399>/If Action Subsystem1' */
+      /* End of Outputs for SubSystem: '<S400>/If Action Subsystem1' */
     }
 
-    /* End of If: '<S399>/If' */
+    /* End of If: '<S400>/If' */
 
-    /* Gain: '<S397>/indexing' */
+    /* Gain: '<S398>/indexing' */
     mcb_pmsm_foc_sensorless_f2806_B.indexing = 800.0F *
       mcb_pmsm_foc_sensorless_f2806_B.Merge;
 
-    /* DataTypeConversion: '<S397>/Get_Integer' */
+    /* DataTypeConversion: '<S398>/Get_Integer' */
     mcb_pmsm_foc_sensorless_f2806_B.Get_Integer = (uint16_T)
       mcb_pmsm_foc_sensorless_f2806_B.indexing;
 
-    /* Sum: '<S397>/Sum' incorporates:
-     *  Constant: '<S397>/offset'
+    /* Sum: '<S398>/Sum' incorporates:
+     *  Constant: '<S398>/offset'
      */
     Sum = mcb_pmsm_foc_sensorless_f2806_B.Get_Integer + 1UL;
     mcb_pmsm_foc_sensorless_f2806_B.Sum[0] = Sum;
 
-    /* Selector: '<S397>/Lookup' incorporates:
-     *  Constant: '<S397>/sine_table_values'
+    /* Selector: '<S398>/Lookup' incorporates:
+     *  Constant: '<S398>/sine_table_values'
      */
     mcb_pmsm_foc_sensorless_f2806_B.Lookup[0] =
       mcb_pmsm_foc_sensorless__ConstP.pooled31[(int16_T)Sum];
 
-    /* Sum: '<S397>/Sum' */
+    /* Sum: '<S398>/Sum' */
     Sum = mcb_pmsm_foc_sensorless_f2806_B.Get_Integer;
     mcb_pmsm_foc_sensorless_f2806_B.Sum[1] = Sum;
 
-    /* Selector: '<S397>/Lookup' incorporates:
-     *  Constant: '<S397>/sine_table_values'
+    /* Selector: '<S398>/Lookup' incorporates:
+     *  Constant: '<S398>/sine_table_values'
      */
     mcb_pmsm_foc_sensorless_f2806_B.Lookup[1] =
       mcb_pmsm_foc_sensorless__ConstP.pooled31[(int16_T)Sum];
 
-    /* Sum: '<S397>/Sum' incorporates:
-     *  Constant: '<S397>/offset'
+    /* Sum: '<S398>/Sum' incorporates:
+     *  Constant: '<S398>/offset'
      */
     Sum = mcb_pmsm_foc_sensorless_f2806_B.Get_Integer + 201UL;
     mcb_pmsm_foc_sensorless_f2806_B.Sum[2] = Sum;
 
-    /* Selector: '<S397>/Lookup' incorporates:
-     *  Constant: '<S397>/sine_table_values'
+    /* Selector: '<S398>/Lookup' incorporates:
+     *  Constant: '<S398>/sine_table_values'
      */
     mcb_pmsm_foc_sensorless_f2806_B.Lookup[2] =
       mcb_pmsm_foc_sensorless__ConstP.pooled31[(int16_T)Sum];
 
-    /* Sum: '<S397>/Sum' incorporates:
-     *  Constant: '<S397>/offset'
+    /* Sum: '<S398>/Sum' incorporates:
+     *  Constant: '<S398>/offset'
      */
     Sum = mcb_pmsm_foc_sensorless_f2806_B.Get_Integer + 200UL;
     mcb_pmsm_foc_sensorless_f2806_B.Sum[3] = Sum;
 
-    /* Selector: '<S397>/Lookup' incorporates:
-     *  Constant: '<S397>/sine_table_values'
+    /* Selector: '<S398>/Lookup' incorporates:
+     *  Constant: '<S398>/sine_table_values'
      */
     mcb_pmsm_foc_sensorless_f2806_B.Lookup[3] =
       mcb_pmsm_foc_sensorless__ConstP.pooled31[(int16_T)Sum];
 
-    /* Sum: '<S398>/Sum3' */
+    /* Sum: '<S399>/Sum3' */
     mcb_pmsm_foc_sensorless_f2806_B.Sum3 =
       mcb_pmsm_foc_sensorless_f2806_B.Lookup[0] -
       mcb_pmsm_foc_sensorless_f2806_B.Lookup[1];
 
-    /* DataTypeConversion: '<S397>/Data Type Conversion1' */
+    /* DataTypeConversion: '<S398>/Data Type Conversion1' */
     mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion1 =
       mcb_pmsm_foc_sensorless_f2806_B.Get_Integer;
 
-    /* Sum: '<S397>/Sum2' */
+    /* Sum: '<S398>/Sum2' */
     mcb_pmsm_foc_sensorless_f2806_B.Sum2 =
       mcb_pmsm_foc_sensorless_f2806_B.indexing -
       mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion1;
 
-    /* Product: '<S398>/Product' */
+    /* Product: '<S399>/Product' */
     mcb_pmsm_foc_sensorless_f2806_B.Product_b =
       mcb_pmsm_foc_sensorless_f2806_B.Sum3 *
       mcb_pmsm_foc_sensorless_f2806_B.Sum2;
 
-    /* Sum: '<S398>/Sum4' */
+    /* Sum: '<S399>/Sum4' */
     mcb_pmsm_foc_sensorless_f2806_B.Sum4 =
       mcb_pmsm_foc_sensorless_f2806_B.Product_b +
       mcb_pmsm_foc_sensorless_f2806_B.Lookup[1];
 
-    /* Sum: '<S398>/Sum5' */
+    /* Sum: '<S399>/Sum5' */
     mcb_pmsm_foc_sensorless_f2806_B.Sum5 =
       mcb_pmsm_foc_sensorless_f2806_B.Lookup[2] -
       mcb_pmsm_foc_sensorless_f2806_B.Lookup[3];
 
-    /* Product: '<S398>/Product1' */
+    /* Product: '<S399>/Product1' */
     mcb_pmsm_foc_sensorless_f2806_B.Product1_a =
       mcb_pmsm_foc_sensorless_f2806_B.Sum5 *
       mcb_pmsm_foc_sensorless_f2806_B.Sum2;
 
-    /* Sum: '<S398>/Sum6' */
+    /* Sum: '<S399>/Sum6' */
     mcb_pmsm_foc_sensorless_f2806_B.Sum6 =
       mcb_pmsm_foc_sensorless_f2806_B.Product1_a +
       mcb_pmsm_foc_sensorless_f2806_B.Lookup[3];
 
-    /* Outputs for Atomic SubSystem: '<S392>/Two inputs CRL' */
+    /* Outputs for Atomic SubSystem: '<S393>/Two inputs CRL' */
     mcb_pmsm_foc_s_TwoinputsCRL(mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead3,
       mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead1,
       mcb_pmsm_foc_sensorless_f2806_B.Sum4, mcb_pmsm_foc_sensorless_f2806_B.Sum6,
       &mcb_pmsm_foc_sensorless_f2806_B.TwoinputsCRL_j);
 
-    /* End of Outputs for SubSystem: '<S392>/Two inputs CRL' */
+    /* End of Outputs for SubSystem: '<S393>/Two inputs CRL' */
 
-    /* DataStoreWrite: '<S387>/Data Store Write1' */
+    /* DataStoreWrite: '<S388>/Data Store Write1' */
     mcb_pmsm_foc_sensorless_f_DWork.Vd_out_initial =
       mcb_pmsm_foc_sensorless_f2806_B.TwoinputsCRL_j.algDD_o1;
 
-    /* DataStoreWrite: '<S387>/Data Store Write2' */
+    /* DataStoreWrite: '<S388>/Data Store Write2' */
     mcb_pmsm_foc_sensorless_f_DWork.Vq_out_initial =
       mcb_pmsm_foc_sensorless_f2806_B.TwoinputsCRL_j.algDD_o2;
 
-    /* DataStoreRead: '<S387>/Data Store Read' */
+    /* DataStoreRead: '<S388>/Data Store Read' */
     mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead =
       mcb_pmsm_foc_sensorless_f_DWork.Ia_meas_PU;
 
-    /* DataStoreRead: '<S387>/Data Store Read4' */
+    /* DataStoreRead: '<S388>/Data Store Read4' */
     mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead4 =
       mcb_pmsm_foc_sensorless_f_DWork.Ib_meas_PU;
 
-    /* Outputs for Atomic SubSystem: '<S393>/Two phase CRL wrap' */
+    /* Outputs for Atomic SubSystem: '<S394>/Two phase CRL wrap' */
     mcb_pmsm_fo_TwophaseCRLwrap(mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead,
       mcb_pmsm_foc_sensorless_f2806_B.DataStoreRead4,
       &mcb_pmsm_foc_sensorless_f2806_B.TwophaseCRLwrap_b);
 
-    /* End of Outputs for SubSystem: '<S393>/Two phase CRL wrap' */
+    /* End of Outputs for SubSystem: '<S394>/Two phase CRL wrap' */
 
-    /* Outputs for Atomic SubSystem: '<S390>/Two inputs CRL' */
+    /* Outputs for Atomic SubSystem: '<S391>/Two inputs CRL' */
     mcb_pmsm_foc_s_TwoinputsCRL
       (mcb_pmsm_foc_sensorless_f2806_B.TwophaseCRLwrap_b.algDD_o1,
        mcb_pmsm_foc_sensorless_f2806_B.TwophaseCRLwrap_b.algDD_o2,
@@ -3445,9 +3457,9 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_step0(void) /* Sample time: [0.000
        mcb_pmsm_foc_sensorless_f2806_B.Sum6,
        &mcb_pmsm_foc_sensorless_f2806_B.TwoinputsCRL_c);
 
-    /* End of Outputs for SubSystem: '<S390>/Two inputs CRL' */
+    /* End of Outputs for SubSystem: '<S391>/Two inputs CRL' */
 
-    /* DataStoreWrite: '<S387>/Data Store Write6' */
+    /* DataStoreWrite: '<S388>/Data Store Write6' */
     mcb_pmsm_foc_sensorless_f_DWork.Iq_ref_initial =
       mcb_pmsm_foc_sensorless_f2806_B.TwoinputsCRL_c.algDD_o2;
   }
@@ -3494,7 +3506,7 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_step0(void) /* Sample time: [0.000
 void mcb_pmsm_foc_sensorless_f28069MLaunchPad_step1(void) /* Sample time: [0.5s, 0.0s] */
 {
   /* Outputs for Atomic SubSystem: '<Root>/Heartbeat LED' */
-  /* S-Function (c280xgpio_do): '<S320>/Digital Output1' incorporates:
+  /* S-Function (c280xgpio_do): '<S321>/Digital Output1' incorporates:
    *  Constant: '<S4>/RED_LED'
    */
   {
@@ -3525,13 +3537,6 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_initialize(void)
     mcb_pmsm_foc_sensorless_f2806_B.Add = 0.0;
     mcb_pmsm_foc_sensorless_f2806_B.Product1 = 0.0;
     mcb_pmsm_foc_sensorless_f2806_B.Add1 = 0.0;
-    mcb_pmsm_foc_sensorless_f2806_B.qcos = 0.0;
-    mcb_pmsm_foc_sensorless_f2806_B.dsin = 0.0;
-    mcb_pmsm_foc_sensorless_f2806_B.sum_beta = 0.0;
-    mcb_pmsm_foc_sensorless_f2806_B.dcos = 0.0;
-    mcb_pmsm_foc_sensorless_f2806_B.qsin = 0.0;
-    mcb_pmsm_foc_sensorless_f2806_B.sum_alpha = 0.0;
-    mcb_pmsm_foc_sensorless_f2806_B.Unary_Minus = 0.0;
     mcb_pmsm_foc_sensorless_f2806_B.SpdCmd = 0.0F;
     mcb_pmsm_foc_sensorless_f2806_B.UnitDelay = 0.0F;
     mcb_pmsm_foc_sensorless_f2806_B.RT6 = 0.0F;
@@ -3618,6 +3623,8 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_initialize(void)
     mcb_pmsm_foc_sensorless_f2806_B.Sum1_e = 0.0F;
     mcb_pmsm_foc_sensorless_f2806_B.Merge_m[0] = 0.0F;
     mcb_pmsm_foc_sensorless_f2806_B.Merge_m[1] = 0.0F;
+    mcb_pmsm_foc_sensorless_f2806_B.CastToSingle1 = 0.0F;
+    mcb_pmsm_foc_sensorless_f2806_B.CastToSingle = 0.0F;
     mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion_c = 0.0F;
     mcb_pmsm_foc_sensorless_f2806_B.Speed_fb_PU = 0.0F;
     mcb_pmsm_foc_sensorless_f2806_B.TmpSignalConversionAtDelay5Inpo[0] = 0.0F;
@@ -4012,6 +4019,12 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_initialize(void)
     mcb_pmsm_foc_sensorless_f2806_B.Bias_f = 0.0F;
     mcb_pmsm_foc_sensorless_f2806_B.Bias_j = 0.0F;
     mcb_pmsm_foc_sensorless_f2806_B.Input_h = 0.0F;
+    mcb_pmsm_foc_sensorless_f2806_B.qcos = 0.0F;
+    mcb_pmsm_foc_sensorless_f2806_B.dsin = 0.0F;
+    mcb_pmsm_foc_sensorless_f2806_B.sum_beta = 0.0F;
+    mcb_pmsm_foc_sensorless_f2806_B.dcos = 0.0F;
+    mcb_pmsm_foc_sensorless_f2806_B.qsin = 0.0F;
+    mcb_pmsm_foc_sensorless_f2806_B.sum_alpha = 0.0F;
     mcb_pmsm_foc_sensorless_f2806_B.Switch_f[0] = 0.0F;
     mcb_pmsm_foc_sensorless_f2806_B.Switch_f[1] = 0.0F;
     mcb_pmsm_foc_sensorless_f2806_B.algDD_o1 = 0.0F;
@@ -4167,7 +4180,7 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_initialize(void)
   mcb_pmsm_foc_sensorless_f_DWork.SpeedControl.integrator_state = 0.0F;
 
   {
-    uint16_T s313_iter;
+    uint16_T s314_iter;
 
     /* Start for DataStoreMemory: '<Root>/Data Store Memory15' */
     mcb_pmsm_foc_sensorless_f_DWork.Id0_out = 0.1F;
@@ -4223,17 +4236,17 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_initialize(void)
     mcb_pmsm_foc_sensorless_f_DWork.is_PositiveSpeedRun =
       mcb_pmsm_foc_IN_NO_ACTIVE_CHILD;
 
-    /* SystemInitialize for S-Function (HardwareInterrupt_sfun): '<S305>/Hardware Interrupt' incorporates:
+    /* SystemInitialize for S-Function (HardwareInterrupt_sfun): '<S306>/Hardware Interrupt' incorporates:
      *  SubSystem: '<Root>/Current Control'
      */
     mcb_pms_CurrentControl_Init();
 
-    /* SystemInitialize for S-Function (HardwareInterrupt_sfun): '<S307>/Hardware Interrupt' incorporates:
+    /* SystemInitialize for S-Function (HardwareInterrupt_sfun): '<S308>/Hardware Interrupt' incorporates:
      *  SubSystem: '<Root>/Serial Receive'
      */
     /* System initialize for function-call system: '<Root>/Serial Receive' */
 
-    /* Start for S-Function (c28xsci_rx): '<S324>/SCI Receive' */
+    /* Start for S-Function (c28xsci_rx): '<S325>/SCI Receive' */
 
     /* Initialize out port */
     {
@@ -4258,7 +4271,7 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_initialize(void)
     /* End of SystemInitialize for SubSystem: '<Root>/Speed Control' */
 
     /* SystemInitialize for Atomic SubSystem: '<Root>/Heartbeat LED' */
-    /* Start for S-Function (c280xgpio_do): '<S320>/Digital Output1' */
+    /* Start for S-Function (c280xgpio_do): '<S321>/Digital Output1' */
     EALLOW;
     GpioCtrlRegs.GPBMUX1.all &= 0xFFFFFFCFU;
     GpioCtrlRegs.GPBDIR.all |= 0x4U;
@@ -4267,15 +4280,15 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_initialize(void)
     /* End of SystemInitialize for SubSystem: '<Root>/Heartbeat LED' */
 
     /* SystemInitialize for Atomic SubSystem: '<Root>/Hardware Init' */
-    /* Start for S-Function (c280xgpio_do): '<S311>/Digital Output' */
+    /* Start for S-Function (c280xgpio_do): '<S312>/Digital Output' */
     EALLOW;
     GpioCtrlRegs.GPBMUX2.all &= 0xFFFFFFCFU;
     GpioCtrlRegs.GPBDIR.all |= 0x40000U;
     EDIS;
 
-    /* SystemInitialize for Enabled SubSystem: '<S309>/Calculate ADC Offset ' */
-    /* SystemInitialize for Iterator SubSystem: '<S310>/For Iterator Subsystem' */
-    /* Start for S-Function (c2802xadc): '<S313>/IA//IB Measurement' */
+    /* SystemInitialize for Enabled SubSystem: '<S310>/Calculate ADC Offset ' */
+    /* SystemInitialize for Iterator SubSystem: '<S311>/For Iterator Subsystem' */
+    /* Start for S-Function (c2802xadc): '<S314>/IA//IB Measurement' */
     if (MW_adcInitFlag == 0U) {
       InitAdc();
       MW_adcInitFlag = 1U;
@@ -4283,8 +4296,8 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_initialize(void)
 
     config_ADC_SOC2_SOC3 ();
 
-    /* End of SystemInitialize for SubSystem: '<S310>/For Iterator Subsystem' */
-    /* End of SystemInitialize for SubSystem: '<S309>/Calculate ADC Offset ' */
+    /* End of SystemInitialize for SubSystem: '<S311>/For Iterator Subsystem' */
+    /* End of SystemInitialize for SubSystem: '<S310>/Calculate ADC Offset ' */
     mcb__SPIMasterTransfer_Init
       (&mcb_pmsm_foc_sensorless_f_DWork.SPIMasterTransfer);
     mcb__SPIMasterTransfer_Init
@@ -4303,8 +4316,8 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_initialize(void)
       &mcb_pmsm_foc_sensorless_f2806_B.SPIMasterTransfer1,
       &mcb_pmsm_foc_sensorless_f_DWork.SPIMasterTransfer1);
 
-    /* S-Function (c280xgpio_do): '<S311>/Digital Output' incorporates:
-     *  Constant: '<S311>/DRV830x_Enable'
+    /* S-Function (c280xgpio_do): '<S312>/Digital Output' incorporates:
+     *  Constant: '<S312>/DRV830x_Enable'
      */
     {
       if ((1U)) {
@@ -4314,19 +4327,19 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_initialize(void)
       }
     }
 
-    /* Outputs for Enabled SubSystem: '<S309>/Calculate ADC Offset ' incorporates:
-     *  EnablePort: '<S310>/Enable'
+    /* Outputs for Enabled SubSystem: '<S310>/Calculate ADC Offset ' incorporates:
+     *  EnablePort: '<S311>/Enable'
      */
-    /* Outputs for Iterator SubSystem: '<S310>/For Iterator Subsystem' incorporates:
-     *  ForIterator: '<S313>/For Iterator'
+    /* Outputs for Iterator SubSystem: '<S311>/For Iterator Subsystem' incorporates:
+     *  ForIterator: '<S314>/For Iterator'
      */
-    for (s313_iter = 1U; s313_iter < 17U; s313_iter++) {
-      /* Outputs for Iterator SubSystem: '<S310>/For Iterator Subsystem' incorporates:
-       *  ForIterator: '<S313>/For Iterator'
+    for (s314_iter = 1U; s314_iter < 17U; s314_iter++) {
+      /* Outputs for Iterator SubSystem: '<S311>/For Iterator Subsystem' incorporates:
+       *  ForIterator: '<S314>/For Iterator'
        */
-      mcb_pmsm_foc_sensorless_f2806_B.ForIterator = s313_iter;
+      mcb_pmsm_foc_sensorless_f2806_B.ForIterator = s314_iter;
 
-      /* S-Function (c2802xadc): '<S313>/IA//IB Measurement' */
+      /* S-Function (c2802xadc): '<S314>/IA//IB Measurement' */
       {
         /*  Internal Reference Voltage : Fixed scale 0 to 3.3 V range.  */
         /*  External Reference Voltage : Allowable ranges of VREFHI(ADCINA0) = 3.3 and VREFLO(tied to ground) = 0  */
@@ -4353,133 +4366,133 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_initialize(void)
           (AdcResult.ADCRESULT3);
       }
 
-      /* If: '<S313>/If' */
+      /* If: '<S314>/If' */
       if (mcb_pmsm_foc_sensorless_f2806_B.ForIterator > 8U) {
-        /* Outputs for IfAction SubSystem: '<S313>/If Action Subsystem' incorporates:
-         *  ActionPort: '<S318>/Action Port'
+        /* Outputs for IfAction SubSystem: '<S314>/If Action Subsystem' incorporates:
+         *  ActionPort: '<S319>/Action Port'
          */
-        /* Memory: '<S318>/Memory' */
+        /* Memory: '<S319>/Memory' */
         mcb_pmsm_foc_sensorless_f2806_B.Memory =
           mcb_pmsm_foc_sensorless_f_DWork.Memory_PreviousInput;
 
-        /* Sum: '<S318>/Sum' */
+        /* Sum: '<S319>/Sum' */
         mcb_pmsm_foc_sensorless_f2806_B.Sum_dn =
           mcb_pmsm_foc_sensorless_f2806_B.IAIBMeasurement[0] +
           mcb_pmsm_foc_sensorless_f2806_B.Memory;
 
-        /* Memory: '<S318>/Memory1' */
+        /* Memory: '<S319>/Memory1' */
         mcb_pmsm_foc_sensorless_f2806_B.Memory1 =
           mcb_pmsm_foc_sensorless_f_DWork.Memory1_PreviousInput;
 
-        /* Sum: '<S318>/Sum1' */
+        /* Sum: '<S319>/Sum1' */
         mcb_pmsm_foc_sensorless_f2806_B.Sum1_dq =
           mcb_pmsm_foc_sensorless_f2806_B.IAIBMeasurement[1] +
           mcb_pmsm_foc_sensorless_f2806_B.Memory1;
 
-        /* Update for Memory: '<S318>/Memory' */
+        /* Update for Memory: '<S319>/Memory' */
         mcb_pmsm_foc_sensorless_f_DWork.Memory_PreviousInput =
           mcb_pmsm_foc_sensorless_f2806_B.Sum_dn;
 
-        /* Update for Memory: '<S318>/Memory1' */
+        /* Update for Memory: '<S319>/Memory1' */
         mcb_pmsm_foc_sensorless_f_DWork.Memory1_PreviousInput =
           mcb_pmsm_foc_sensorless_f2806_B.Sum1_dq;
 
-        /* End of Outputs for SubSystem: '<S313>/If Action Subsystem' */
+        /* End of Outputs for SubSystem: '<S314>/If Action Subsystem' */
       }
 
-      /* End of If: '<S313>/If' */
+      /* End of If: '<S314>/If' */
     }
 
-    /* End of Outputs for SubSystem: '<S310>/For Iterator Subsystem' */
+    /* End of Outputs for SubSystem: '<S311>/For Iterator Subsystem' */
 
-    /* Product: '<S310>/Divide' incorporates:
-     *  Constant: '<S310>/Constant'
+    /* Product: '<S311>/Divide' incorporates:
+     *  Constant: '<S311>/Constant'
      */
     mcb_pmsm_foc_sensorless_f2806_B.Divide_h = (uint16_T)((real_T)
       mcb_pmsm_foc_sensorless_f2806_B.Sum_dn / 8.0);
 
-    /* If: '<S310>/If' incorporates:
-     *  Constant: '<S310>/Constant1'
-     *  Constant: '<S310>/Constant2'
+    /* If: '<S311>/If' incorporates:
+     *  Constant: '<S311>/Constant1'
+     *  Constant: '<S311>/Constant2'
      */
     if ((mcb_pmsm_foc_sensorless_f2806_B.Divide_h > 1500U) &&
         (mcb_pmsm_foc_sensorless_f2806_B.Divide_h < 2500U)) {
-      /* Outputs for IfAction SubSystem: '<S310>/If Action Subsystem' incorporates:
-       *  ActionPort: '<S314>/Action Port'
+      /* Outputs for IfAction SubSystem: '<S311>/If Action Subsystem' incorporates:
+       *  ActionPort: '<S315>/Action Port'
        */
-      /* DataStoreWrite: '<S314>/Data Store Write1' */
+      /* DataStoreWrite: '<S315>/Data Store Write1' */
       mcb_pmsm_foc_sensorless_f_DWork.IaOffset =
         mcb_pmsm_foc_sensorless_f2806_B.Divide_h;
 
-      /* End of Outputs for SubSystem: '<S310>/If Action Subsystem' */
+      /* End of Outputs for SubSystem: '<S311>/If Action Subsystem' */
     } else {
-      /* Outputs for IfAction SubSystem: '<S310>/If Action Subsystem1' incorporates:
-       *  ActionPort: '<S315>/Action Port'
+      /* Outputs for IfAction SubSystem: '<S311>/If Action Subsystem1' incorporates:
+       *  ActionPort: '<S316>/Action Port'
        */
-      /* DataStoreWrite: '<S315>/Data Store Write1' incorporates:
-       *  Constant: '<S315>/Constant'
+      /* DataStoreWrite: '<S316>/Data Store Write1' incorporates:
+       *  Constant: '<S316>/Constant'
        */
       mcb_pmsm_foc_sensorless_f_DWork.IaOffset = 2087U;
 
-      /* End of Outputs for SubSystem: '<S310>/If Action Subsystem1' */
+      /* End of Outputs for SubSystem: '<S311>/If Action Subsystem1' */
     }
 
-    /* End of If: '<S310>/If' */
+    /* End of If: '<S311>/If' */
 
-    /* Product: '<S310>/Divide1' incorporates:
-     *  Constant: '<S310>/Constant'
+    /* Product: '<S311>/Divide1' incorporates:
+     *  Constant: '<S311>/Constant'
      */
     mcb_pmsm_foc_sensorless_f2806_B.Divide1_e = (uint16_T)((real_T)
       mcb_pmsm_foc_sensorless_f2806_B.Sum1_dq / 8.0);
 
-    /* If: '<S310>/If1' incorporates:
-     *  Constant: '<S310>/Constant1'
-     *  Constant: '<S310>/Constant2'
+    /* If: '<S311>/If1' incorporates:
+     *  Constant: '<S311>/Constant1'
+     *  Constant: '<S311>/Constant2'
      */
     if ((mcb_pmsm_foc_sensorless_f2806_B.Divide1_e > 1500U) &&
         (mcb_pmsm_foc_sensorless_f2806_B.Divide1_e < 2500U)) {
-      /* Outputs for IfAction SubSystem: '<S310>/If Action Subsystem2' incorporates:
-       *  ActionPort: '<S316>/Action Port'
+      /* Outputs for IfAction SubSystem: '<S311>/If Action Subsystem2' incorporates:
+       *  ActionPort: '<S317>/Action Port'
        */
-      /* DataStoreWrite: '<S316>/Data Store Write2' */
+      /* DataStoreWrite: '<S317>/Data Store Write2' */
       mcb_pmsm_foc_sensorless_f_DWork.IbOffset =
         mcb_pmsm_foc_sensorless_f2806_B.Divide1_e;
 
-      /* End of Outputs for SubSystem: '<S310>/If Action Subsystem2' */
+      /* End of Outputs for SubSystem: '<S311>/If Action Subsystem2' */
     } else {
-      /* Outputs for IfAction SubSystem: '<S310>/If Action Subsystem3' incorporates:
-       *  ActionPort: '<S317>/Action Port'
+      /* Outputs for IfAction SubSystem: '<S311>/If Action Subsystem3' incorporates:
+       *  ActionPort: '<S318>/Action Port'
        */
-      /* DataStoreWrite: '<S317>/Data Store Write2' incorporates:
-       *  Constant: '<S317>/Constant1'
+      /* DataStoreWrite: '<S318>/Data Store Write2' incorporates:
+       *  Constant: '<S318>/Constant1'
        */
       mcb_pmsm_foc_sensorless_f_DWork.IbOffset = 2082U;
 
-      /* End of Outputs for SubSystem: '<S310>/If Action Subsystem3' */
+      /* End of Outputs for SubSystem: '<S311>/If Action Subsystem3' */
     }
 
-    /* End of If: '<S310>/If1' */
-    /* End of Outputs for SubSystem: '<S309>/Calculate ADC Offset ' */
+    /* End of If: '<S311>/If1' */
+    /* End of Outputs for SubSystem: '<S310>/Calculate ADC Offset ' */
 
-    /* Logic: '<S309>/NOT' */
+    /* Logic: '<S310>/NOT' */
     mcb_pmsm_foc_sensorless_f2806_B.NOT_h = false;
 
-    /* Outputs for Enabled SubSystem: '<S309>/Default ADC Offset' incorporates:
-     *  EnablePort: '<S312>/Enable'
+    /* Outputs for Enabled SubSystem: '<S310>/Default ADC Offset' incorporates:
+     *  EnablePort: '<S313>/Enable'
      */
     if (mcb_pmsm_foc_sensorless_f2806_B.NOT_h) {
-      /* DataStoreWrite: '<S312>/Data Store Write1' incorporates:
-       *  Constant: '<S312>/Constant'
+      /* DataStoreWrite: '<S313>/Data Store Write1' incorporates:
+       *  Constant: '<S313>/Constant'
        */
       mcb_pmsm_foc_sensorless_f_DWork.IaOffset = 2087U;
 
-      /* DataStoreWrite: '<S312>/Data Store Write2' incorporates:
-       *  Constant: '<S312>/Constant1'
+      /* DataStoreWrite: '<S313>/Data Store Write2' incorporates:
+       *  Constant: '<S313>/Constant1'
        */
       mcb_pmsm_foc_sensorless_f_DWork.IbOffset = 2082U;
     }
 
-    /* End of Outputs for SubSystem: '<S309>/Default ADC Offset' */
+    /* End of Outputs for SubSystem: '<S310>/Default ADC Offset' */
     /* End of Outputs for SubSystem: '<Root>/Hardware Init' */
   }
 }
@@ -4506,7 +4519,7 @@ void mcb_pmsm_foc_sensorless_f28069MLaunchPad_configure_interrupts(void)
   HWI_TIC28x_EnableIRQ(96);
 }
 
-/* Hardware Interrupt Block: '<S305>/Hardware Interrupt' */
+/* Hardware Interrupt Block: '<S306>/Hardware Interrupt' */
 interrupt void ADCINT1(void)
 {
   /* Event: Default Event */
@@ -4521,10 +4534,10 @@ interrupt void ADCINT1(void)
       mcb_pmsm_foc_sensorless_f2806_B.RT2[1] =
         mcb_pmsm_foc_sensorless_f_DWork.RT2_Buffer[tmp + 1];
 
-      /* S-Function (HardwareInterrupt_sfun): '<S305>/Hardware Interrupt' */
+      /* S-Function (HardwareInterrupt_sfun): '<S306>/Hardware Interrupt' */
       mcb_pmsm_foc_CurrentControl();
 
-      /* End of Outputs for S-Function (HardwareInterrupt_sfun): '<S305>/Hardware Interrupt' */
+      /* End of Outputs for S-Function (HardwareInterrupt_sfun): '<S306>/Hardware Interrupt' */
 
       /* RateTransition: '<Root>/RT4' */
       mcb_pmsm_foc_sensorless_f_DWork.RT4_Buffer[mcb_pmsm_foc_sensorless_f_DWork.RT4_semaphoreTaken
@@ -4542,7 +4555,7 @@ interrupt void ADCINT1(void)
   HWI_TIC28x_AcknowledgeIrq(32);
 }
 
-/* Hardware Interrupt Block: '<S307>/Hardware Interrupt' */
+/* Hardware Interrupt Block: '<S308>/Hardware Interrupt' */
 interrupt void SCIRXINTA(void)
 {
   volatile unsigned int PIEIER1_stack_save = PieCtrlRegs.PIEIER1.all;
@@ -4561,13 +4574,13 @@ interrupt void SCIRXINTA(void)
   /* Event: Default Event */
   if (1 == runModel) {
     {
-      /* S-Function (HardwareInterrupt_sfun): '<S307>/Hardware Interrupt' */
+      /* S-Function (HardwareInterrupt_sfun): '<S308>/Hardware Interrupt' */
 
       /* Output and update for function-call system: '<Root>/Serial Receive' */
       {
         int16_T DataTypeConversion2;
 
-        /* S-Function (c28xsci_rx): '<S324>/SCI Receive' */
+        /* S-Function (c28xsci_rx): '<S325>/SCI Receive' */
         {
           int16_T i;
           int16_T errFlg = NOERROR;
@@ -4591,26 +4604,26 @@ interrupt void SCIRXINTA(void)
           }
         }
 
-        /* DataTypeConversion: '<S322>/Data Type Conversion2' */
+        /* DataTypeConversion: '<S323>/Data Type Conversion2' */
         DataTypeConversion2 = (int16_T)
           mcb_pmsm_foc_sensorless_f2806_B.SCIReceive[0];
         mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion2[0] =
           DataTypeConversion2;
 
-        /* DataTypeConversion: '<S322>/Data Type Conversion1' incorporates:
-         *  DataTypeConversion: '<S322>/Data Type Conversion2'
+        /* DataTypeConversion: '<S323>/Data Type Conversion1' incorporates:
+         *  DataTypeConversion: '<S323>/Data Type Conversion2'
          */
         mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion1_a[0] = (real32_T)
           DataTypeConversion2 * 0.000244140625F;
 
-        /* DataTypeConversion: '<S322>/Data Type Conversion2' */
+        /* DataTypeConversion: '<S323>/Data Type Conversion2' */
         DataTypeConversion2 = (int16_T)
           mcb_pmsm_foc_sensorless_f2806_B.SCIReceive[1];
         mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion2[1] =
           DataTypeConversion2;
 
-        /* DataTypeConversion: '<S322>/Data Type Conversion1' incorporates:
-         *  DataTypeConversion: '<S322>/Data Type Conversion2'
+        /* DataTypeConversion: '<S323>/Data Type Conversion1' incorporates:
+         *  DataTypeConversion: '<S323>/Data Type Conversion2'
          */
         mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion1_a[1] = (real32_T)
           DataTypeConversion2 * 0.000244140625F;
@@ -4624,7 +4637,7 @@ interrupt void SCIRXINTA(void)
           (mcb_pmsm_foc_sensorless_f2806_B.DataTypeConversion1_a[1] != 0.0F);
       }
 
-      /* End of Outputs for S-Function (HardwareInterrupt_sfun): '<S307>/Hardware Interrupt' */
+      /* End of Outputs for S-Function (HardwareInterrupt_sfun): '<S308>/Hardware Interrupt' */
 
       /* RateTransition: '<S8>/RT6' */
       mcb_pmsm_foc_sensorless_f_DWork.RT6_Buffer[mcb_pmsm_foc_sensorless_f_DWork.RT6_semaphoreTaken

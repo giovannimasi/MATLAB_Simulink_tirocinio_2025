@@ -25,7 +25,7 @@ pmsm_motor1 = mcb_SetPMSMMotorParameters('Teknic2310P');
 pmsm_motor1.PositionOffset = 0.0783; % Enter offset values from calibration
 
 pmsm_motor2 = mcb_SetPMSMMotorParameters('Teknic2310P');
-pmsm_motor2.PositionOffset = 0.2250; % Enter offset values from calibration
+pmsm_motor2.PositionOffset = 0.0793; % Enter offset values from calibration
 
 %PRIMO MOTORE TESTATO -> motor2, offset_calcolato=0.2250, originale=0.165
 %SECONDO MOTORE TESTATO -> motor1, offset_calcolato=0.0783, originale= 0.165

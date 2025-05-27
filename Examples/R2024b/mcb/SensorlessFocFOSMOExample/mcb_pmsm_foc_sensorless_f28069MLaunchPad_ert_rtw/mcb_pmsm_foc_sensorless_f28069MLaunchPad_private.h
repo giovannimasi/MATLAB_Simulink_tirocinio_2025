@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'mcb_pmsm_foc_sensorless_f28069MLaunchPad'.
  *
- * Model version                  : 9.18
+ * Model version                  : 9.20
  * Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
- * C/C++ source code generated on : Wed Apr  2 15:33:15 2025
+ * C/C++ source code generated on : Tue May 27 12:41:05 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
