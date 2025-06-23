@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'mcb_pmsm_foc_sensorless_dyno_f28379d'.
  *
- * Model version                  : 9.12
+ * Model version                  : 9.123
  * Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
- * C/C++ source code generated on : Tue May 27 11:59:56 2025
+ * C/C++ source code generated on : Fri Jun 20 11:21:06 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -131,7 +131,6 @@ extern void mcb_pmsm_foc_s_SpeedControl(real_T rtu_EstimatorSelect, real32_T
   rtB_SpeedControl_mcb_pmsm_foc_s *localB, rtDW_SpeedControl_mcb_pmsm_foc_
   *localDW);
 extern void mcb_FOCAlgorithmMotor1_Init(void);
-extern void mc_FOCAlgorithmMotor1_Reset(void);
 
 #pragma CODE_SECTION (mcb_pmsm_FOCAlgorithmMotor1, "ramfuncs")
 

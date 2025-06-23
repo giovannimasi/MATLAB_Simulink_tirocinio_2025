@@ -7,9 +7,9 @@
  *
  * Code generated for Simulink model 'mcb_pmsm_foc_sensorless_dyno_f28379d'.
  *
- * Model version                  : 9.12
+ * Model version                  : 9.123
  * Simulink Coder version         : 24.2 (R2024b) 21-Jun-2024
- * C/C++ source code generated on : Tue May 27 11:59:56 2025
+ * C/C++ source code generated on : Fri Jun 20 11:21:06 2025
  *
  * Target selection: ert.tlc
  * Embedded hardware selection: Texas Instruments->C2000
@@ -21,45 +21,45 @@
 
 /* Invariant block signals (default storage) */
 const ConstBlockIO_mcb_pmsm_foc_senso mcb_pmsm_foc_sensorless__ConstB = {
-  7.061551833333E-6,                   /* '<S492>/Index Vector' */
-  0.0,                                 /* '<S492>/Index Vector1' */
-  2.636875217824E-6,                   /* '<S492>/Index Vector2' */
-  0.0002,                              /* '<S509>/Index Vector' */
-  0.0002,                              /* '<S509>/Index Vector1' */
-  0.0,                                 /* '<S509>/Add' */
-  0.0,                                 /* '<S510>/Index Vector' */
-  0.0002,                              /* '<S512>/Index Vector' */
-  0.0002,                              /* '<S513>/Index Vector' */
-  0.0002,                              /* '<S513>/Index Vector2' */
-  0.0002,                              /* '<S514>/Index Vector' */
-  0.0,                                 /* '<S511>/Index Vector' */
-  0.0002,                              /* '<S515>/Index Vector' */
-  0.0002,                              /* '<S516>/Index Vector' */
-  0.0002,                              /* '<S516>/Index Vector1' */
-  0.0002,                              /* '<S517>/Index Vector' */
-  0.0002,                              /* '<S518>/Index Vector' */
-  0.0002,                              /* '<S538>/Index Vector' */
-  0.0002,                              /* '<S538>/Index Vector1' */
-  0.0,                                 /* '<S538>/Add' */
-  0.0,                                 /* '<S539>/Index Vector' */
-  0.0002,                              /* '<S541>/Index Vector' */
-  0.0002,                              /* '<S542>/Index Vector' */
-  0.0002,                              /* '<S542>/Index Vector1' */
-  0.0002,                              /* '<S543>/Index Vector' */
-  0.0,                                 /* '<S540>/Index Vector' */
-  0.0002,                              /* '<S544>/Index Vector' */
-  0.0002,                              /* '<S545>/Index Vector' */
-  0.0002,                              /* '<S545>/Index Vector1' */
-  0.0002,                              /* '<S546>/Index Vector' */
-  0.0002,                              /* '<S547>/Index Vector' */
+  7.061551833333E-6,                   /* '<S545>/Index Vector' */
+  0.0,                                 /* '<S545>/Index Vector1' */
+  2.636875217824E-6,                   /* '<S545>/Index Vector2' */
+  0.0002,                              /* '<S562>/Index Vector' */
+  0.0002,                              /* '<S562>/Index Vector1' */
+  0.0,                                 /* '<S562>/Add' */
+  0.0,                                 /* '<S563>/Index Vector' */
+  0.0002,                              /* '<S565>/Index Vector' */
+  0.0002,                              /* '<S566>/Index Vector' */
+  0.0002,                              /* '<S566>/Index Vector2' */
+  0.0002,                              /* '<S567>/Index Vector' */
+  0.0,                                 /* '<S564>/Index Vector' */
+  0.0002,                              /* '<S568>/Index Vector' */
+  0.0002,                              /* '<S569>/Index Vector' */
+  0.0002,                              /* '<S569>/Index Vector1' */
+  0.0002,                              /* '<S570>/Index Vector' */
+  0.0002,                              /* '<S571>/Index Vector' */
+  0.0002,                              /* '<S591>/Index Vector' */
+  0.0002,                              /* '<S591>/Index Vector1' */
+  0.0,                                 /* '<S591>/Add' */
+  0.0,                                 /* '<S592>/Index Vector' */
+  0.0002,                              /* '<S594>/Index Vector' */
+  0.0002,                              /* '<S595>/Index Vector' */
+  0.0002,                              /* '<S595>/Index Vector1' */
+  0.0002,                              /* '<S596>/Index Vector' */
+  0.0,                                 /* '<S593>/Index Vector' */
+  0.0002,                              /* '<S597>/Index Vector' */
+  0.0002,                              /* '<S598>/Index Vector' */
+  0.0002,                              /* '<S598>/Index Vector1' */
+  0.0002,                              /* '<S599>/Index Vector' */
+  0.0002,                              /* '<S600>/Index Vector' */
   2U,                                  /* '<S264>/Width' */
-  0.0F,                                /* '<S461>/Gain' */
-  0.111687154F,                        /* '<S461>/Switch' */
-  0.0F,                                /* '<S461>/Gain1' */
-  0.111687154F,                        /* '<S461>/Switch1' */
-  0.0F,                                /* '<S461>/Gain2' */
-  0.166666672F,                        /* '<S461>/Switch2' */
-  0.0F,                                /* '<S460>/Subtract' */
+  0.0F,                                /* '<S514>/Gain' */
+  0.111687154F,                        /* '<S514>/Switch' */
+  0.0F,                                /* '<S514>/Gain1' */
+  0.111687154F,                        /* '<S514>/Switch1' */
+  0.0F,                                /* '<S514>/Gain2' */
+  0.166666672F,                        /* '<S514>/Switch2' */
+  0.0F,                                /* '<S513>/Subtract' */
   0.0F,                                /* '<S262>/Gain' */
   0.111687154F,                        /* '<S262>/Switch' */
   0.0F,                                /* '<S262>/Gain1' */
@@ -74,7 +74,7 @@ const ConstParam_mcb_pmsm_foc_sensorl mcb_pmsm_foc_sensorless__ConstP = {
   /* Pooled Parameter (Expression: )
    * Referenced by:
    *   '<S172>/sine_table_values'
-   *   '<S366>/sine_table_values'
+   *   '<S419>/sine_table_values'
    */
   { 0.0F, 0.00785390101F, 0.0157073177F, 0.023559764F, 0.0314107575F,
     0.0392598175F, 0.0471064523F, 0.0549501814F, 0.0627905205F, 0.070626989F,
