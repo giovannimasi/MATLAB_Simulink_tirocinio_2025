@@ -90,8 +90,8 @@ inverter_motor2.CtSensOffsetMin = 1500;
 
 
 %% Open loop reference values
-T_Ref_openLoop          = 1;                     % Sec // Time for open-loop start-up
-Speed_openLoop_PU       = 0.1;                   % PU  // Per-Unit speed referene for open-loop start-up
+T_Ref_openLoop          = 1;  %1                   % Sec // Time for open-loop start-up
+Speed_openLoop_PU       = 0.1; %0.1                  % PU  // Per-Unit speed referene for open-loop start-up
 Vd_Ref_openLoop_PU      = 1.2*Speed_openLoop_PU; % Use 1.2x for Dyno setup and 1x for others
 
 %% Derive Characteristics
@@ -106,12 +106,11 @@ pmsm_motor2.N_base = mcb_getBaseSpeed(pmsm_motor2,inverter_motor2); %rpm // Base
 PU_System_motor1 = mcb_SetPUSystem(pmsm_motor1,inverter_motor1);
 PU_System_motor2 = mcb_SetPUSystem(pmsm_motor2,inverter_motor2);
 %% Set Acceleration
-acceleration = 20000/PU_System_motor1.N_base;                  % P.U/Sec // Maximum allowable acceleraton
+acceleration = 20000/PU_System_motor1.N_base;   %20000/PU_System_motor1.N_base;  % P.U/Sec // Maximum allowable acceleraton
 
 %% Controller design // Get ballpark values!
 % for motor 1 
-%PI_params_motor1 = mcb.internal.SetControllerParameters(pmsm_motor1,inverter_motor1,PU_System_motor1,T_pwm,2*Ts,Ts_speed);
-PI_params_motor1 = calculate_PI_params(pmsm_motor1);
+PI_params_motor1 = mcb.internal.SetControllerParameters(pmsm_motor1,inverter_motor1,PU_System_motor1,T_pwm,2*Ts,Ts_speed);
 
 %Updating delays for simulation
 PI_params_motor1.delay_Currents    = 1; %int32(Ts/Ts_simulink);
@@ -124,8 +123,7 @@ smo_motor1 = mcb_ComputeSMOParameters(pmsm_motor1,Ts,PU_System_motor1);
 % mcb_getControlAnalysis(pmsm_motor1,inverter_motor1,PU_System_motor1,PI_params_motor1,Ts,Ts_speed); 
 
 % for motor 2
-%PI_params_motor2 = mcb.internal.SetControllerParameters(pmsm_motor2,inverter_motor2,PU_System_motor2,T_pwm,2*Ts,Ts_speed);
-PI_params_motor2=calculate_PI_params(pmsm_motor2);
+PI_params_motor2 = mcb.internal.SetControllerParameters(pmsm_motor2,inverter_motor2,PU_System_motor2,T_pwm,2*Ts,Ts_speed);
 
 %Updating delays for simulation
 PI_params_motor2.delay_Currents    = 1; %int32(Ts/Ts_simulink);
@@ -146,165 +144,32 @@ disp(target);
 disp(PU_System_motor1);
 disp(PU_System_motor2);
 
-%% Indici prestazione
 
-% FLUX OBSERVER
+%% DT-slid parameters
 
-%originali
-% IAE = 0.0429
-% ISE = 0.0027
-% ITAE = 0.1179
+% velocità due campioni
+SlidFCS_params.lam1 = 200;% PWM = 100,FCS = 600 (con azione integrale) 0.5 %0.6 0 < lam1 < 1(senza azione integrale=)
+SlidFCS_params.lam2 = 0.02; % PWM = 0.01 FCS = 0.6 0 < lam2 < 1; %0.001
 
-%custom alpha=0.009
-% IAE = 0.0212
-% ISE = 0.0017
-% ITAE = 0.0459
+% Speed Slid + FCS (discrete time)
+SlidFCS_params.lw = 0.55;% FCS = 0.55
+SlidFCS_params.ar = 0.018;% PWM = 0.1,FCS = 0.01  % -1 < ar <1
+SlidFCS_params.rr = 80;% PWM = 300,% FCS = 300 (a 300 oscillazioni a frequenza piu bassa, 500 frequenza piu alta)
 
-%custom alpha=0.008
-% IAE = 0.0193
-% ISE = 0.0016
-% ITAE = 0.0411
+%SlidFCS_params.Tc_speed = 1e-4;
 
-%custom alpha=0.007
-% IAE = 0.0174
-% ISE = 0.0014
-% ITAE = 0.0364
+% % correnti due campioni
+% SlidFCS_params.lamd1 = 0.1; % PWM = 0.1,FCS =  0.1 
+% SlidFCS_params.lamd2 = 0.01;% PWM = 0.01,FCS =  0.01
+% SlidFCS_params.lamq1 = 0.1; % PWM = 0.1,FCS =  0.1
+% SlidFCS_params.lamq2 = 0.01;% PWM = 0.01,FCS =  0.01
 
-%custom alpha=0.006
-% IAE = 0.0156
-% ISE = 0.0012
-% ITAE = 0.0318
+% Current Slid + FCS (discrete time)
+SlidFCS_params.lamd = 0.3; % FCS = 0.1
+SlidFCS_params.lamq = 0.3; % FCS =  0.01
+SlidFCS_params.ad = 0.7;  % PWM = 0.95,FCS =  0.95
+SlidFCS_params.aq = 0.7;  % PWM= 0.99,FCS =  0.99
+SlidFCS_params.rd = 0.5;   % PWM = 0.5,FCS =  0.5
+SlidFCS_params.rq = 0.5;   % PWM = 0.5,FCS =  0.5
 
-%custom alpha=0.005
-% IAE = 0.0139
-% ISE = 0.0011
-% ITAE = 0.0272
-
-%custom alpha=0.004
-% IAE = 0.0123
-% ISE = 0.00097735
-% ITAE = 0.0228
-
-%custom alpha=0.003
-% IAE = 0.0110
-% ISE = 0.00089019
-% ITAE = 0.0188
-
-%custom alpha=0.002
-% IAE = 0.0118
-% ISE = 0.0010
-% ITAE = 0.0170
-
-%custom alpha=0.001
-% IAE = 0.6726
-% ISE = 0.1063
-% ITAE = 2.2670
-
-%SLIDING MODE OBSERVER
-
-%originali
-% IAE = 0.0429
-% ISE = 0.0019
-% ITAE = 0.1170
-
-%custom alpha=0.0095
-% IAE = 0.0198
-% ISE = 0.00067411
-% ITAE = 0.0451
-
-%custom alpha=0.0094
-% IAE = 0.0196
-% ISE = 0.00066223
-% ITAE = 0.0446
-
-%custom alpha=0.0093
-% IAE = 0.0195
-% ISE = 0.00065090
-% ITAE = 0.0443
-
-%custom alpha=0.0092
-% IAE = 0.0195
-% ISE = 0.00064056
-% ITAE = 0.0441
-
-%custom alpha=0.0091
-% IAE = 0.0196
-% ISE = 0.00063076
-% ITAE = 0.0440
-
-%custom alpha=0.009
-% IAE = 0.0197
-% ISE = 0.00062199
-% ITAE = 0.0438
-
-%custom alpha=0.0089
-% IAE = 0.0198
-% ISE = 0.00061452
-% ITAE = 0.0439
-
-%custom alpha=0.0088
-% IAE = 0.0199
-% ISE = 0.00060775
-% ITAE = 0.0437
-
-%custom alpha=0.0087
-% IAE = 0.0200
-% ISE = 0.00060228
-% ITAE = 0.0436
-
-%custom alpha=0.0086
-% IAE = 0.0202
-% ISE = 0.00059686
-% ITAE = 0.0436
-
-%custom alpha=0.0085
-% IAE = 0.0204
-% ISE = 0.00059346
-% ITAE = 0.0436
-
-%custom alpha=0.008
-% IAE = 0.0212
-% ISE = 0.00058933
-% ITAE = 0.0435
-
-%% Functions
-
-function PI_params = calculate_PI_params(pmsm)
-%Options
-sliding_mode=0;
-
-%Parameters
-zeta1=0.707;
-zeta2=1;
-Rt_speed=0.06;
-gamma=0.6;
-%pmsm.Rs=pmsm.Rs+inverter.R_board;
-
-%Speed PI
-
-wn_speed=5*zeta1/Rt_speed;
-if sliding_mode
-    alpha=0.0092;
-else
-    alpha=0.003;
-end
-a=pmsm.B/pmsm.J;
-b=1.5*alpha*((pmsm.p)^2 * pmsm.FluxPM)/pmsm.J;
-PI_params.Kp_speed=(2*zeta1*wn_speed-a)/b;
-PI_params.Ti_speed=(2*zeta1*wn_speed-a)/(wn_speed^2);
-PI_params.Ki_speed=PI_params.Kp_speed / PI_params.Ti_speed;
-
-%Current PI 
-
-%Il modello Simulink utilizza un'unica configurazione per la corrente q e d
-%poiché nel caso specifico, i parametri sono uguali e le configurazioni
-%risultano equivalenti
-L=pmsm.Lq;
-
-wn_i = (1/(1-gamma))*(pmsm.Rs/L);
-PI_params.Kp_i=(2*zeta2*wn_i*L)-pmsm.Rs;
-PI_params.Ti_i=(2*zeta2*wn_i*L-pmsm.Rs)/(L*(wn_i)^2);
-PI_params.Ki_i=PI_params.Kp_i/PI_params.Ti_i;
-
-end
-
+%SlidFCS_params.Tc = 1e-4;
